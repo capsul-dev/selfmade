@@ -1,0 +1,16 @@
+.grid {
+  display: grid;
+  border: 1px dotted red;
+
+  grid-gap: .5em;
+}
+
+.drag-enter-active,
+.drag-leave-active {
+  transition: opacity .5s;
+}
+
+.drag-enter,
+.drag-leave-to {
+  opacity: 0;
+}

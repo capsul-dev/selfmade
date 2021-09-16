@@ -1,4 +1,12 @@
 import { createApp } from 'vue'
-import App from './App.vue'
+import App from './views/main.vue'
+import store from './store'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+app.use(store)
+app.mount('#app')
+
+// debug
+Object.assign(window, {
+  _store: store
+})

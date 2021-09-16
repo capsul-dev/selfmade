@@ -1,0 +1,19 @@
+.button {
+  display: block;
+  box-sizing: border-box;
+
+  padding: .5em 1em;
+  line-height: 1.2em;
+
+  width: 100%;
+  text-align: center;
+}
+
+.button--base {
+  border: 1px solid black;
+  box-shadow: var(--light-shadow);
+}
+
+.button--default {
+  background: blue;
+}

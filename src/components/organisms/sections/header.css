@@ -1,0 +1,12 @@
+.header {
+  background: #ddd;
+}
+
+.header__title {
+  font-size: 1.5em;
+  margin-bottom: 1.2em;
+}
+
+.header__subtitle {
+  opacity: .9;
+}
