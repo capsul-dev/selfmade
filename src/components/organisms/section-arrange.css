@@ -5,6 +5,11 @@
   grid-gap: .5em;
 }
 
+.ghost {
+  opacity: .2;
+  background: #666;
+}
+
 .drag-enter-active,
 .drag-leave-active {
   transition: opacity .5s;

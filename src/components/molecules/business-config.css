@@ -1,0 +1,15 @@
+.config {
+  display: grid;
+  grid-template-columns: auto 10em;
+  grid-column-gap: 1em;
+
+  border: 1px solid red;
+  padding: .5em;
+}
+
+@media screen and (max-width: 600px) {
+  .config {
+    grid-template-columns: auto 5em;
+    grid-column-gap: var(--mobile-column-gap);
+  }
+}

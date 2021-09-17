@@ -7,10 +7,14 @@
 
   width: 100%;
   text-align: center;
+  background: #fff;
+
+  cursor: pointer !important;
 }
 
 .button--base {
   border: 1px solid black;
+  border-radius: var(--rounded-borders);
   box-shadow: var(--light-shadow);
 }
 

@@ -1,0 +1,16 @@
+.list {
+  display: grid;
+  grid-row-gap: .4em;
+  border: 1px border yellow;
+}
+
+.checkbox_name {
+  font-weight: bold;
+  font-size: 1.1em;
+
+  margin-bottom: 8pt;
+}
+
+.checkbox_description {
+  opacity: .8;
+}

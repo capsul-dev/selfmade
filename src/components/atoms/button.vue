@@ -1,5 +1,8 @@
 <template>
-  <div :class="`button button--base ${makeClasses}`" :draggable="classes.includes('draggable')">
+  <div
+    :class="`button button--base ${makeClasses}`"
+    :draggable="classes.includes('draggable')"
+  >
     <slot></slot>
   </div>
 </template>
@@ -9,17 +12,17 @@ export default {
   props: {
     classes: {
       type: Array,
-      default: () => ['default'],
-    }
+      default: () => ["default"],
+    },
   },
   computed: {
     makeClasses() {
-      return typeof this.classes !== 'string'
-        ? this.classes.reduce((a, c) => c + ` button--${a}`, '')
-        : `button--${this.classes}`
-    }
-  }
-}
+      return typeof this.classes !== "string"
+        ? this.classes.reduce((a, c) => c + ` button--${a}`, "")
+        : `button--${this.classes}`;
+    },
+  },
+};
 </script>
 
 <style scoped src="./button.css"></style>

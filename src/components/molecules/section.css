@@ -2,7 +2,11 @@
   border: 1px solid black;
   cursor: move;
 
-  padding: 0 .5em;
+  padding: .5em;
+  background: #fff;
+
+  border-radius: var(--rounded-borders);
+  box-shadow: var(--lighter-shadow);
 }
 
 .section__order {
@@ -23,12 +27,11 @@
   grid-column-gap: 1em;
 
   align-items: center;
-  min-height: 10em;
+  height: 10em;
 }
 
 .section__body__template {
   height: 100%;
-
   border: 3px dotted green;
 }
 
@@ -38,4 +41,21 @@
 
   justify-items: center;
   grid-row-gap: .5em;
+}
+
+@media screen and (max-width: 600px) {
+  .section {
+    padding: .15em .2em 0 .2em;
+  }
+
+  .section__body {
+    grid-template-columns: 1fr;
+    grid-column-gap: var(--mobile-column-gap);
+  }
+
+  .section__body__sideopts {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: .5em;
+    grid-row-gap: 0;
+  }
 }

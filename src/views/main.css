@@ -1,5 +1,13 @@
 .view {
-  border: 1px solid blue;
+  position: relative;
+  display: grid;
+  grid-row-gap: 1.5em;
 
-  padding: 0 20vw;
+  padding: 0 15vw;
+}
+
+@media screen and (max-width: 900px) {
+  .view {
+    padding: 0 !important;
+  }
 }

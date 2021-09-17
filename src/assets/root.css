@@ -1,7 +1,22 @@
 * {
+  --lighter-shadow: 0 0 5px #ddd;
   --light-shadow: 0 1px 4px #ccc;
   --medium-shadow: 0;
   --heavy-shadow: 0;
 
+  --rounded-borders: 4px;
+  --mobile-column-gap: .5em;
+
   --success-bg-color: green;
-}  
+}
+
+body,html {
+  margin: 0;
+  padding: 0;
+
+  width: 100vw !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}

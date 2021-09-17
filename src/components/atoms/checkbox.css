@@ -1,0 +1,22 @@
+.checkbox {
+  display: grid;
+  grid-template-columns: 3em auto;
+  border: 1px solid black;
+
+  align-items: center;
+  border-radius: var(--rounded-borders);
+
+  background: #fff;
+}
+
+.checkbox__input {
+  text-align: center;
+  border-right: 1px solid #666;
+}
+
+.checkbox__text {
+  padding: .5em 1em;
+  box-sizing: border-box;
+
+  cursor: pointer;
+}

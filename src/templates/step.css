@@ -1,0 +1,33 @@
+.step {
+  position: relative;
+  border: 1px dotted pink;
+  padding: .5em;
+  width: 100%;
+  box-sizing: border-box;
+
+  border-radius: var(--rounded-borders);
+  background: #efefef;
+}
+
+.step__header {
+  border: 2px dashed gold;
+  margin-bottom: .8em;
+}
+
+.step__header__title {
+  font-weight: bold;
+  font-size: 1.1em;
+
+  margin-bottom: 8pt;
+}
+
+.step__header__description {
+  opacity: .8;
+}
+
+@media screen and (max-width: 600px) {
+  .step {
+    padding: .3em;
+    min-width: 0 !important;
+  }
+}

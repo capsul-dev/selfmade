@@ -1,8 +1,6 @@
 <template>
   <div class="section">
-    <div class="section__order">
-      #{{ order }}
-    </div>
+    <div class="section__order">#{{ order }}</div>
     <div class="section__title">
       <slot name="title"></slot>
     </div>
@@ -21,20 +19,14 @@
 </template>
 
 <script>
-import CButton from '@/components/atoms/button.vue'
-
 export default {
-  components: {
-    CButton,
-  },
-
   props: {
     order: {
       type: Number,
       required: true,
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped src="./section.css"></style>
