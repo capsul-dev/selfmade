@@ -8,7 +8,11 @@
     ghost-class="ghost"
   >
     <template #item="{ element }">
-      <c-section :order="element.order">
+      <c-section
+        :order="element.order"
+        @moveUp="onMoveUp(element)"
+        @moveDown="onMoveDown(element)"
+      >
         <template #title>{{ element.name }}</template>
         <template #template>
           <component :is="element.component"></component>
@@ -42,11 +46,21 @@ export default {
     ...sectionComponents,
   },
 
+  methods: {
+    onMoveUp(section) {
+      store.dispatch("layout/moveUp", section);
+    },
+    onMoveDown(section) {
+      store.dispatch("layout/moveDown", section);
+    },
+  },
+
   computed: {
     sections: {
       get() {
         return store.getters["layout/sections"]
           .filter((section) => !!section.enabled)
+          .sort((a, b) => (a.order < b.order ? 1 : -1))
           .sort((a, b) => (a.originalOrder > b.originalOrder ? 1 : -1));
       },
       set(value) {

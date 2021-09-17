@@ -1,6 +1,7 @@
 .step {
   position: relative;
-  border: 1px dotted pink;
+  border: 1px solid #ccc;
+  box-shadow: var(--lighter-shadow);
   padding: .5em;
 
   border-radius: var(--rounded-borders);

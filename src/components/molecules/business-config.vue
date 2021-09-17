@@ -27,20 +27,20 @@ export default {
 
   methods: {
     onImportClick() {
-      this.$refs.file.click()
+      this.$refs.file.click();
     },
 
     async onFileImported(event) {
-      const content = await this.importJSON(event)
-      console.log({ content })
+      const content = await this.importJSON(event);
+      console.log({ content });
     },
 
     importJSON(event) {
       return new Promise((resolve) => {
-        const fr = new FileReader()
-        fr.onload = () => resolve(fr.result)
-        fr.readAsText(event.target.files[0])
-      })
+        const fr = new FileReader();
+        fr.onload = () => resolve(fr.result);
+        fr.readAsText(event.target.files[0]);
+      });
     },
   },
 };

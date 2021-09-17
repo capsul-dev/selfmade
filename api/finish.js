@@ -25,13 +25,12 @@ module.exports = async (req, res) => {
       subject: "Layout do site",
       text: "Alguma mensagem institucional",
     });
-
-  } catch( error ) {
-    console.trace(error)
-    res.status(500).send({ error: true, message: error.message })
+  } catch (error) {
+    console.trace(error);
+    res.status(500).send({ error: true, message: error.message });
   }
 
   res.send({
     error: false,
-  })
+  });
 };

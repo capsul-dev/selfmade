@@ -41,7 +41,7 @@ import CTemplateStep from "@/templates/step.vue";
 import CBusinessConfig from "@/components/molecules/business-config.vue";
 import CSectionList from "@/components/organisms/section-list.vue";
 import CSectionArrange from "@/components/organisms/section-arrange.vue";
-import CFinish from '@/components/organisms/finish.vue'
+import CFinish from "@/components/organisms/finish.vue";
 
 export default {
   components: {

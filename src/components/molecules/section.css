@@ -9,8 +9,26 @@
   box-shadow: var(--lighter-shadow);
 }
 
-.section__order {
+.section__top {
+  display: grid;
+  grid-template-columns: auto 7em;
+  border: 1px dashed grey;
+}
+
+.section__top__order {
   opacity: .8;
+}
+
+.section__top__arrows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 2px;
+  border: 1px solid red;
+}
+
+.section__arrow {
+  border: 1px solid black;
+  cursor: pointer;
 }
 
 .section__title {
