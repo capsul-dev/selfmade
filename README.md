@@ -1,24 +1,12 @@
-# selfmade
+TODO
+====
 
-## Project setup
-```
-npm install
-```
+- [ ] responsividade
+- [ ] implementar o Tailwind no frontend
+- [ ] importar/exportar JSON
+- [ ] backend
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+API
+===
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- [ ] /api/mailSend -- envia um e-mail c o JSON para a capsul (e outro para o cliente?)
