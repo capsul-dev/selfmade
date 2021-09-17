@@ -31,6 +31,8 @@
         <c-section-arrange></c-section-arrange>
       </template>
     </c-template-step>
+
+    <c-finish></c-finish>
   </div>
 </template>
 
@@ -39,6 +41,7 @@ import CTemplateStep from "@/templates/step.vue";
 import CBusinessConfig from "@/components/molecules/business-config.vue";
 import CSectionList from "@/components/organisms/section-list.vue";
 import CSectionArrange from "@/components/organisms/section-arrange.vue";
+import CFinish from '@/components/organisms/finish.vue'
 
 export default {
   components: {
@@ -46,6 +49,7 @@ export default {
     CBusinessConfig,
     CSectionList,
     CSectionArrange,
+    CFinish,
   },
 };
 </script>

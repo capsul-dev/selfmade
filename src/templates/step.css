@@ -2,11 +2,9 @@
   position: relative;
   border: 1px dotted pink;
   padding: .5em;
-  width: 100%;
-  box-sizing: border-box;
 
   border-radius: var(--rounded-borders);
-  background: #efefef;
+  background: #f7f7f7;
 }
 
 .step__header {
@@ -27,7 +25,9 @@
 
 @media screen and (max-width: 600px) {
   .step {
-    padding: .3em;
+    padding: .2em;
     min-width: 0 !important;
+
+    width: 100%;
   }
 }

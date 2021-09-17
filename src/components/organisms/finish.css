@@ -1,0 +1,23 @@
+.finish {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  border: 2px solid pink;
+  padding: 1em;
+}
+
+.finish__right {
+  display: grid;
+  grid-row-gap: .5em;
+}
+
+.finish__right__disclaimer {
+  text-align: justify;
+  font-size: .95em;
+  opacity: .8;
+}
+
+@media screen and (max-width: 600px) {
+  .finish {
+    grid-template-columns: auto 10em;
+  }
+}

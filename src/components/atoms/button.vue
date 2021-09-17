@@ -11,7 +11,6 @@
 export default {
   props: {
     classes: {
-      type: Array,
       default: () => ["default"],
     },
   },

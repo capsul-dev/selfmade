@@ -1,10 +1,19 @@
 .config {
   display: grid;
   grid-template-columns: auto 10em;
-  grid-column-gap: 1em;
+  grid-column-gap: var(--column-gap);
 
   border: 1px solid red;
   padding: .5em;
+}
+
+.config__input {
+  min-height: 0;
+}
+
+.config__right {
+  display: grid;
+  grid-row-gap: .5em;
 }
 
 @media screen and (max-width: 600px) {
