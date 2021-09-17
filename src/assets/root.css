@@ -17,5 +17,6 @@ body,html {
 }
 
 html {
+  font-family: Lato;
   scroll-behavior: smooth;
 }
