@@ -2,16 +2,16 @@
   <div class="checkbox">
     <div class="checkbox__input">
       <input
-        id="checkbox"
+        ref="checkbox"
         type="checkbox"
         :checked="checked"
         :disabled="!!required"
         @input="onInput"
       />
     </div>
-    <label class="checkbox__text" for="checkbox">
+    <div class="checkbox__text" @click="onClick">
       <slot></slot>
-    </label>
+    </div>
   </div>
 </template>
 
@@ -32,6 +32,9 @@ export default {
     onInput(event) {
       this.$emit("update:checked", event.target.checked);
     },
+    onClick() {
+      this.$emit('update:checked', !this.$refs.checkbox.checked);
+    }
   },
 };
 </script>

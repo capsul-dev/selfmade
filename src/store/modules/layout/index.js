@@ -132,10 +132,7 @@ export default {
   mutations: {
     ORDER_UPDATE: (state, value) => {
       value.forEach((section, index) => {
-        state.sections[index] = {
-          ...section,
-          order: index + 1,
-        };
+        state.sections.find(({ name }) => section.name === name).order = index + 1
       });
     },
 

@@ -1,8 +1,13 @@
 .finish {
+  position: sticky;
+  bottom: 0;
   display: grid;
   grid-template-columns: 3fr 1fr;
-  border: 2px solid pink;
   padding: 1em;
+
+  background: #fff;
+  border: 2px solid pink;
+  border-radius: 15px 15px 0 0;
 }
 
 .finish__right {

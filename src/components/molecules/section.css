@@ -29,6 +29,8 @@
 .section__arrow {
   border: 1px solid black;
   cursor: pointer;
+
+  justify-self: center;
 }
 
 .section__title {
