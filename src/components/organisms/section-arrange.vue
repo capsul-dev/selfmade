@@ -1,6 +1,7 @@
 <template>
   <draggable
     class="grid"
+    handle=".info--handle"
     v-model="sections"
     tag="transition-group"
     item-key="order"
@@ -13,7 +14,17 @@
         @moveUp="onMoveUp(element)"
         @moveDown="onMoveDown(element)"
       >
-        <template #title>{{ element.name }}</template>
+        <template #info>
+          <div
+            :class="{
+              info: true,
+              'info--handle': typeof element.originalOrder !== 'number',
+              'info--blocked': typeof element.originalOrder === 'number',
+            }"
+          >
+            {{ element.name }}
+          </div>
+        </template>
         <template #template>
           <component :is="element.component"></component>
         </template>

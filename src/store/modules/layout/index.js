@@ -131,9 +131,11 @@ export default {
 
   mutations: {
     ORDER_UPDATE: (state, value) => {
-      value.forEach((section, index) => {
-        state.sections.find(({ name }) => section.name === name).order = index + 1
-      });
+      value
+        .forEach((section, index) => {
+          state.sections.find(({ name }) => section.name === name).order =
+            index + 1;
+        });
     },
 
     MOVE_UP: (state, value) => {

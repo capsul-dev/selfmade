@@ -33,8 +33,8 @@ export default {
       this.$emit("update:checked", event.target.checked);
     },
     onClick() {
-      this.$emit('update:checked', !this.$refs.checkbox.checked);
-    }
+      this.$emit("update:checked", !this.$refs.checkbox.checked);
+    },
   },
 };
 </script>

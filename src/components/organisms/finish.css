@@ -1,13 +1,16 @@
 .finish {
-  position: sticky;
-  bottom: 0;
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 1fr 1fr;
   padding: 1em;
 
   background: #fff;
   border: 2px solid pink;
   border-radius: 15px 15px 0 0;
+}
+
+.finish--sticky {
+  position: sticky;
+  bottom: 0;
 }
 
 .finish__right {
