@@ -71,8 +71,7 @@ export default {
       get() {
         return store.getters["layout/sections"]
           .filter((section) => !!section.enabled)
-          .sort((a, b) => (a.order < b.order ? 1 : -1))
-          .sort((a, b) => (a.originalOrder > b.originalOrder ? 1 : -1));
+          .sort((a, b) => (a.order > b.order ? 1 : -1));
       },
       set(value) {
         store.dispatch("layout/updateOrder", value);

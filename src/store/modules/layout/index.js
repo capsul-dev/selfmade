@@ -6,7 +6,7 @@ export default {
       sections: [
         {
           order: 1,
-          originalOrder: 0,
+          originalOrder: -1,
           enabled: true,
           required: true,
           name: "Header",
@@ -132,6 +132,10 @@ export default {
   mutations: {
     ORDER_UPDATE: (state, value) => {
       value
+        .map((section, index) => ({ ...section, order: section.order + index }))
+        .sort((a, b) =>
+          (a.originalOrder || a.order) < (b.originalOrder || b.order) ? -1 : 1
+        )
         .forEach((section, index) => {
           state.sections.find(({ name }) => section.name === name).order =
             index + 1;

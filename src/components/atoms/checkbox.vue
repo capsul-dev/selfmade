@@ -33,7 +33,9 @@ export default {
       this.$emit("update:checked", event.target.checked);
     },
     onClick() {
-      this.$emit("update:checked", !this.$refs.checkbox.checked);
+      if (!this.required) {
+        this.$emit("update:checked", !this.$refs.checkbox.checked);
+      }
     },
   },
 };
