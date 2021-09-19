@@ -132,7 +132,7 @@ export default {
   mutations: {
     ORDER_UPDATE: (state, value) => {
       value
-        .map((section, index) => ({ ...section, order: section.order + index }))
+        .map((section, index) => ({ ...section, order: index }))
         .sort((a, b) =>
           (a.originalOrder || a.order) < (b.originalOrder || b.order) ? -1 : 1
         )
