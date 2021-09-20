@@ -1,5 +1,10 @@
 <template>
-  <input class="input" :type="type" :value="modelValue" @input="onInput" />
+  <input
+    class="border-box bg-white shadow-sm rounded px-3 py-2"
+    :type="type"
+    :value="modelValue"
+    @input="onInput"
+  />
 </template>
 
 <script>
@@ -24,5 +29,3 @@ export default {
   },
 };
 </script>
-
-<style scoped src="./input.css"></style>

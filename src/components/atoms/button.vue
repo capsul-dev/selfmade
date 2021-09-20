@@ -1,6 +1,15 @@
 <template>
   <div
-    :class="`button button--base ${makeClasses}`"
+    class="
+      bg-blue-500
+      hover:bg-blue-700
+      text-white text-center
+      font-bold
+      py-2
+      px-4
+      rounded
+      cursor-pointer
+    "
     :draggable="classes.includes('draggable')"
   >
     <slot></slot>
@@ -23,5 +32,3 @@ export default {
   },
 };
 </script>
-
-<style scoped src="./button.css"></style>

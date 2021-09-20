@@ -1,6 +1,16 @@
 <template>
-  <div class="checkbox">
-    <div class="checkbox__input">
+  <div
+    class="
+      checkbox
+      rounded
+      bg-white
+      shadow-md
+      py-2
+      grid grid-cols-checkbox
+      items-center
+    "
+  >
+    <div class="justify-self-center">
       <input
         ref="checkbox"
         type="checkbox"
@@ -9,7 +19,7 @@
         @input="onInput"
       />
     </div>
-    <div class="checkbox__text" @click="onClick">
+    <div class="border-l-2 px-4 cursor-pointer" @click="onClick">
       <slot></slot>
     </div>
   </div>
@@ -40,5 +50,3 @@ export default {
   },
 };
 </script>
-
-<style scoped src="./checkbox.css"></style>

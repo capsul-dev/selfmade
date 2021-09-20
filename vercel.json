@@ -1,5 +1,5 @@
 {
-  "version": "2",
+  "version": 2,
   "env": {
     "CS_SMTP_HOST": "@cs-selfmade-smtp-host",
     "CS_SMTP_PORT": "@cs-selfmade-smtp-port",

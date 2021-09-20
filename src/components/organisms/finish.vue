@@ -1,5 +1,5 @@
 <template>
-  <div class="finish">
+  <div class="border-2 p-4">
     <div class="finish__left">Blah</div>
     <div class="finish__right">
       <div class="finish__right__disclaimer">
@@ -42,5 +42,3 @@ export default {
   },
 };
 </script>
-
-<style scoped src="./finish.css"></style>

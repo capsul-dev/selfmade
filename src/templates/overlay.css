@@ -24,12 +24,14 @@
   margin-bottom: 5vh;
 
   background: pink;
-  grid-template-columns: auto 2em;
+  grid-template-columns: 1fr 1fr;
 }
 
 .overlay__box__close {
   background: red;
   cursor: pointer;
+
+  justify-self: right;
 }
 
 .overlay__box__close:before {
@@ -51,8 +53,8 @@
   top: 50%;
   left: 50%;
 
-  width: 100vw;
-  height: 100vh;
+  width: 110vw;
+  height: 110vh;
 
   background: #666;
   opacity: .6;
@@ -68,6 +70,12 @@
     width: 100vw;
     height: 100vh;
     transform: none;
+
+    padding: 0;
+  }
+
+  .overlay__box__top {
+    padding: 1em .5em;
   }
 
   .overlay__back {

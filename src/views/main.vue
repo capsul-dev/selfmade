@@ -1,5 +1,5 @@
 <template>
-  <div class="view">
+  <div class="w-full lg:px-40 grid gap-y-5">
     <c-template-step>
       <template #title>Dados pessoais</template>
       <template #description
@@ -74,4 +74,3 @@ export default {
 </script>
 
 <style src="@/assets/root.css"></style>
-<style scoped src="./main.css"></style>

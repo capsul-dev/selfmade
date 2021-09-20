@@ -1,7 +1,7 @@
 <template>
-  <div class="step">
-    <div class="step__header">
-      <div class="step__header__title">
+  <div class="p-5 shadow-md bg-blue-50">
+    <div class="mb-10">
+      <div class="text-lg font-bold">
         <slot name="title"></slot>
       </div>
       <div class="step__header__description">
@@ -13,5 +13,3 @@
     </div>
   </div>
 </template>
-
-<style scoped src="./step.css"></style>

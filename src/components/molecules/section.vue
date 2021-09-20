@@ -1,11 +1,11 @@
 <template>
-  <div class="section">
-    <div class="section__info">
-      <div class="section__info__title">
+  <div class="relative border-2 bg-white">
+    <div class="flex items-center">
+      <div class="border-red-500 border-2 flex-1">
         <slot name="info"></slot>
       </div>
-      <div class="section__info__order">#{{ order }}</div>
-      <div class="section__info__arrows">
+      <div class="w-10">#{{ order }}</div>
+      <div class="flex gap-x-2 border-blue-500 border-2 text-2xl opacity-40">
         <div @click="$emit('moveUp')" class="section__arrow section__arrow--up">
           <i class="fa fa-arrow-circle-up"></i>
         </div>
@@ -18,7 +18,7 @@
       </div>
     </div>
 
-    <div class="section__body">
+    <div class="h-40">
       <div class="section__body__template">
         <slot name="template"></slot>
       </div>
@@ -30,10 +30,10 @@
     </div>
 
     <div class="section__navigation">
-      <div class="section__nav section__nav--left">
+      <div class="absolute top-1/2 left-5">
         <i class="fa fa-chevron-left"></i>
       </div>
-      <div class="section__nav section__nav--right">
+      <div class="absolute top-1/2 right-5">
         <i class="fa fa-chevron-right"></i>
       </div>
     </div>
@@ -50,5 +50,3 @@ export default {
   },
 };
 </script>
-
-<style scoped src="./section.css"></style>
