@@ -7,13 +7,13 @@
       <div class="section__info__order">#{{ order }}</div>
       <div class="section__info__arrows">
         <div @click="$emit('moveUp')" class="section__arrow section__arrow--up">
-          Sobe
+          <i class="fa fa-arrow-circle-up"></i>
         </div>
         <div
           @click="$emit('moveDown')"
           class="section__arrow section__arrow--down"
         >
-          Desce
+          <i class="fa fa-arrow-circle-down"></i>
         </div>
       </div>
     </div>
@@ -30,8 +30,12 @@
     </div>
 
     <div class="section__navigation">
-      <div class="section__nav section__nav--left">&lt;</div>
-      <div class="section__nav section__nav--right">&gt;</div>
+      <div class="section__nav section__nav--left">
+        <i class="fa fa-chevron-left"></i>
+      </div>
+      <div class="section__nav section__nav--right">
+        <i class="fa fa-chevron-right"></i>
+      </div>
     </div>
   </div>
 </template>

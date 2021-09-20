@@ -24,8 +24,6 @@ export default {
     sendLayout: ({ commit, getters, rootGetters }) =>
       new Promise((resolve, reject) => {
 
-        console.log({ getters, rootGetters })
-
         if( !isStringFilled(getters.name) ) {
           return reject("Você deve preencher o campo 'nome'")
         }

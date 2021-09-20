@@ -1,4 +1,7 @@
 .finish {
+  position: sticky;
+  bottom: 0;
+
   display: grid;
   padding: 1em;
   border: 2px solid pink;
@@ -26,6 +29,8 @@
 
 @media screen and (max-width: 600px) {
   .finish {
+    position: relative;
+    bottom: auto;
     grid-template-columns: auto 10em;
   }
 }

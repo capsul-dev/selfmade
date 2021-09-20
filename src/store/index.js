@@ -13,4 +13,5 @@ export default createStore({
   plugins: [
     ...(process.env.NODE_ENV === "development" ? [createLogger()] : []),
   ],
+  strict: process.env.NODE_ENV === 'production',
 });

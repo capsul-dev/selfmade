@@ -65,7 +65,7 @@ module.exports = async (req, res) => {
     });
   } catch (error) {
     console.trace(error);
-    res.status(500).send({ error: true, message: error.message });
+    return res.status(500).send({ error: true, message: error.message });
   }
 
   res.send({

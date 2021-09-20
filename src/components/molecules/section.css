@@ -11,7 +11,7 @@
   border: 1px solid #ccc;
   background: #eee;
   border-radius: 10px 10px 0 0;
-  grid-template-columns: auto 3em 7em;
+  grid-template-columns: auto 4em 5.2em;
   user-select: none;
 }
 
@@ -29,16 +29,17 @@
 
 .section__info__arrows {
   display: grid;
-  border: 1px solid red;
   grid-column-gap: 2px;
   grid-template-columns: 1fr 1fr;
+  
+  font-size: 20pt;
+  opacity: .5;
 }
 
 .section__arrow {
-  border: 1px solid black;
   cursor: pointer;
 
-  justify-self: center;
+  justify-self: left;
 }
 
 .section__body {
@@ -73,10 +74,12 @@
   border-radius: 50%;
   color: #fff;
   cursor: pointer;
-  font-size: 2.5em;
+  font-size: 1.6em;
   line-height: 1em;
   opacity: .5;
   text-align: center;
+
+  padding: .3em;
 }
 
 .section__nav--left {

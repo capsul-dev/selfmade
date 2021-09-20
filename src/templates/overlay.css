@@ -19,12 +19,12 @@
 
 .overlay__box__top {
   display: grid;
-  grid-template-columns: auto 2em;
-
-  background: pink;
-  margin-bottom: 5vh;
 
   padding: 1em 1.5em;
+  margin-bottom: 5vh;
+
+  background: pink;
+  grid-template-columns: auto 2em;
 }
 
 .overlay__box__close {
@@ -32,14 +32,14 @@
   cursor: pointer;
 }
 
-.overlay__box__close:pre {
+.overlay__box__close:before {
   display: block;
   content: 'Fechar';
 }
 
 .overlay__box__title {
-  font-weight: bold;
   font-size: 1.3em;
+  font-weight: bold;
 }
 
 .overlay__box__body {
@@ -58,11 +58,6 @@
   opacity: .6;
 
   transform: translate(-50%, -50%);
-}
-
-.overlay__back:pre {
-  display: block;
-  content: ' ';
 }
 
 @media screen and (max-width: 600px) {
