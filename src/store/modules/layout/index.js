@@ -120,13 +120,17 @@ export default {
 
   getters: {
     sections: (state) => state.sections,
+    filteredSections: (state) =>
+      state.sections.filter((section) => !!section.enabled),
   },
 
   actions: {
     updateOrder: ({ commit }, value) => commit("ORDER_UPDATE", value),
 
-    moveUp: ({ commit }, value) => commit("MOVE_UP", value),
-    moveDown: ({ commit }, value) => commit("MOVE_DOWN", value),
+    moveUp: ({ commit }, value) =>
+      commit("SECTION_MOVE", { target: value, direction: -1 }),
+    moveDown: ({ commit }, value) =>
+      commit("SECTION_MOVE", { target: value, direction: 1 }),
   },
 
   mutations: {
@@ -142,37 +146,17 @@ export default {
         });
     },
 
-    MOVE_UP: (state, value) => {
-      if (typeof value.originalOrder === "number") {
+    SECTION_MOVE: (state, { target, direction }) => {
+      if (typeof target.originalOrder === "number") {
         return;
       }
 
-      const order = value.order;
-      const sections = state.sections;
-
-      const next = sections
-        .filter((section) => typeof section.originalOrder !== "number")
-        .find((section) => section.order === order - 1);
-      if (!next) {
-        return;
-      }
-
-      sections.find((section) => section.order === order).order = next.order;
-      next.order = order;
-      state.sections = sections;
-    },
-
-    MOVE_DOWN: (state, value) => {
-      if (typeof value.originalOrder === "number") {
-        return;
-      }
-
-      const order = value.order;
+      const order = target.order;
       const sections = state.sections;
 
       const previous = sections
         .filter((section) => typeof section.originalOrder !== "number")
-        .find((section) => section.order === order + 1);
+        .find((section) => section.order === order + direction);
       if (!previous) {
         return;
       }

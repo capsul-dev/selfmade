@@ -1,11 +1,11 @@
 .finish {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   padding: 1em;
-
-  background: #fff;
   border: 2px solid pink;
+  background: #fff;
+
   border-radius: 15px 15px 0 0;
+  grid-template-columns: 1fr 1fr;
 }
 
 .finish--sticky {
@@ -19,9 +19,9 @@
 }
 
 .finish__right__disclaimer {
-  text-align: justify;
   font-size: .95em;
   opacity: .8;
+  text-align: justify;
 }
 
 @media screen and (max-width: 600px) {

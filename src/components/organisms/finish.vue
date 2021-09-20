@@ -24,8 +24,20 @@ export default {
 
   methods: {
     exportJSON() {
-      const sections = JSON.stringify(this.store.getters["layout/sections"]);
-      console.log({ sections });
+      this.store
+        .dispatch("business/sendLayout")
+        .then(() =>
+          this.store.dispatch("overlay/spawn", {
+            title: "Sucesso",
+            body: "Layout enviado para a equipe responsável",
+          })
+        )
+        .catch((error) =>
+          this.store.dispatch("overlay/spawn", {
+            title: "Erro",
+            body: error,
+          })
+        );
     },
   },
 };

@@ -33,15 +33,24 @@
     </c-template-step>
 
     <c-finish></c-finish>
+    <c-template-overlay v-if="overlay.isVisible">
+      <template #title>{{ overlay.title }}</template>
+      <template #body>{{ overlay.body }}</template>
+    </c-template-overlay>
   </div>
 </template>
 
 <script>
+import { computed } from "vue";
+import { useStore } from "vuex";
+
 import CTemplateStep from "@/templates/step.vue";
 import CBusinessConfig from "@/components/molecules/business-config.vue";
 import CSectionList from "@/components/organisms/section-list.vue";
 import CSectionArrange from "@/components/organisms/section-arrange.vue";
 import CFinish from "@/components/organisms/finish.vue";
+
+import CTemplateOverlay from "@/templates/overlay.vue";
 
 export default {
   components: {
@@ -50,6 +59,16 @@ export default {
     CSectionList,
     CSectionArrange,
     CFinish,
+
+    CTemplateOverlay,
+  },
+
+  setup() {
+    const store = useStore();
+
+    return {
+      overlay: computed(() => store.getters["overlay/get"]),
+    };
   },
 };
 </script>

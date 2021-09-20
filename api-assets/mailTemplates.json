@@ -1,0 +1,10 @@
+{
+  "fromClientToBusiness": {
+    "subject": "Lorem ipsum dolor sit amet",
+    "text": "blaaah"
+  },
+  "fromBusinessToClient": {
+    "subject": "Seu pedido foi enviado",
+    "text": "123123"
+  }
+}

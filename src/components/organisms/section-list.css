@@ -1,16 +1,16 @@
 .list {
   display: grid;
-  grid-row-gap: .4em;
   border: 1px border yellow;
-
+  grid-row-gap: .4em;
   user-select: none;
+
 }
 
 .checkbox_name {
-  font-weight: bold;
-  font-size: 1.1em;
 
   margin-bottom: 8pt;
+  font-size: 1.1em;
+  font-weight: bold;
 }
 
 .checkbox_description {

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@vue/cli-plugin-unit-mocha": "^4.5.13",
+    "axios": "^0.21.4",
     "core-js": "^3.6.5",
     "nodemailer": "^6.6.3",
     "vue": "^3.0.0",
@@ -25,7 +26,10 @@
     "eslint": "^6.8.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.0.0",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-order": "^4.1.0"
   },
   "eslintConfig": {
     "root": true,
@@ -37,9 +41,7 @@
       "eslint:recommended",
       "@vue/prettier"
     ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
+    "parserOptions": {},
     "rules": {}
   },
   "browserslist": [

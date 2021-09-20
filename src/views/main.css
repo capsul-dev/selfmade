@@ -1,16 +1,16 @@
 .view {
   position: relative;
   display: grid;
-  grid-row-gap: 1.5em;
 
   padding: 1em 15vw;
+  grid-row-gap: 1.5em;
 }
 
 @media screen and (max-width: 900px) {
   .view {
-    grid-row-gap: 1em;
-    padding: 0 !important;
 
     min-width: 0;
+    padding: 0 !important;
+    grid-row-gap: 1em;
   }
 }

@@ -1,29 +1,67 @@
-const nodemailer = require("nodemailer");
-
 /* eslint-disable no-unused-vars */
+const nodemailer = require("nodemailer");
+const { fromBase64 } = require("../isomorphic/services/encoding");
+
+const {
+  fromClientToBusiness,
+  fromBusinessToClient,
+} = require("../api-assets/mailTemplates.json");
+
+const {
+  NODE_ENV,
+  CS_SMTP_HOST,
+  CS_SMTP_PORT,
+  CS_SMTP_USER,
+  CS_SMTP_PASS,
+  CS_MAIL,
+  CS_SENDERNAME,
+} = process.env;
+
 module.exports = async (req, res) => {
   try {
+    const requiredFields = {
+      clientName: "string",
+      clientMail: "string",
+      content: "string",
+    };
+
+    if (typeof req.body !== "object") {
+      throw "direct access not allowed";
+    }
+
+    Object.entries(requiredFields).forEach(([name, value]) => {
+      if (typeof req.body[name] !== value) {
+        throw NODE_ENV === "development"
+          ? `expected ${name} to be ${value}`
+          : "an error ocurred";
+      }
+    });
+
     const transporter = nodemailer.createTransport({
-      host: "smtp.mailtrap.io",
-      port: 2525,
+      host: CS_SMTP_HOST,
+      port: CS_SMTP_PORT,
       auth: {
-        user: "b6df109c7ed54c",
-        pass: "cb116dc6479d24",
+        user: CS_SMTP_USER,
+        pass: CS_SMTP_PASS,
       },
     });
 
     await transporter.sendMail({
-      from: "Cliente da Silva <cliente@gmail.com>",
-      to: "email@capsul.com.br",
-      subject: "Layout do site",
-      text: "Aqui iria o JSON",
+      ...fromClientToBusiness,
+      from: "${req.body.clientName} <${req.body.clientMail}>",
+      to: CS_MAIL,
+      attachments: [
+        {
+          filename: `NOME.json`,
+          content: fromBase64(req.body.content),
+        },
+      ],
     });
 
     await transporter.sendMail({
-      from: "Email Capsul <email@capsul.com.br>",
+      ...fromBusinessToClient,
+      from: `${CS_SENDERNAME} <${CS_MAIL}>`,
       to: "cliente@gmail.com",
-      subject: "Layout do site",
-      text: "Alguma mensagem institucional",
     });
   } catch (error) {
     console.trace(error);

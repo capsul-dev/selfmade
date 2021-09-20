@@ -1,0 +1,11 @@
+{
+  "version": "2",
+  "env": {
+    "CS_SMTP_HOST": "@cs-selfmade-smtp-host",
+    "CS_SMTP_PORT": "@cs-selfmade-smtp-port",
+    "CS_SMTP_USER": "@cs-selfmade-smtp-user",
+    "CS_SMTP_PASS": "@cs-selfmade-smtp-pass",
+    "CS_MAIL": "@cs-selfmade-mail",
+    "CS_SENDERNAME": "@cs-selfmade-sendername"
+  }
+}

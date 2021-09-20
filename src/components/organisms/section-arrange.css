@@ -4,8 +4,8 @@
 }
 
 .ghost {
-  opacity: .2;
   background: #666;
+  opacity: .2;
 }
 
 .info {

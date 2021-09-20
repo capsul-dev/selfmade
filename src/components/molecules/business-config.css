@@ -1,10 +1,10 @@
 .config {
   display: grid;
-  grid-template-columns: auto 10em;
-  grid-column-gap: var(--column-gap);
+  padding: .5em;
 
   border: 1px solid red;
-  padding: .5em;
+  grid-column-gap: var(--column-gap);
+  grid-template-columns: auto 10em;
 }
 
 .config__input {
@@ -18,7 +18,7 @@
 
 @media screen and (max-width: 600px) {
   .config {
-    grid-template-columns: auto 5em;
     grid-column-gap: var(--mobile-column-gap);
+    grid-template-columns: auto 5em;
   }
 }

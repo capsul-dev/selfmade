@@ -1,11 +1,11 @@
 .step {
   position: relative;
-  border: 1px solid #ccc;
-  box-shadow: var(--lighter-shadow);
   padding: .5em;
+  border: 1px solid #ccc;
+  background: #f7f7f7;
 
   border-radius: var(--rounded-borders);
-  background: #f7f7f7;
+  box-shadow: var(--lighter-shadow);
 }
 
 .step__header {
@@ -13,10 +13,10 @@
 }
 
 .step__header__title {
-  font-weight: bold;
-  font-size: 1.1em;
 
   margin-bottom: 8pt;
+  font-size: 1.1em;
+  font-weight: bold;
 }
 
 .step__header__description {
@@ -25,9 +25,9 @@
 
 @media screen and (max-width: 600px) {
   .step {
-    padding: .5em .2em;
-    min-width: 0 !important;
 
     width: 100%;
+    min-width: 0 !important;
+    padding: .5em .2em;
   }
 }
