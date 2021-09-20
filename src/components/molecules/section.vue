@@ -1,18 +1,24 @@
 <template>
   <div class="relative border-2 bg-white">
-    <div class="flex items-center">
-      <div class="border-red-500 border-2 flex-1">
+    <div class="flex items-center border-gray-200 border-b-2">
+      <div class="flex-1">
         <slot name="info"></slot>
       </div>
       <div class="w-10">#{{ order }}</div>
-      <div class="flex gap-x-2 border-blue-500 border-2 text-2xl opacity-40">
-        <div @click="$emit('moveUp')" class="section__arrow section__arrow--up">
+      <div
+        class="
+          flex
+          gap-x-2
+          border-blue-500 border-2
+          text-2xl
+          opacity-40
+          cursor-pointer
+        "
+      >
+        <div @click="$emit('moveUp')">
           <i class="fa fa-arrow-circle-up"></i>
         </div>
-        <div
-          @click="$emit('moveDown')"
-          class="section__arrow section__arrow--down"
-        >
+        <div @click="$emit('moveDown')">
           <i class="fa fa-arrow-circle-down"></i>
         </div>
       </div>
@@ -30,10 +36,42 @@
     </div>
 
     <div class="section__navigation">
-      <div class="absolute top-1/2 left-5">
+      <div
+        class="
+          absolute
+          top-1/2
+          left-5
+          rounded-full
+          w-10
+          h-10
+          bg-white
+          opacity-6
+          hover:bg-blue-500 hover:text-white
+          shadow-lg
+          text-center
+          leading-10
+          cursor-pointer
+        "
+      >
         <i class="fa fa-chevron-left"></i>
       </div>
-      <div class="absolute top-1/2 right-5">
+      <div
+        class="
+          absolute
+          top-1/2
+          right-5
+          rounded-full
+          w-10
+          h-10
+          bg-white
+          opacity-6
+          hover:bg-blue-500 hover:text-white
+          shadow-lg
+          text-center
+          leading-10
+          cursor-pointer
+        "
+      >
         <i class="fa fa-chevron-right"></i>
       </div>
     </div>

@@ -1,16 +1,16 @@
 <template>
-  <div class="list">
+  <div class="grid gap-y-2">
     <c-checkbox
       v-for="(section, index) in sections"
       v-model:checked="section.enabled"
       :key="`section-${index}`"
       :required="section.required"
     >
-      <div class="checkbox_name">
+      <div class="font-bold mb-2">
         {{ section.name }}
         <small>{{ !!section.required ? "(obrigatório)" : "" }}</small>
       </div>
-      <div class="checkbox_description">
+      <div class="opacity-80">
         {{ section.description }}
       </div>
     </c-checkbox>
@@ -40,5 +40,3 @@ export default {
   },
 };
 </script>
-
-<style scoped src="./section-list.css"></style>

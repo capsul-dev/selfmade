@@ -1,10 +1,10 @@
 <template>
-  <div class="p-5 shadow-md bg-blue-50">
+  <div class="p-3 lg:p-5 shadow-md bg-gray-50">
     <div class="mb-10">
-      <div class="text-lg font-bold">
+      <div class="text-lg font-bold mb-4">
         <slot name="title"></slot>
       </div>
-      <div class="step__header__description">
+      <div class="opacity-80 mb-4">
         <slot name="description"></slot>
       </div>
     </div>

@@ -1,7 +1,7 @@
 <template>
   <draggable
-    class="grid"
-    handle=".info--handle"
+    class="grid gap-y-4"
+    handle=".handle"
     v-model="sections"
     tag="transition-group"
     item-key="order"
@@ -16,11 +16,14 @@
       >
         <template #info>
           <div
-            :class="{
-              info: true,
-              'info--handle': typeof element.originalOrder !== 'number',
-              'info--blocked': typeof element.originalOrder === 'number',
-            }"
+            :class="`
+              handle font-bold text-lg p-2
+              ${
+                typeof element.originalOrder !== 'number'
+                  ? 'cursor-move'
+                  : 'cursor-not-allowed'
+              }
+            `"
           >
             {{ element.name }}
           </div>
@@ -80,5 +83,3 @@ export default {
   },
 };
 </script>
-
-<style scoped src="./section-arrange.css"></style>
