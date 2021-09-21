@@ -1,6 +1,6 @@
 <template>
   <div class="p-3 lg:p-5 shadow-md bg-gray-50">
-    <div class="mb-10">
+    <div class="mb-10" v-if="$slots.title && $slots.description">
       <div class="text-lg font-bold mb-4">
         <slot name="title"></slot>
       </div>

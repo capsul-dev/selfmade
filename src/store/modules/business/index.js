@@ -8,19 +8,27 @@ export default {
 
   state() {
     return {
+      isAdmin: false,
       sentLayouts: [],
-      name: "Lorem ipsum",
-      mail: '',
+      clientName: "Lorem ipsum",
+      clientMail: '',
+      productName: "",
     };
   },
 
   getters: {
-    name: (state) => state.name,
-    mail: (state) => state.mail,
+    isAdmin: (state) => !!state.isAdmin,
+    clientName: (state) => state.clientName,
+    clientMail: (state) => state.clientMail,
+    productName: (state) => state.productName,
   },
 
   actions: {
-    updateName: ({ commit }, value) => commit("NAME_UPDATE", value),
+    setAdmin: ({ commit }, value) => commit('ADMIN_SET', value),
+    updateClientName: ({ commit }, value) => commit("CLIENT_NAME_UPDATE", value),
+    updateClientMail: ({ commit }, value) => commit('CLIENT_MAIL_UPDATE', value),
+    updateProductName: ({ commit }, value) => commit('PRODUCT_NAME_UPDATE', value),
+
     sendLayout: ({ commit, getters, rootGetters }) =>
       new Promise((resolve, reject) => {
 
@@ -49,8 +57,20 @@ export default {
   },
 
   mutations: {
-    NAME_UPDATE: (state, value) => {
-      value.foreach((val) => (state.sections[val].enabled = val.enabled));
+    ADMIN_SET: (state, value) => {
+      state.isAdmin = value
+    },
+
+    CLIENT_NAME_UPDATE: (state, value) => {
+      state.clientName = value;
+    },
+    
+    CLIENT_MAIL_UPDATE: (state, value) => {
+      state.clientMail = value;
+    },
+
+    PRODUCT_NAME_UPDATE: (state, value) => {
+      state.productName = value;
     },
 
     // eslint-disable-next-line

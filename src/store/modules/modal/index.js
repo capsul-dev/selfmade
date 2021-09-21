@@ -3,8 +3,8 @@ export default {
 
   state: {
     isVisible: false,
-    title: "",
-    body: "",
+    title: "Título do modal",
+    body: "Lorem ipsum dolor sit amet",
   },
 
   getters: {

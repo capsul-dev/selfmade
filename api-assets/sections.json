@@ -1,0 +1,120 @@
+{
+    "sections": [
+        {
+            "originalOrder": -1,
+            "enabled": true,
+            "required": true,
+            "name": "Cabeçalho",
+            "description": "A apresentação do site. Deve conter um título e um subtítulo.",
+            "component": "c-section-header",
+            "filename": "header",
+            "styles": [
+                {
+                    "name": "Estilo 1",
+                    "image": "https://picsum.photos/seed/1230/800/300"
+                },
+                {
+                    "name": "Estilo 2",
+                    "image": "https://picsum.photos/seed/1231/800/300"
+                },
+                {
+                    "name": "Estilo 3",
+                    "image": "https://picsum.photos/seed/1232/800/300"
+                },
+                {
+                    "name": "Estilo 4",
+                    "image": "https://picsum.photos/seed/1234/800/300"
+                }
+            ]
+        },
+        {
+            "enabled": true,
+            "name": "Sobre o produto",
+            "description": "Formulário de contato.",
+            "component": "c-section-contact",
+            "filename": "contact",
+            "styles": []
+        },
+        {
+            "enabled": true,
+            "name": "Depoimentos",
+            "description": "Formulário de contato.",
+            "component": "c-section-contact",
+            "filename": "contact",
+            "styles": []
+        },
+        {
+            "enabled": true,
+            "name": "Benefícios",
+            "description": "Formulário de contato.",
+            "component": "c-section-contact",
+            "filename": "contact",
+            "styles": []
+        },
+        {
+            "enabled": true,
+            "name": "Antes e depois",
+            "description": "Formulário de contato.",
+            "component": "c-section-contact",
+            "filename": "contact",
+            "styles": []
+        },
+        {
+            "enabled": true,
+            "name": "O que dizem na mídia",
+            "description": "Formulário de contato.",
+            "component": "c-section-contact",
+            "filename": "contact",
+            "styles": []
+        },
+        {
+            "enabled": true,
+            "name": "Cards de compra",
+            "description": "Formulário de contato.",
+            "component": "c-section-contact",
+            "filename": "contact",
+            "styles": []
+        },
+        {
+            "enabled": true,
+            "name": "Anvisa",
+            "description": "Formulário de ontato.",
+            "component": "c-section-contact",
+            "filename": "contact",
+            "styles": []
+        },
+        {
+            "enabled": true,
+            "name": "Garantia",
+            "description": "Formulário de contato.",
+            "component": "c-section-contact",
+            "filename": "contact",
+            "styles": []
+        },
+        {
+            "enabled": true,
+            "name": "Perguntas frequentes",
+            "description": "Formulário de contato.",
+            "component": "c-section-contact",
+            "filename": "contact",
+            "styles": []
+        },
+        {
+            "enabled": true,
+            "name": "Compra segura",
+            "description": "Formulário de contato.",
+            "component": "c-section-contact",
+            "filename": "contact",
+            "styles": []
+        },
+        {
+            "originalOrder": 999,
+            "enabled": true,
+            "name": "Rodapé",
+            "description": "Formulário de contato.",
+            "component": "c-section-contact",
+            "filename": "contact",
+            "styles": []
+        }
+    ]
+}

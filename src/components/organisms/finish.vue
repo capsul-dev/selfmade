@@ -1,12 +1,7 @@
 <template>
-  <div class="border-2 p-4 bg-white">
-    <div class="finish__left">Blah</div>
-    <div class="finish__right">
-      <div class="finish__right__disclaimer">
-        Ao salvar você concorda com os nossos Termos de Uso.
-      </div>
-      <c-button classes="confirm" @click="exportJSON">Salvar</c-button>
-    </div>
+  <div class="lg:px-5">
+    <div class="mb-5">Ao salvar você concorda com os nossos Termos de Uso.</div>
+    <c-button @click="exportJSON">Salvar</c-button>
   </div>
 </template>
 
@@ -27,13 +22,13 @@ export default {
       this.store
         .dispatch("business/sendLayout")
         .then(() =>
-          this.store.dispatch("overlay/spawn", {
+          this.store.dispatch("modal/spawn", {
             title: "Sucesso",
             body: "Layout enviado para a equipe responsável",
           })
         )
         .catch((error) =>
-          this.store.dispatch("overlay/spawn", {
+          this.store.dispatch("modal/spawn", {
             title: "Erro",
             body: error,
           })

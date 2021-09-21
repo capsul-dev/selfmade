@@ -1,12 +1,21 @@
 <template>
-  <div class="w-full lg:px-40 grid gap-y-5">
-    <c-template-step>
+  <div class="relative w-full lg:px-40 grid gap-y-5">
+    <c-template-step v-if="!store.getters['business/isAdmin']">
       <template #title>Dados pessoais</template>
       <template #description
         >Preencha os dados para uma prévia mais fidedigna.</template
       >
       <template #body>
         <c-business-config></c-business-config>
+      </template>
+    </c-template-step>
+
+    <c-template-step v-else>
+      <template #title>Opções do operador</template>
+      <template #description>Opções</template>
+
+      <template #body>
+        <c-operator-options></c-operator-options>
       </template>
     </c-template-step>
 
@@ -32,45 +41,57 @@
       </template>
     </c-template-step>
 
-    <c-finish></c-finish>
-    <c-template-overlay v-if="overlay.isVisible">
-      <template #title>{{ overlay.title }}</template>
-      <template #body>{{ overlay.body }}</template>
-    </c-template-overlay>
+    <c-template-step>
+      <template #body>
+        <c-finish></c-finish>
+      </template>
+    </c-template-step>
+
+    <c-template-modal v-if="modal.isVisible">
+      <template #title>{{ modal.title }}</template>
+      <template #body>{{ modal.body }}</template>
+    </c-template-modal>
   </div>
 </template>
 
 <script>
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 import { useStore } from "vuex";
 
 import CTemplateStep from "@/templates/step.vue";
-import CBusinessConfig from "@/components/molecules/business-config.vue";
+import COperatorOptions from "@/components/organisms/operator-options.vue";
+import CBusinessConfig from "@/components/organisms/business-config.vue";
 import CSectionList from "@/components/organisms/section-list.vue";
 import CSectionArrange from "@/components/organisms/section-arrange.vue";
 import CFinish from "@/components/organisms/finish.vue";
 
-import CTemplateOverlay from "@/templates/overlay.vue";
+import CTemplateModal from "@/templates/modal.vue";
 
 export default {
   components: {
     CTemplateStep,
+    COperatorOptions,
     CBusinessConfig,
     CSectionList,
     CSectionArrange,
     CFinish,
 
-    CTemplateOverlay,
+    CTemplateModal,
   },
 
   setup() {
     const store = useStore();
 
+    onMounted(() => {
+      store.dispatch("business/setAdmin", window.location.hash === "#admin");
+    });
+
     return {
-      overlay: computed(() => store.getters["overlay/get"]),
+      store,
+      modal: computed(() => store.getters["modal/get"]),
     };
   },
 };
 </script>
 
-<style src="@/assets/root.css"></style>
+<style src="@/assets/tailwind.css"></style>

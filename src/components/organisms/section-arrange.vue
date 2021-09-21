@@ -13,6 +13,7 @@
         :order="element.order"
         @moveUp="onMoveUp(element)"
         @moveDown="onMoveDown(element)"
+        :element="element"
       >
         <template #info>
           <div
@@ -27,9 +28,6 @@
           >
             {{ element.name }}
           </div>
-        </template>
-        <template #template>
-          <component :is="element.component"></component>
         </template>
       </c-section>
     </template>

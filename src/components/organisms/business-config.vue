@@ -1,10 +1,8 @@
 <template>
-  <div class="flex gap-x-2">
-    <c-input class="flex-1" v-model="businessName"></c-input>
-    <div>
-      <input type="file" ref="file" @change="onFileImported" hidden />
-      <c-button class="w-40" @click="onImportClick">Importar</c-button>
-    </div>
+  <div class="relative">
+    <c-input v-model="clientName">Seu nome</c-input>
+    <c-input v-model="clientMail">Seu e-mail</c-input>
+    <c-input v-model="productName">Nome do produto</c-input>
   </div>
 </template>
 
@@ -13,12 +11,12 @@ import store from "@/store";
 
 export default {
   computed: {
-    businessName: {
+    clientName: {
       get() {
-        return store.getters["business/name"];
+        return store.getters["business/clientName"];
       },
       set(value) {
-        store.dispatch("business/updateName", value);
+        store.dispatch("business/updateClientName", value);
       },
     },
   },

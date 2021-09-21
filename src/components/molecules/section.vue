@@ -1,20 +1,11 @@
 <template>
-  <div class="relative border-2 bg-white">
-    <div class="flex items-center border-gray-200 border-b-2">
+  <div class="relative rounded-lg bg-white shadow-lg">
+    <div class="flex items-center border-gray-200 border-b bg-gray-100">
       <div class="flex-1">
         <slot name="info"></slot>
       </div>
-      <div class="w-10">#{{ order }}</div>
-      <div
-        class="
-          flex
-          gap-x-2
-          border-blue-500 border-2
-          text-2xl
-          opacity-40
-          cursor-pointer
-        "
-      >
+      <div class="w-10 opacity-50">#{{ $props.element.order }}</div>
+      <div class="flex pt-1 gap-x-4 text-2xl opacity-40 cursor-pointer pr-3">
         <div @click="$emit('moveUp')">
           <i class="fa fa-arrow-circle-up"></i>
         </div>
@@ -24,18 +15,11 @@
       </div>
     </div>
 
-    <div class="h-40">
-      <div class="section__body__template">
-        <slot name="template"></slot>
-      </div>
-
-      <div class="section__body__sideopts" v-if="false">
-        <c-button>Selecionar</c-button>
-        <c-button>Opções</c-button>
-      </div>
+    <div class="flex h-40 overflow-hidden">
+      <img class="object-cover w-full" :src="selectedStyle.image" />
     </div>
 
-    <div class="section__navigation">
+    <div class="w-full">
       <div
         class="
           absolute
@@ -52,6 +36,7 @@
           leading-10
           cursor-pointer
         "
+        @click="stylePrevious"
       >
         <i class="fa fa-chevron-left"></i>
       </div>
@@ -71,6 +56,7 @@
           leading-10
           cursor-pointer
         "
+        @click="styleNext"
       >
         <i class="fa fa-chevron-right"></i>
       </div>
@@ -79,12 +65,39 @@
 </template>
 
 <script>
+import { computed } from "vue";
+import store from "@/store";
+
 export default {
   props: {
-    order: {
-      type: Number,
+    element: {
+      type: Object,
       required: true,
     },
   },
+
+  methods: {
+    styleNext() {
+      store.dispatch("layout/nextStyle", this.$props.element);
+    },
+
+    stylePrevious() {
+      store.dispatch("layout/previousStyle", this.$props.element);
+    },
+  },
+
+  setup(props) {
+    return {
+      selectedStyle: computed(() => {
+        const selectedStyle = props.element.selectedStyle
+          ? props.element.selectedStyle
+          : props.element.styles[0];
+
+        return selectedStyle?.name ? selectedStyle : { name: "", image: "" };
+      }),
+    };
+  },
 };
 </script>
+
+<style scoped></style>
