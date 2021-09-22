@@ -10,6 +10,7 @@
     >
     <c-input
       placeholder="(11) 91234-5678"
+      mask="(##) #####-####"
       v-model="store.state.business.clientPhone"
       >Seu telefone</c-input
     >

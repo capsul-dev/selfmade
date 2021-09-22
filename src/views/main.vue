@@ -59,7 +59,16 @@
 
     <c-template-modal v-if="modal.isVisible">
       <template #title>{{ modal.title }}</template>
-      <template #body>{{ modal.body }}</template>
+      <template #body>
+        <div v-if="modal.body.length > 0" class="opacity-80 mb-5">
+          {{ modal.body }}
+        </div>
+        <component
+          v-if="modal.component.length > 0"
+          :is="modal.component"
+          :details="modal.details"
+        ></component>
+      </template>
     </c-template-modal>
   </div>
 </template>
@@ -75,6 +84,7 @@ import CBusinessConfig from "@/components/organisms/business-config.vue";
 import CSectionList from "@/components/organisms/section-list.vue";
 import CSectionArrange from "@/components/organisms/section-arrange.vue";
 import CFinish from "@/components/organisms/finish.vue";
+import CVideo from '@/components/atoms/video.vue'
 
 import CTemplateModal from "@/templates/modal.vue";
 
@@ -87,6 +97,7 @@ export default {
     CSectionList,
     CSectionArrange,
     CFinish,
+    CVideo,
 
     CTemplateModal,
   },

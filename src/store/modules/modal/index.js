@@ -5,6 +5,8 @@ export default {
     isVisible: false,
     title: "Título do modal",
     body: "Lorem ipsum dolor sit amet",
+    component: '',
+    details: {}
   },
 
   getters: {
@@ -29,6 +31,8 @@ export default {
         isVisible: false,
         title: "",
         body: "",
+        component: '',
+        details: Object(),
       });
     },
   },

@@ -31,7 +31,10 @@
       <img class="object-cover w-full" :src="selectedStyle.image" />
     </div>
 
-    <div v-if="!store.getters['business/isAdmin']" class="w-full">
+    <div
+      v-if="!store.getters['business/isAdmin']"
+      class="absolute flex justify-between px-2 top-1/2 w-full"
+    >
       <c-arrow direction="left" @click="stylePrevious"></c-arrow>
       <c-arrow direction="right" @click="styleNext"></c-arrow>
     </div>

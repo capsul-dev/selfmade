@@ -31,7 +31,7 @@ export default {
 
     clientName: (state) => state.clientName,
     clientMail: (state) => state.clientMail,
-    clientPhone: (state) => state.clientPhone,
+    clientPhone: (state) => state.clientPhone.replace(/^0/, '').replace(/[^0-9]/g, '') || 'invalid',
     productName: (state) => state.productName,
   },
 
@@ -58,6 +58,14 @@ export default {
 
         if( !isStringFilled(getters.productName) ) {
           return reject("Você deve preencher o campo 'nome do produto'")
+        }
+
+        if( !/^([a-zA-Z0-9]|\.|_)+@(.?([a-zA-Z0-9]|\.|_|-)+){2,}/.test(getters.clientMail) ) {
+          return reject('E-mail inválido')
+      }
+
+        if( ![10, 11].includes(getters.clientPhone.length)) {
+          return reject('Telefone inválido - deve conter entre 10 e 11 dígitos e incluir o DDD')
         }
 
         const { isAdmin, ...businessInfo } = getters;

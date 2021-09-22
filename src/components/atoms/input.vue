@@ -5,37 +5,58 @@
     </div>
     <input
       class="w-full border-box bg-white shadow-sm rounded px-3 py-2 mb-2"
+      ref="input"
       :type="type"
       :value="modelValue"
       :placeholder="placeholder"
       @input="onInput"
+      @change="onChange"
     />
   </label>
 </template>
 
 <script>
-/* eslint-disable */
+import { mask } from "maska";
 
-  export default {
-    props: {
-      modelValue: {
-        type: String,
-        required: true,
-      },
-      type: {
-        type: String,
-        default: "text",
-      },
-      placeholder: {
-        type: String,
-        required: false,
+export default {
+  props: {
+    modelValue: {
+      type: String,
+      required: true,
+    },
+    type: {
+      type: String,
+      default: "text",
+    },
+    placeholder: {
+      type: String,
+      required: false,
+    },
+    mask: {
+      type: String,
+      required: false,
+    },
+  },
+
+  methods: {
+    onInput(event) {
+      if (
+        typeof this.$props.mask === "string" &&
+        event.target.value >= this.$props.mask.length
+      ) {
+        return;
       }
+
+      const value = this.$props.mask
+        ? mask(event.target.value, this.$props.mask)
+        : event.target.value;
+
+      this.$emit("update:modelValue", value);
     },
 
-    methods: {
-      onInput(event) {
-        this.$emit("update:modelValue", event.target.value);
-      },
+    onChange(event) {
+      this.$refs.input.value = event.target.value;
     },
-  };
+  },
+};
 </script>

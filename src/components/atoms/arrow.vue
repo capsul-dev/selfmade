@@ -1,9 +1,6 @@
 <template>
   <div
     :class="`
-    absolute
-    top-1/2
-    ${props.direction}-5
     rounded-full
     w-10
     h-10

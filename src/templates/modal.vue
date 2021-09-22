@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute">
+  <div class="absolute z-10">
     <div class="fixed inset-0 bg-gray-900 opacity-50"></div>
     <div class="fixed inset-0 flex justify-center items-center">
       <div
