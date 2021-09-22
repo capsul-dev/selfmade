@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 const nodemailer = require("nodemailer");
+const http = require("../isomorphic/http");
 const { fromBase64 } = require("../isomorphic/services/encoding");
 
 const {
@@ -15,6 +16,7 @@ const {
   CS_SMTP_PASS,
   CS_MAIL,
   CS_SENDERNAME,
+  HCAPTCHA_SECRET,
 } = process.env;
 
 module.exports = async (req, res) => {
@@ -29,6 +31,10 @@ module.exports = async (req, res) => {
       throw "direct access not allowed";
     }
 
+    if (!req.body["h-captcha-response"]) {
+      throw "access denied";
+    }
+
     Object.entries(requiredFields).forEach(([name, value]) => {
       if (typeof req.body[name] !== value) {
         throw NODE_ENV === "development"
@@ -36,6 +42,13 @@ module.exports = async (req, res) => {
           : "an error ocurred";
       }
     });
+
+    await http
+      .post("https://hcaptcha.com/siteverify", {
+        secret: HCAPTCHA_SECRET,
+        token: req.body["h-captcha-response"],
+      })
+      .then((a) => console.log(a.data));
 
     const transporter = nodemailer.createTransport({
       host: CS_SMTP_HOST,
@@ -48,7 +61,7 @@ module.exports = async (req, res) => {
 
     await transporter.sendMail({
       ...fromClientToBusiness,
-      from: "${req.body.clientName} <${req.body.clientMail}>",
+      from: `${req.body.clientName} <${req.body.clientMail}>`,
       to: CS_MAIL,
       attachments: [
         {
@@ -61,7 +74,7 @@ module.exports = async (req, res) => {
     await transporter.sendMail({
       ...fromBusinessToClient,
       from: `${CS_SENDERNAME} <${CS_MAIL}>`,
-      to: "cliente@gmail.com",
+      to: req.body.clientMail,
     });
   } catch (error) {
     console.trace(error);

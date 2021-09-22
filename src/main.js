@@ -1,11 +1,17 @@
 import { createApp, defineAsyncComponent } from "vue";
+
 import App from "./views/main.vue";
 import store from "./store";
 import "./assets/tailwind.css";
-import "./assets/tailwind.css";
+
+// debug
+Object.assign(window, {
+  _store: store,
+});
 
 const app = createApp(App);
 app.use(store);
+
 app.mixin({
   components: {
     CButton: defineAsyncComponent(() =>
@@ -16,8 +22,3 @@ app.mixin({
 });
 
 app.mount("#app");
-
-// debug
-Object.assign(window, {
-  _store: store,
-});

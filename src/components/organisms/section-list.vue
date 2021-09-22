@@ -1,5 +1,5 @@
 <template>
-  <div class="grid gap-y-2">
+  <div class="grid lg:grid-cols-2 gap-y-2 lg:gap-x-4">
     <c-checkbox
       v-for="(section, index) in sections"
       v-model:checked="section.enabled"

@@ -1,31 +1,29 @@
 import { sections } from "@/../api-assets/sections.json";
 
+const initialState = { sections };
+
 export default {
   namespaced: true,
 
   state() {
     return {
-      sections,
+      sections: [],
     };
   },
 
   getters: {
-    sections: (state) =>
-      state.sections.map((section, index) => ({
-        ...section,
-        order: section.order || index + 1,
-      })),
+    sections: (state) => state.sections,
 
     filteredSections: (state) =>
-      state.sections
-        .map((section, index) => ({
-          ...section,
-          order: section.order || index + 1,
-        }))
-        .filter((section) => !!section.enabled),
+      state.sections.filter((section) => !!section.enabled),
   },
 
   actions: {
+    import: ({ commit }, value) => commit("LAYOUT_IMPORT", value),
+    reset: ({ commit, rootGetters }) =>
+      commit("LAYOUT_RESET", !!rootGetters["business/isAdmin"]),
+
+    initOrder: ({ commit }) => commit("ORDER_INIT"),
     updateOrder: ({ commit }, value) => commit("ORDER_UPDATE", value),
 
     moveUp: ({ commit }, value) =>
@@ -40,6 +38,21 @@ export default {
   },
 
   mutations: {
+    LAYOUT_IMPORT: (state, value) => {
+      state.sections = value;
+    },
+
+    LAYOUT_RESET: (state, isAdmin) => {
+      Object.assign(state, !isAdmin ? initialState : { sections: [] });
+    },
+
+    ORDER_INIT: (state) => {
+      state.sections = initialState.sections.map((section, index) => ({
+        ...section,
+        order: section.order || index + 1,
+      }));
+    },
+
     ORDER_UPDATE: (state, value) => {
       value
         .map((section, index) => ({ ...section, order: index }))
@@ -55,13 +68,6 @@ export default {
     SECTION_MOVE: (state, { target, direction }) => {
       if (typeof target.originalOrder === "number") {
         return;
-      }
-
-      if (typeof target.order !== "number") {
-        state.sections = state.sections.map((section, index) => ({
-          ...section,
-          order: section.order || index + 1,
-        }));
       }
 
       const order = target.order;

@@ -1,50 +1,91 @@
 /* eslint-disable */
-import http from "@/http";
+import http from "@/../isomorphic/http";
 import { toBase64 } from "@/../isomorphic/services/encoding";
 import { isStringFilled } from '@/../isomorphic/polyfill'
+
+const initialState = {
+      isAdmin: false,
+      isImported: false,
+      isLoading: false,
+
+      sentLayouts: [],
+      clientName: '',
+      clientMail: '',
+      clientPhone: '',
+      productName: '',
+    };
 
 export default {
   namespaced: true,
 
   state() {
     return {
-      isAdmin: false,
-      sentLayouts: [],
-      clientName: "Lorem ipsum",
-      clientMail: '',
-      productName: "",
-    };
+      ...initialState
+    }
   },
 
   getters: {
     isAdmin: (state) => !!state.isAdmin,
+    isImported: (state) => !!state.isImported,
+    isLoading: (state) => !!state.isLoading,
+
     clientName: (state) => state.clientName,
     clientMail: (state) => state.clientMail,
+    clientPhone: (state) => state.clientPhone,
     productName: (state) => state.productName,
   },
 
   actions: {
+    import: ({ commit }, value) => commit('BUSINESS_IMPORT', value),
+    reset: ({ commit }) => commit('BUSINESS_RESET'),
+
     setAdmin: ({ commit }, value) => commit('ADMIN_SET', value),
-    updateClientName: ({ commit }, value) => commit("CLIENT_NAME_UPDATE", value),
-    updateClientMail: ({ commit }, value) => commit('CLIENT_MAIL_UPDATE', value),
-    updateProductName: ({ commit }, value) => commit('PRODUCT_NAME_UPDATE', value),
 
     sendLayout: ({ commit, getters, rootGetters }) =>
-      new Promise((resolve, reject) => {
+      new Promise(async (resolve, reject) => {
 
-        if( !isStringFilled(getters.name) ) {
+        if( !isStringFilled(getters.clientName) ) {
           return reject("Você deve preencher o campo 'nome'")
         }
 
-        if( !isStringFilled(getters.mail) ) {
+        if( !isStringFilled(getters.clientMail) ) {
           return reject("Você deve preencher o campo 'email'")
         }
 
+        if( !isStringFilled(getters.clientPhone) ) {
+          return reject("Você deve preencher o campo 'telefone'")
+        }
+
+        if( !isStringFilled(getters.productName) ) {
+          return reject("Você deve preencher o campo 'nome do produto'")
+        }
+
+        const { isAdmin, ...businessInfo } = getters;
+        const serializedContent = JSON.stringify({
+          sections: rootGetters['layout/filteredSections'],
+          business: businessInfo,
+        })
+
         const payload = {
-          clientName: getters.name,
-          clientMail: getters.mail,
-          content: toBase64(rootGetters['layout/filteredSections']),
+          clientName: getters.clientName,
+          clientMail: getters.clientMail,
+          clientPhone: getters.clientPhone,
+          productName: getters.productName,
+          content: toBase64(serializedContent),
         };
+
+        commit('LOADING_UPDATE', true)
+
+        if( 'hcaptcha' in window ) {
+          const { key } = await hcaptcha.execute(window.hcaptcha_widgetID, { async: true })
+            .catch((error) => reject(error))
+
+          if( !key ) {
+            return
+          }
+
+          payload['h-captcha-response'] = key
+        }
 
         http
           .post("/api/finish", payload)
@@ -52,25 +93,32 @@ export default {
             commit("LAYOUT_SEND");
             resolve(result);
           })
-          .catch((error) => reject(error));
-      }),
+          .catch((error) => reject(error))
+
+      }).finally(() => commit('LOADING_UPDATE', false)),
   },
 
   mutations: {
+    LOADING_UPDATE: (state, value) => {
+      state.isLoading = value;
+    },
+
+    BUSINESS_IMPORT: (state, value) => {
+      Object.assign(state, {
+        ...value,
+        isImported: true,
+      })
+    },
+
+    BUSINESS_RESET: (state) => {
+      Object.assign(state, {
+        ...initialState,
+        isAdmin: true,
+      })
+    },
+
     ADMIN_SET: (state, value) => {
       state.isAdmin = value
-    },
-
-    CLIENT_NAME_UPDATE: (state, value) => {
-      state.clientName = value;
-    },
-    
-    CLIENT_MAIL_UPDATE: (state, value) => {
-      state.clientMail = value;
-    },
-
-    PRODUCT_NAME_UPDATE: (state, value) => {
-      state.productName = value;
     },
 
     // eslint-disable-next-line

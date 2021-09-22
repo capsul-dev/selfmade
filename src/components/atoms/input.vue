@@ -7,6 +7,7 @@
       class="w-full border-box bg-white shadow-sm rounded px-3 py-2 mb-2"
       :type="type"
       :value="modelValue"
+      :placeholder="placeholder"
       @input="onInput"
     />
   </label>
@@ -17,13 +18,17 @@
 
   export default {
     props: {
+      modelValue: {
+        type: String,
+        required: true,
+      },
       type: {
         type: String,
         default: "text",
       },
-      modelValue: {
+      placeholder: {
         type: String,
-        required: true,
+        required: false,
       }
     },
 

@@ -4,8 +4,20 @@
       <div class="flex-1">
         <slot name="info"></slot>
       </div>
+
+      <div
+        v-if="store.getters['business/isAdmin']"
+        class="text-sm pr-4 opacity-80"
+      >
+        {{ $props.element.selectedStyle?.name }}
+      </div>
+
       <div class="w-10 opacity-50">#{{ $props.element.order }}</div>
-      <div class="flex pt-1 gap-x-4 text-2xl opacity-40 cursor-pointer pr-3">
+
+      <div
+        v-if="!store.getters['business/isAdmin']"
+        class="flex pt-1 gap-x-4 text-2xl opacity-40 cursor-pointer pr-3"
+      >
         <div @click="$emit('moveUp')">
           <i class="fa fa-arrow-circle-up"></i>
         </div>
@@ -19,47 +31,9 @@
       <img class="object-cover w-full" :src="selectedStyle.image" />
     </div>
 
-    <div class="w-full">
-      <div
-        class="
-          absolute
-          top-1/2
-          left-5
-          rounded-full
-          w-10
-          h-10
-          bg-white
-          opacity-6
-          hover:bg-blue-500 hover:text-white
-          shadow-lg
-          text-center
-          leading-10
-          cursor-pointer
-        "
-        @click="stylePrevious"
-      >
-        <i class="fa fa-chevron-left"></i>
-      </div>
-      <div
-        class="
-          absolute
-          top-1/2
-          right-5
-          rounded-full
-          w-10
-          h-10
-          bg-white
-          opacity-6
-          hover:bg-blue-500 hover:text-white
-          shadow-lg
-          text-center
-          leading-10
-          cursor-pointer
-        "
-        @click="styleNext"
-      >
-        <i class="fa fa-chevron-right"></i>
-      </div>
+    <div v-if="!store.getters['business/isAdmin']" class="w-full">
+      <c-arrow direction="left" @click="stylePrevious"></c-arrow>
+      <c-arrow direction="right" @click="styleNext"></c-arrow>
     </div>
   </div>
 </template>
@@ -68,12 +42,18 @@
 import { computed } from "vue";
 import store from "@/store";
 
+import CArrow from "@/components/atoms/arrow.vue";
+
 export default {
   props: {
     element: {
       type: Object,
       required: true,
     },
+  },
+
+  components: {
+    CArrow,
   },
 
   methods: {
@@ -88,6 +68,7 @@ export default {
 
   setup(props) {
     return {
+      store,
       selectedStyle: computed(() => {
         const selectedStyle = props.element.selectedStyle
           ? props.element.selectedStyle

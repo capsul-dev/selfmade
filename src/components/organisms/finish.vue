@@ -1,12 +1,18 @@
 <template>
   <div class="lg:px-5">
     <div class="mb-5">Ao salvar você concorda com os nossos Termos de Uso.</div>
-    <c-button @click="exportJSON">Salvar</c-button>
+    <div id="h-captcha"></div>
+    <c-button
+      :is-loading="store.getters['business/isLoading']"
+      @click="exportJSON"
+      >Salvar</c-button
+    >
   </div>
 </template>
 
 <script>
 import { useStore } from "vuex";
+const { HCAPTCHA_SITEKEY } = process.env;
 
 export default {
   setup() {
@@ -14,11 +20,19 @@ export default {
 
     return {
       store,
+      HCAPTCHA_SITEKEY,
     };
   },
 
   methods: {
     exportJSON() {
+      if ("hcaptcha" in window && !("hcaptcha_widgetID" in window)) {
+        window.hcaptcha_widgetID = window.hcaptcha.render("h-captcha", {
+          size: "invisible",
+          sitekey: "c54dbb72-3bb9-482b-baae-0b2f8368ae15",
+        });
+      }
+
       this.store
         .dispatch("business/sendLayout")
         .then(() =>
@@ -30,7 +44,7 @@ export default {
         .catch((error) =>
           this.store.dispatch("modal/spawn", {
             title: "Erro",
-            body: error,
+            body: error?.message ? error.message : error,
           })
         );
     },

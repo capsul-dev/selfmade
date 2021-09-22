@@ -18,10 +18,11 @@
         <template #info>
           <div
             :class="`
-              handle font-bold text-lg p-2
+           font-bold text-lg p-2
               ${
-                typeof element.originalOrder !== 'number'
-                  ? 'cursor-move'
+                typeof element.originalOrder !== 'number' &&
+                !store.getters['business/isAdmin']
+                  ? 'handle cursor-move'
                   : 'cursor-not-allowed'
               }
             `"
@@ -35,27 +36,15 @@
 </template>
 
 <script>
-import { defineAsyncComponent } from "vue";
 import Draggable from "vuedraggable";
 
 import CSection from "@/components/molecules/section.vue";
 import store from "@/store";
 
-const sectionComponents = store.getters["layout/sections"].reduce(
-  (a, c) => ({
-    ...a,
-    [c.component]: defineAsyncComponent(() =>
-      import(`@/components/organisms/sections/${c.filename}.vue`)
-    ),
-  }),
-  {}
-);
-
 export default {
   components: {
     Draggable,
     CSection,
-    ...sectionComponents,
   },
 
   methods: {
@@ -79,5 +68,17 @@ export default {
       },
     },
   },
+
+  setup() {
+    return {
+      store,
+    };
+  },
 };
 </script>
+
+<style scoped>
+.ghost {
+  opacity: 0.5;
+}
+</style>

@@ -1,16 +1,14 @@
 <template>
   <div
-    class="
-      bg-blue-500
-      hover:bg-blue-700
+    :class="`
+      ${!!props.isLoading ? 'bg-gray-200' : 'bg-blue-500 hover:bg-blue-700'}
       text-white text-center
       font-bold
       py-2
       px-4
       rounded
       cursor-pointer
-    "
-    :draggable="classes.includes('draggable')"
+      `"
   >
     <slot></slot>
   </div>
@@ -19,16 +17,16 @@
 <script>
 export default {
   props: {
-    classes: {
-      default: () => ["default"],
+    isLoading: {
+      type: Boolean,
+      default: false,
     },
   },
-  computed: {
-    makeClasses() {
-      return typeof this.classes !== "string"
-        ? this.classes.reduce((a, c) => c + ` button--${a}`, "")
-        : `button--${this.classes}`;
-    },
+
+  setup(props) {
+    return {
+      props,
+    };
   },
 };
 </script>

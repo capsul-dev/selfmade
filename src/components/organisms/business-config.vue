@@ -1,8 +1,23 @@
 <template>
-  <div class="relative">
-    <c-input v-model="clientName">Seu nome</c-input>
-    <c-input v-model="clientMail">Seu e-mail</c-input>
-    <c-input v-model="productName">Nome do produto</c-input>
+  <div class="relative grid gap-y-2">
+    <c-input placeholder="John Doe" v-model="store.state.business.clientName"
+      >Seu nome</c-input
+    >
+    <c-input
+      placeholder="nome@provedor.com.br"
+      v-model="store.state.business.clientMail"
+      >Seu e-mail</c-input
+    >
+    <c-input
+      placeholder="(11) 91234-5678"
+      v-model="store.state.business.clientPhone"
+      >Seu telefone</c-input
+    >
+    <c-input
+      placeholder="Seu produto"
+      v-model="store.state.business.productName"
+      >Nome do produto</c-input
+    >
   </div>
 </template>
 
@@ -10,34 +25,10 @@
 import store from "@/store";
 
 export default {
-  computed: {
-    clientName: {
-      get() {
-        return store.getters["business/clientName"];
-      },
-      set(value) {
-        store.dispatch("business/updateClientName", value);
-      },
-    },
-  },
-
-  methods: {
-    onImportClick() {
-      this.$refs.file.click();
-    },
-
-    async onFileImported(event) {
-      const content = await this.importJSON(event);
-      console.log({ content });
-    },
-
-    importJSON(event) {
-      return new Promise((resolve) => {
-        const fr = new FileReader();
-        fr.onload = () => resolve(fr.result);
-        fr.readAsText(event.target.files[0]);
-      });
-    },
+  setup() {
+    return {
+      store,
+    };
   },
 };
 </script>
