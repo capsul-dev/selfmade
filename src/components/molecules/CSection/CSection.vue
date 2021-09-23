@@ -45,7 +45,7 @@
 import { computed } from "vue";
 import store from "@/store";
 
-import CArrow from "@/components/atoms/arrow.vue";
+import CArrow from "@/components/atoms/CArrow/CArrow.vue";
 
 export default {
   props: {

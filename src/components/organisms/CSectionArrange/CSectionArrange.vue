@@ -38,7 +38,7 @@
 <script>
 import Draggable from "vuedraggable";
 
-import CSection from "@/components/molecules/section.vue";
+import CSection from "@/components/molecules/CSection/CSection.vue";
 import store from "@/store";
 
 export default {

@@ -34,7 +34,7 @@
 <script>
 import { computed } from "vue";
 import { useStore } from "vuex";
-import CCheckbox from "@/components/atoms/checkbox.vue";
+import CCheckbox from "@/components/atoms/CCheckbox/CCheckbox.vue";
 
 import store from "@/store";
 
