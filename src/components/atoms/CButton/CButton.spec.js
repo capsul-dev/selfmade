@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
 import { shallowMount } from "@vue/test-utils";
-import CButton from "./button.vue";
+import CButton from "./CButton.vue";
 
-describe("button.vue", () => {
+describe("./CButton.vue", () => {
   it("renders a button", () => {
     const component = shallowMount(CButton, {
       slots: {

@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
 import { shallowMount } from "@vue/test-utils";
-import CVideo from "./video.vue";
+import CVideo from "./CVideo.vue";
 
-describe("video.vue", () => {
+describe("./CVideo.vue", () => {
   it("renders a video container", () => {
     const component = shallowMount(CVideo, {
       propsData: {

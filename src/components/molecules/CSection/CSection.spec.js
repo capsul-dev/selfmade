@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
 import { shallowMount } from "@vue/test-utils";
-import CSection from "./section.vue";
+import CSection from "./CSection.vue";
 
-describe("section.vue", () => {
+describe("./CSection.vue", () => {
   it("renders a section container", () => {
     const component = shallowMount(CSection, {
       slots: {

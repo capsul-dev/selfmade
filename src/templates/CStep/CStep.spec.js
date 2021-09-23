@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
 import { shallowMount } from '@vue/test-utils'
-import CStep from './step.vue'
+import CStep from './CStep.vue'
 
-describe('step.vue', () => {
+describe('./CStep.vue', () => {
   it('renders a step container', () => {
     const component = shallowMount(CStep, {
       slots: {

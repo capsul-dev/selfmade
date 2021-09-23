@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
 import { shallowMount } from '@vue/test-utils'
-import CFinish from './finish.vue'
+import CFinish from './CFinish.vue'
 
-describe('finish.vue', () => {
+describe('./CFinish.vue', () => {
   it('renders save options', () => {
     const component = shallowMount(CFinish)
     expect(component.isVisible()).toBe(true)

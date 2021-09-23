@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
 import { shallowMount } from "@vue/test-utils";
-import CInput from "./input.vue";
+import CInput from "./CInput.vue";
 
-describe("input.vue", () => {
+describe("./CInput.vue", () => {
   it("renders a input wrapper", () => {
     const component = shallowMount(CInput, {
       propsData: {

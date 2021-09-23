@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
 import { shallowMount } from '@vue/test-utils'
-import CModal from './modal.vue'
+import CModal from './CModal.vue'
 
-describe('modal.vue', () => {
+describe('./CModal.vue', () => {
   it('renders a modal', () => {
     const component = shallowMount(CModal, {
       slots: {

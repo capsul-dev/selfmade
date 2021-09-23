@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
 import { shallowMount } from "@vue/test-utils";
-import CArrow from "./arrow.vue";
+import CArrow from "./CArrow.vue";
 
-describe("arrow.vue", () => {
+describe("./CArrow.vue", () => {
   it("renders a arrow pointing left", () => {
     const component = shallowMount(CArrow, {
       propsData: { direction: "left" },
