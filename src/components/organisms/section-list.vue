@@ -19,7 +19,10 @@
 
         <div
           class="self-center text-purple-400 ml-5 z-9"
-          @click="$event.stopPropagation(); spawnVideoModal(section)"
+          @click="
+            $event.stopPropagation();
+            spawnVideoModal(section);
+          "
         >
           <i class="fa fa-video"></i>
         </div>
@@ -45,10 +48,10 @@ export default {
       store.dispatch("modal/spawn", {
         title: section.name,
         body: "fdfdasfa",
-        component: 'c-video',
+        component: "c-video",
         details: {
-          id: 'blabla'
-        }
+          id: "blabla",
+        },
       });
     },
   },

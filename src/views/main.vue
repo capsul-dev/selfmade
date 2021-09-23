@@ -84,7 +84,7 @@ import CBusinessConfig from "@/components/organisms/business-config.vue";
 import CSectionList from "@/components/organisms/section-list.vue";
 import CSectionArrange from "@/components/organisms/section-arrange.vue";
 import CFinish from "@/components/organisms/finish.vue";
-import CVideo from '@/components/atoms/video.vue'
+import CVideo from "@/components/atoms/video.vue";
 
 import CTemplateModal from "@/templates/modal.vue";
 
