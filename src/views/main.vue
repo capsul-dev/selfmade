@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full lg:px-60 py-4 grid gap-y-5">
+  <div class="relative w-full lg:px-40 xl:px-60 py-4 grid gap-y-5">
     <c-template-step v-if="!store.getters['business/isAdmin']">
       <template #title>Dados pessoais</template>
       <template #description
