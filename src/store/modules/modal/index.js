@@ -1,12 +1,14 @@
 export default {
   namespaced: true,
 
-  state: {
-    isVisible: false,
-    title: "Título do modal",
-    body: "Lorem ipsum dolor sit amet",
-    component: "",
-    details: {},
+  state() {
+    return {
+      isVisible: false,
+      title: "",
+      body: "",
+      component: "",
+      details: {},
+    }
   },
 
   getters: {
