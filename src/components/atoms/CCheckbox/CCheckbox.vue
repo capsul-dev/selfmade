@@ -8,6 +8,7 @@
       py-2
       grid grid-cols-checkbox
       items-center
+      dark:bg-gray-800
     "
   >
     <div class="justify-self-center">
@@ -19,7 +20,7 @@
         @input="onInput"
       />
     </div>
-    <div class="border-l-2 px-4 cursor-pointer" @click="onClick">
+    <div class="border-l-2 px-4 cursor-pointer dark:border-gray-500" @click="onClick">
       <slot></slot>
     </div>
   </div>

@@ -1,10 +1,10 @@
 <template>
-  <div class="p-3 lg:p-5 shadow-md bg-gray-50">
+  <div class="p-3 lg:p-5 border-b border-gray-200 dark:border-gray-700 dark:text-white">
     <div class="mb-10" v-if="$slots.title || $slots.description">
-      <div class="text-lg font-bold mb-4" v-if="$slots.title">
+      <div class="text-4xl uppercase font-normal mb-5" v-if="$slots.title">
         <slot name="title"></slot>
       </div>
-      <div class="opacity-80 mb-4" v-if="$slots.description">
+      <div class="opacity-80 text-xl mb-4" v-if="$slots.description">
         <slot name="description"></slot>
       </div>
     </div>

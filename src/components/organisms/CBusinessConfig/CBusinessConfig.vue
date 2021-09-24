@@ -1,23 +1,23 @@
 <template>
   <div class="relative grid gap-y-2">
     <c-input placeholder="John Doe" v-model="store.state.business.clientName"
-      >Seu nome</c-input
+      ><span class="ml-2 font-semibold">Seu nome</span></c-input
     >
     <c-input
       placeholder="nome@provedor.com.br"
       v-model="store.state.business.clientMail"
-      >Seu e-mail</c-input
+      ><span class="ml-2 font-semibold">Seu e-mail</span></c-input
     >
     <c-input
       placeholder="(11) 91234-5678"
       mask="(##) #####-####"
       v-model="store.state.business.clientPhone"
-      >Seu telefone</c-input
+      ><span class="ml-2 font-semibold">Seu telefone</span></c-input
     >
     <c-input
       placeholder="Seu produto"
       v-model="store.state.business.productName"
-      >Nome do produto</c-input
+      ><span class="ml-2 font-semibold">Nome do produto</span></c-input
     >
   </div>
 </template>
