@@ -1,7 +1,7 @@
 <template>
   <div
     :class="`
-      ${!!props.isLoading ? 'bg-gray-200' : 'bg-blue-500 hover:bg-blue-700'}
+      ${!!props.isLoading ? 'bg-gray-200' : 'bg-gradient-to-r from-green-500 to-green-700'}
       text-white text-center
       font-bold
       py-2

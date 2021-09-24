@@ -8,17 +8,16 @@
     >
       <div class="flex">
         <div class="flex-1">
-          <div class="font-bold mb-2">
+          <div class="font-semibold uppercase my-2">
             {{ section.name }}
-            <small>{{ !!section.required ? "(obrigatório)" : "" }}</small>
-          </div>
-          <div class="opacity-80">
-            {{ section.description }}
+            <span class="text-red-600">{{
+              !!section.required ? "*" : ""
+            }}</span>
           </div>
         </div>
 
         <div
-          class="self-center text-purple-400 ml-5 z-9"
+          class="self-center text-green-500 ml-5 z-9"
           @click="
             $event.stopPropagation();
             spawnVideoModal(section);
@@ -28,6 +27,9 @@
         </div>
       </div>
     </c-checkbox>
+  </div>
+  <div class="font-light text-right opacity-80 text-x1 my-2">
+    <small class="font-bold text-red-600">*</small> Obrigatório
   </div>
 </template>
 

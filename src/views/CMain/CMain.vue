@@ -1,9 +1,9 @@
 <template>
-  <div class="relative w-full lg:px-40 xl:px-60 py-4 grid gap-y-5">
+  <div class="relative w-full lg:px-40 xl:px-60 py-4 grid gap-y-5 dark:bg-gray-900 dark:text-white">
     <c-template-step v-if="!store.getters['business/isAdmin']">
       <template #title>Dados pessoais</template>
       <template #description
-        >Preencha os dados para uma prévia mais fidedigna.</template
+        >Preencha com <span class="font-medium">suas informações</span> pessoais.</template
       >
       <template #body>
         <c-business-config></c-business-config>
@@ -18,10 +18,9 @@
     </c-template-step>
 
     <c-template-step v-if="!store.getters['business/isAdmin']">
-      <template #title>Seleção de seções</template>
+      <template #title>Escolha suas seções</template>
       <template #description
-        >Selecione as seções que você quer que o seu site possua. Na próxima
-        etapa, você terá a chance de organizá-las a sua maneira.</template
+        >Nesta área, você irá <span class="font-medium">escolher as seções</span> que deseja em seu site. Caso queira saber mais sobre cada uma, <span class="font-bold">clique no ícone</span> " <i class="fa fa-video text-green-500"></i> " e assista a um vídeo que preparamos para você!</template
       >
       <template #body>
         <c-section-list></c-section-list>

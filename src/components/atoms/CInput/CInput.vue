@@ -1,10 +1,10 @@
 <template>
-  <label class="px-2">
-    <div class="text-sm opacity-80">
+  <label class="px-2 my-1">
+    <div class="text-sm opacity-80 mb-2">
       <slot></slot>
     </div>
     <input
-      class="w-full border-box bg-white shadow-sm rounded px-3 py-2 mb-2"
+      class="w-full border-box bg-white shadow-sm px-3 bg-gray-100 py-2 mb-2 dark:bg-gray-800 dark:text-white rounded-full"
       ref="input"
       :type="type"
       :value="modelValue"
