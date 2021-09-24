@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="leading-8 opacity-80">
     <div>Nome: {{ store.getters["business/clientName"] }}</div>
     <div>Email: {{ store.getters["business/clientMail"] }}</div>
     <div>Telefone: {{ store.getters["business/clientPhone"] }}</div>
