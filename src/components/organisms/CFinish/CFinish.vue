@@ -20,7 +20,6 @@ export default {
 
     return {
       store,
-      HCAPTCHA_SITEKEY,
     };
   },
 
@@ -29,7 +28,7 @@ export default {
       if ("hcaptcha" in window && !("hcaptcha_widgetID" in window)) {
         window.hcaptcha_widgetID = window.hcaptcha.render("h-captcha", {
           size: "invisible",
-          sitekey: "c54dbb72-3bb9-482b-baae-0b2f8368ae15",
+          sitekey: HCAPTCHA_SITEKEY,
         });
       }
 
