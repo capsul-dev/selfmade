@@ -1,5 +1,12 @@
 <template>
-  <div class="p-3 lg:p-5 border-b border-gray-200 dark:border-gray-700 dark:text-white">
+  <div
+    class="
+      p-3
+      lg:p-5
+      border-b border-gray-200
+      dark:border-gray-700 dark:text-white
+    "
+  >
     <div class="mb-10" v-if="$slots.title || $slots.description">
       <div class="text-4xl uppercase font-normal mb-5" v-if="$slots.title">
         <slot name="title"></slot>

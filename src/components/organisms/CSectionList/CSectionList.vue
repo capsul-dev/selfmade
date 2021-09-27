@@ -5,6 +5,7 @@
       v-model:checked="section.enabled"
       :key="`section-${index}`"
       :required="section.required"
+      @valueChanged="store.dispatch('layout/initOrder')"
     >
       <div class="flex">
         <div class="flex-1">
@@ -62,9 +63,11 @@ export default {
     const store = useStore();
 
     return {
+      store,
       sections: computed(() =>
         store.getters["layout/sections"]
           .slice(0)
+          .reverse()
           .sort((a) => (a.required ? 1 : -1))
       ),
     };

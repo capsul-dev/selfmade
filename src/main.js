@@ -17,7 +17,9 @@ app.mixin({
     CButton: defineAsyncComponent(() =>
       import("./components/atoms/CButton/CButton.vue")
     ),
-    CInput: defineAsyncComponent(() => import("./components/atoms/CInput/CInput.vue")),
+    CInput: defineAsyncComponent(() =>
+      import("./components/atoms/CInput/CInput.vue")
+    ),
   },
 });
 

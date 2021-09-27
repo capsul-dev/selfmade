@@ -5,7 +5,6 @@
             "enabled": true,
             "required": true,
             "name": "Cabeçalho",
-            "description": "A apresentação do site. Deve conter um título e um subtítulo.",
             "videoUrl": "",
             "styles": [
                 {
@@ -29,70 +28,60 @@
         {
             "enabled": true,
             "name": "Sobre o produto",
-            "description": "Formulário de contato.",
             "videoUrl": "",
             "styles": []
         },
         {
             "enabled": true,
             "name": "Depoimentos",
-            "description": "Formulário de contato.",
             "videoUrl": "",
             "styles": []
         },
         {
             "enabled": true,
             "name": "Benefícios",
-            "description": "Formulário de contato.",
             "videoUrl": "",
             "styles": []
         },
         {
             "enabled": true,
             "name": "Antes e depois",
-            "description": "Formulário de contato.",
             "videoUrl": "",
             "styles": []
         },
         {
             "enabled": true,
             "name": "O que dizem na mídia",
-            "description": "Formulário de contato.",
             "videoUrl": "",
             "styles": []
         },
         {
             "enabled": true,
             "name": "Cards de compra",
-            "description": "Formulário de contato.",
             "videoUrl": "",
             "styles": []
         },
         {
             "enabled": true,
             "name": "Anvisa",
-            "description": "Formulário de ontato.",
             "videoUrl": "",
             "styles": []
         },
         {
             "enabled": true,
             "name": "Garantia",
-            "description": "Formulário de contato.",
             "videoUrl": "",
             "styles": []
         },
         {
             "enabled": true,
             "name": "Perguntas frequentes",
-            "description": "Formulário de contato.",
             "videoUrl": "",
             "styles": []
         },
         {
             "enabled": true,
             "name": "Compra segura",
-            "description": "Formulário de contato.",
             "videoUrl": "",
             "styles": []
         },
@@ -101,7 +90,6 @@
             "enabled": true,
             "required": true,
             "name": "Rodapé",
-            "description": "Formulário de contato.",
             "videoUrl": "",
             "styles": []
         }

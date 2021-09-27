@@ -1,6 +1,15 @@
 <template>
   <div class="relative rounded-lg bg-white shadow-lg dark:bg-gray-800">
-    <div class="flex items-center rounded-t-lg border-gray-200 border-b bg-gray-100 dark:bg-gray-800 dark:border-gray-500">
+    <div
+      class="
+        flex
+        items-center
+        rounded-t-lg
+        border-gray-200 border-b
+        bg-gray-100
+        dark:bg-gray-800 dark:border-gray-500
+      "
+    >
       <div class="flex-1">
         <slot name="info"></slot>
       </div>
@@ -28,7 +37,10 @@
     </div>
 
     <div class="flex h-40 overflow-hidden">
-      <img class="object-cover rounded-b-lg w-full" :src="selectedStyle.image" />
+      <img
+        class="object-cover rounded-b-lg w-full"
+        :src="selectedStyle.image"
+      />
     </div>
 
     <div

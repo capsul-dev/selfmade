@@ -13,8 +13,7 @@
           rounded-lg
           shadow-lg
           p-5
-          dark:bg-gray-900
-          dark:text-white
+          dark:bg-gray-900 dark:text-white
         "
       >
         <div class="flex mb-6">

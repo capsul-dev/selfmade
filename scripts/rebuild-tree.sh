@@ -60,5 +60,5 @@ echo "It's hardly recommended to commit your changes before proceeding."
 echo "Hit any key if you're sure"
 read;
 
-# find . -iname \*\.vue -and -not -path './node_modules/*' | xargs -I{} sh -c 'move_files "{}"'
-find . \( -iname \*\.vaue -or -iname \*\.spec\.js \) -not -path './node_modules/*' | xargs -I{} sh -c 'fix_includes "{}"'
+find . -iname \*\.vue -and -not -path './node_modules/*' | xargs -I{} sh -c 'move_files "{}"'
+find . \( -iname \*\.vue -or -iname \*\.spec\.js \) -not -path './node_modules/*' | xargs -I{} sh -c 'fix_includes "{}"'
