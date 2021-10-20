@@ -9,15 +9,18 @@
             "styles": [
                 {
                     "name": "Estilo 1",
-                    "image": "img/sections/faixagatilho/faixagatilho_exemplo1.webp"
+                    "image": "img/sections/faixagatilho/faixagatilho_exemplo1.webp",
+                    "height": "20"
                 },
                 {
                     "name": "Estilo 2",
-                    "image": "img/sections/faixagatilho/faixagatilho_exemplo2.webp"
+                    "image": "img/sections/faixagatilho/faixagatilho_exemplo2.webp",
+                    "height": "50"
                 },
                 {
                     "name": "Estilo 3",
-                    "image": "img/sections/faixagatilho/faixagatilho_exemplo3.webp"
+                    "image": "img/sections/faixagatilho/faixagatilho_exemplo3.webp",
+                    "height": "70"
                 }
             ]
         },
@@ -26,7 +29,6 @@
             "enabled": true,
             "required": true,
             "name": "Cabeçalho",
-            "height": "20",
             "videoUrl": "",
             "styles": [
                 {

@@ -35,11 +35,6 @@
         </div>
       </div>
     </div>
-
-    <div class="flex h-auto overflow-hidden">
-      <img class="object-cover rounded-b-lg w-full " :src="selectedStyle.image" />
-    </div>
-
     <div
       v-if="!store.getters['business/isAdmin']"
       class="absolute flex justify-between px-2 top-1/2 w-full"
@@ -49,10 +44,10 @@
     </div>
 
     <div
-      :class="`
-      h-${element.height ? element.height : '40'}
-      md:h-${element.mobileHeight ? element.mobileHeight : '40'}
-      flex overflow-hidden animate-fade`"
+      role="selfmadeSection"
+      :class="`flex overflow-hidden animate-fade 
+        h-${selectedStyle.height ? selectedStyle.height : '40'}
+        md:h-${selectedStyle.mobileHeight ? selectedStyle.mobileHeight : 'auto'}`"
       :key="selectedStyle.name"
     >
       <img
