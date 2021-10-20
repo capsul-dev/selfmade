@@ -27,8 +27,8 @@
       </div>
     </div>
 
-    <div class="flex h-40 overflow-hidden">
-      <img class="object-cover rounded-b-lg w-full" :src="selectedStyle.image" />
+    <div class="flex h-auto overflow-hidden">
+      <img class="object-cover rounded-b-lg w-full " :src="selectedStyle.image" />
     </div>
 
     <div

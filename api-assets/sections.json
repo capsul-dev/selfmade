@@ -1,6 +1,27 @@
 {
     "sections": [
         {
+            "originalOrder": -2,
+            "enabled": true,
+            "name": "Faixa gatilho",
+            "description": "Formulário de contato.",
+            "videoUrl": "",
+            "styles": [
+                {
+                    "name": "Estilo 1",
+                    "image": "img/sections/faixagatilho/faixagatilho_exemplo1.webp"
+                },
+                {
+                    "name": "Estilo 2",
+                    "image": "img/sections/faixagatilho/faixagatilho_exemplo2.webp"
+                },
+                {
+                    "name": "Estilo 3",
+                    "image": "img/sections/faixagatilho/faixagatilho_exemplo3.webp"
+                }
+            ]
+        },
+        {            
             "originalOrder": -1,
             "enabled": true,
             "required": true,
@@ -10,20 +31,16 @@
             "styles": [
                 {
                     "name": "Estilo 1",
-                    "image": "https://picsum.photos/seed/1230/800/300"
+                    "image": "img/sections/header/header_exemplo1.webp"
                 },
                 {
                     "name": "Estilo 2",
-                    "image": "https://picsum.photos/seed/1231/800/300"
+                    "image": "img/sections/header/header_exemplo2.webp"
                 },
                 {
                     "name": "Estilo 3",
-                    "image": "https://picsum.photos/seed/1232/800/300"
-                },
-                {
-                    "name": "Estilo 4",
-                    "image": "https://picsum.photos/seed/1234/800/300"
-                }
+                    "image": "img/sections/header/header_exemplo3.webp"
+                }                
             ]
         },
         {
@@ -31,70 +48,256 @@
             "name": "Sobre o produto",
             "description": "Formulário de contato.",
             "videoUrl": "",
-            "styles": []
+            "styles": [
+                {
+                    "name": "Estilo 1",
+                    "image": "img/sections/comofunciona/comofunciona_exemplo1.webp"
+                },
+                {
+                    "name": "Estilo 2",
+                    "image": "img/sections/comofunciona/comofunciona_exemplo2.webp"
+                },
+                {
+                    "name": "Estilo 3",
+                    "image": "img/sections/comofunciona/comofunciona_exemplo3.webp"
+                }                
+            ]
         },
         {
             "enabled": true,
-            "name": "Depoimentos",
+            "name": "Fórmula",
             "description": "Formulário de contato.",
             "videoUrl": "",
-            "styles": []
+            "styles": [
+                {
+                    "name": "Estilo 1",
+                    "image": "img/sections/formula/formula_exemplo1.webp"
+                },
+                {
+                    "name": "Estilo 2",
+                    "image": "img/sections/formula/formula_exemplo2.webp"
+                },
+                {
+                    "name": "Estilo 3",
+                    "image": "img/sections/formula/formula_exemplo3.webp"
+                }
+            ]
         },
         {
             "enabled": true,
             "name": "Benefícios",
             "description": "Formulário de contato.",
             "videoUrl": "",
-            "styles": []
-        },
+            "styles": [
+                {
+                    "name": "Estilo 1",
+                    "image": "img/sections/beneficios/beneficios_exemplo1.webp"
+                },
+                {
+                    "name": "Estilo 2",
+                    "image": "img/sections/beneficios/beneficios_exemplo2.webp"
+                },
+                {
+                    "name": "Estilo 3",
+                    "image": "img/sections/beneficios/beneficios_exemplo3.webp"
+                }
+            ]
+        },        
         {
             "enabled": true,
-            "name": "Antes e depois",
+            "name": "Gatilhos mentais",
             "description": "Formulário de contato.",
             "videoUrl": "",
-            "styles": []
-        },
-        {
-            "enabled": true,
-            "name": "O que dizem na mídia",
-            "description": "Formulário de contato.",
-            "videoUrl": "",
-            "styles": []
+            "styles": [
+                {
+                    "name": "Estilo 1",
+                    "image": "img/sections/gatilhosmentais/gatilhosmentais_exemplo1.webp"
+                },
+                {
+                    "name": "Estilo 2",
+                    "image": "img/sections/gatilhosmentais/gatilhosmentais_exemplo2.webp"
+                },
+                {
+                    "name": "Estilo 3",
+                    "image": "img/sections/gatilhosmentais/gatilhosmentais_exemplo3.webp"
+                }
+            ]
         },
         {
             "enabled": true,
             "name": "Cards de compra",
             "description": "Formulário de contato.",
             "videoUrl": "",
-            "styles": []
+            "styles": [
+                { 
+                    "name": "Estilo 1",
+                    "image": "img/sections/checkout/checkout_exemplo1.webp"
+                },
+                { 
+                    "name": "Estilo 2",
+                    "image": "img/sections/checkout/checkout_exemplo2.webp"
+                },
+                { 
+                    "name": "Estilo 3",
+                    "image": "img/sections/checkout/checkout_exemplo3.webp"
+                },
+                { 
+                    "name": "Estilo 4",
+                    "image": "img/sections/checkout/checkout_exemplo4.webp"
+                },
+                { 
+                    "name": "Estilo 5",
+                    "image": "img/sections/checkout/checkout_exemplo5.webp"
+                },
+                { 
+                    "name": "Estilo 6",
+                    "image": "img/sections/checkout/checkout_exemplo6.webp"
+                }
+            ]
+        },
+        {
+            "enabled": true,
+            "name": "Provas Sociais",
+            "description": "Formulário de contato.",
+            "videoUrl": "",
+            "styles": [
+                { 
+                    "name": "Estilo 1",
+                    "image": "img/sections/provassociais/provassociais_exemplo1.webp"
+                },
+                { 
+                    "name": "Estilo 2",
+                    "image": "img/sections/provassociais/provassociais_exemplo2.webp"
+                },
+                { 
+                    "name": "Estilo 3",
+                    "image": "img/sections/provassociais/provassociais_exemplo3.webp"
+                }
+            ]
         },
         {
             "enabled": true,
             "name": "Anvisa",
-            "description": "Formulário de ontato.",
+            "description": "Formulário de contato.",
             "videoUrl": "",
-            "styles": []
+            "styles": [
+                {
+                    "name": "Estilo 1",
+                    "image": "img/sections/anvisa/anvisa_exemplo1.webp"
+                },
+                {
+                    "name": "Estilo 2",
+                    "image": "img/sections/anvisa/anvisa_exemplo2.webp"
+                },
+                {
+                    "name": "Estilo 3",
+                    "image": "img/sections/anvisa/anvisa_exemplo3.webp"
+                },
+                {
+                    "name": "Estilo 4",
+                    "image": "img/sections/anvisa/anvisa_exemplo4.webp"
+                },
+                {
+                    "name": "Estilo 5",
+                    "image": "img/sections/anvisa/anvisa_exemplo5.webp"
+                },
+                {
+                    "name": "Estilo 6",
+                    "image": "img/sections/anvisa/anvisa_exemplo6.webp"
+                }
+            ]
         },
         {
             "enabled": true,
             "name": "Garantia",
             "description": "Formulário de contato.",
             "videoUrl": "",
-            "styles": []
+            "styles": [
+                {
+                    "name": "Estilo 1",
+                    "image": "img/sections/garantia/garantia_exemplo1.webp"
+                },
+                {
+                    "name": "Estilo 2",
+                    "image": "img/sections/garantia/garantia_exemplo2.webp"
+                },
+                {
+                    "name": "Estilo 3",
+                    "image": "img/sections/garantia/garantia_exemplo3.webp"
+                }
+            ]
         },
         {
             "enabled": true,
             "name": "Perguntas frequentes",
             "description": "Formulário de contato.",
             "videoUrl": "",
-            "styles": []
+            "styles": [
+                {
+                    "name": "Estilo 1",
+                    "image": "img/sections/faq/faq_exemplo1.webp"
+                },
+                {
+                    "name": "Estilo 2",
+                    "image": "img/sections/faq/faq_exemplo2.webp"
+                },
+                {
+                    "name": "Estilo 3",
+                    "image": "img/sections/faq/faq_exemplo3.webp"
+                }
+            ]
         },
         {
             "enabled": true,
             "name": "Compra segura",
             "description": "Formulário de contato.",
             "videoUrl": "",
-            "styles": []
+            "styles": [
+                {
+                    "name": "Estilo 1",
+                    "image": "img/sections/comprarnainternet/comprarnainternet_exemplo1.webp"
+                },
+                {
+                    "name": "Estilo 2",
+                    "image": "img/sections/comprarnainternet/comprarnainternet_exemplo2.webp"
+                },
+                {
+                    "name": "Estilo 3",
+                    "image": "img/sections/comprarnainternet/comprarnainternet_exemplo3.webp"
+                }
+            ]
+        },
+        {
+            "enabled": true,
+            "name": "Atendimento Whatsapp",
+            "description": "Formulário de contato.",
+            "videoUrl": "",
+            "styles": [
+                {
+                    "name": "Estilo 1",
+                    "image": "img/sections/whatsapp/whatsapp_exemplo1.webp"
+                },
+                {
+                    "name": "Estilo 2",
+                    "image": "img/sections/whatsapp/whatsapp_exemplo2.webp"
+                },
+                {
+                    "name": "Estilo 3",
+                    "image": "img/sections/whatsapp/whatsapp_exemplo3.webp"
+                },
+                {
+                    "name": "Estilo 4",
+                    "image": "img/sections/whatsapp/whatsapp_exemplo4.webp"
+                },
+                {
+                    "name": "Estilo 5",
+                    "image": "img/sections/whatsapp/whatsapp_exemplo5.webp"
+                },
+                {
+                    "name": "Estilo 6",
+                    "image": "img/sections/whatsapp/whatsapp_exemplo6.webp"
+                }
+            ]
         },
         {
             "originalOrder": 999,
@@ -103,7 +306,20 @@
             "name": "Rodapé",
             "description": "Formulário de contato.",
             "videoUrl": "",
-            "styles": []
+            "styles": [
+                {
+                    "name": "Estilo 1",
+                    "image": "img/sections/rodape/rodape_exemplo1.webp"
+                },
+                {
+                    "name": "Estilo 2",
+                    "image": "img/sections/rodape/rodape_exemplo2.webp"
+                },
+                {
+                    "name": "Estilo 3",
+                    "image": "img/sections/rodape/rodape_exemplo3.webp"
+                }
+            ]
         }
     ]
 }
