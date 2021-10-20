@@ -8,6 +8,7 @@
       py-2
       grid grid-cols-checkbox
       items-center
+      select-none
       dark:bg-gray-800
     "
   >

@@ -13,6 +13,7 @@ const initialState = {
       clientMail: '',
       clientPhone: '',
       productName: '',
+      details: '',
     };
 
 export default {
@@ -41,7 +42,7 @@ export default {
 
     setAdmin: ({ commit }, value) => commit('ADMIN_SET', value),
 
-    sendLayout: ({ commit, getters, rootGetters }) =>
+    sendLayout: ({ commit, getters, rootGetters, rootState }) =>
       new Promise(async (resolve, reject) => {
 
         if( !isStringFilled(getters.clientName) ) {
@@ -62,10 +63,14 @@ export default {
 
         if( !/^([a-zA-Z0-9]|\.|_)+@(.?([a-zA-Z0-9]|\.|_|-)+){2,}/.test(getters.clientMail) ) {
           return reject('E-mail inválido')
-      }
+        }
 
         if( ![10, 11].includes(getters.clientPhone.length)) {
           return reject('Telefone inválido - deve conter entre 10 e 11 dígitos e incluir o DDD')
+        }
+
+        if( rootState.layout.selectedCount < rootState.layout.requiredMin ) {
+          return reject('Você precisa escolher mais seções')
         }
 
         const { isAdmin, ...businessInfo } = getters;

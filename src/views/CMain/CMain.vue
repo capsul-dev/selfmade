@@ -59,10 +59,10 @@
       "
     >
       <template #title>Disposição das seções</template>
-      <template #description
-        >As seções do seu site serão organizadas da forma como são
-        exibidas.</template
-      >
+      <template #description>
+        Clique nas setas laterais para mudar o estilo de cada seção e use as setas
+        na barra superior para mudar a posição, ou caso prefira, arraste a barra.
+      </template>
       <template #body>
         <c-section-arrange></c-section-arrange>
       </template>

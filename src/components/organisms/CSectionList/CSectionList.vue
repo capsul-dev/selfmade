@@ -1,4 +1,9 @@
 <template>
+  <c-message v-if="selectedCount < requiredMin">
+    <i class="fa fa-warning" />
+    Você precisa escolher mais {{ requiredMin - selectedCount }}.
+  </c-message
+  >
   <div class="grid lg:grid-cols-2 gap-y-2 lg:gap-x-4">
     <c-checkbox
       v-for="(section, index) in sections"
@@ -38,12 +43,14 @@
 import { computed } from "vue";
 import { useStore } from "vuex";
 import CCheckbox from "@/components/atoms/CCheckbox/CCheckbox.vue";
+import CMessage from "@/components/atoms/CMessage/CMessage.vue";
 
 import store from "@/store";
 
 export default {
   components: {
     CCheckbox,
+    CMessage,
   },
 
   methods: {
@@ -65,11 +72,13 @@ export default {
     return {
       store,
       sections: computed(() =>
-        store.getters["layout/sections"]
+        store.state.layout.sections
           .slice(0)
           .reverse()
           .sort((a) => (a.required ? 1 : -1))
       ),
+      selectedCount: computed(() => store.getters['layout/selectedCount']),
+      requiredMin: computed(() => store.state.layout.requiredMin),
     };
   },
 };

@@ -5,15 +5,16 @@
             "enabled": true,
             "required": true,
             "name": "Cabeçalho",
+            "height": "20",
             "videoUrl": "",
             "styles": [
                 {
                     "name": "Estilo 1",
-                    "image": "https://picsum.photos/seed/1230/800/300"
+                    "image": "https://picsum.photos/seed/1230/800/600"
                 },
                 {
                     "name": "Estilo 2",
-                    "image": "https://picsum.photos/seed/1231/800/300"
+                    "image": "https://picsum.photos/seed/1231/800/600"
                 },
                 {
                     "name": "Estilo 3",
@@ -26,61 +27,62 @@
             ]
         },
         {
-            "enabled": true,
+            "enabled": false,
             "name": "Sobre o produto",
             "videoUrl": "",
             "styles": []
         },
         {
-            "enabled": true,
+            "enabled": false,
             "name": "Depoimentos",
             "videoUrl": "",
             "styles": []
         },
         {
-            "enabled": true,
+            "enabled": false,
             "name": "Benefícios",
             "videoUrl": "",
             "styles": []
         },
         {
-            "enabled": true,
+            "enabled": false,
             "name": "Antes e depois",
             "videoUrl": "",
             "styles": []
         },
         {
-            "enabled": true,
+            "enabled": false,
             "name": "O que dizem na mídia",
             "videoUrl": "",
             "styles": []
         },
         {
             "enabled": true,
+            "required": true,
             "name": "Cards de compra",
             "videoUrl": "",
             "styles": []
         },
         {
-            "enabled": true,
+            "enabled": false,
             "name": "Anvisa",
             "videoUrl": "",
             "styles": []
         },
         {
-            "enabled": true,
+            "enabled": false,
             "name": "Garantia",
             "videoUrl": "",
             "styles": []
         },
         {
-            "enabled": true,
+            "enabled": false,
             "name": "Perguntas frequentes",
             "videoUrl": "",
             "styles": []
         },
         {
-            "enabled": true,
+            "enabled": false,
             "name": "Compra segura",
             "videoUrl": "",
             "styles": []

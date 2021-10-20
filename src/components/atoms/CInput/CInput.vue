@@ -1,6 +1,6 @@
 <template>
   <label class="px-2 my-1">
-    <div class="text-sm opacity-80 mb-2">
+    <div class="text-sm opacity-80 mb-2 ml-2 font-semibold">
       <slot></slot>
     </div>
     <input

@@ -24,3 +24,16 @@ app.mixin({
 });
 
 app.mount("#app");
+
+// precaches images
+import { sections } from "../api-assets/sections.json";
+const precacheImage = async (source) => {
+  const img = new Image();
+  img.src = source;
+  console.log(`${source} precached`)
+};
+
+sections.forEach((section) => {
+  section.styles.forEach((style) => precacheImage(style.image));
+});
+

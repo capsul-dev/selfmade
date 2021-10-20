@@ -7,15 +7,24 @@ export default {
 
   state() {
     return {
+      requiredMin: 6,
       sections: [],
     };
   },
 
   getters: {
-    sections: (state) => state.sections,
+    sections: (state) =>
+      state.sections,
 
     filteredSections: (state) =>
-      state.sections.filter((section) => !!section.enabled),
+      state.sections.filter(
+        (section) => !!section.enabled || !!section.required
+      ),
+
+    selectedCount: (state) =>
+      state.sections.filter(
+        (section) => !!section.enabled || !!section.required
+      ).length,
   },
 
   actions: {
