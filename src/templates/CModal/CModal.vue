@@ -9,7 +9,7 @@
           w-full
           h-full
           lg:w-1/2 lg:h-1/2
-          z-10
+          z-40
           rounded-lg
           shadow-lg
           p-5
