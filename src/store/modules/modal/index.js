@@ -8,7 +8,7 @@ export default {
       body: "",
       component: "",
       details: {},
-    }
+    };
   },
 
   getters: {

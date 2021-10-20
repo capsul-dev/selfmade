@@ -5,16 +5,16 @@
             "enabled": true,
             "required": true,
             "name": "Cabeçalho",
-            "description": "A apresentação do site. Deve conter um título e um subtítulo.",
+            "height": "20",
             "videoUrl": "",
             "styles": [
                 {
                     "name": "Estilo 1",
-                    "image": "https://picsum.photos/seed/1230/800/300"
+                    "image": "https://picsum.photos/seed/1230/800/600"
                 },
                 {
                     "name": "Estilo 2",
-                    "image": "https://picsum.photos/seed/1231/800/300"
+                    "image": "https://picsum.photos/seed/1231/800/600"
                 },
                 {
                     "name": "Estilo 3",
@@ -27,72 +27,63 @@
             ]
         },
         {
-            "enabled": true,
+            "enabled": false,
             "name": "Sobre o produto",
-            "description": "Formulário de contato.",
             "videoUrl": "",
             "styles": []
         },
         {
-            "enabled": true,
+            "enabled": false,
             "name": "Depoimentos",
-            "description": "Formulário de contato.",
             "videoUrl": "",
             "styles": []
         },
         {
-            "enabled": true,
+            "enabled": false,
             "name": "Benefícios",
-            "description": "Formulário de contato.",
             "videoUrl": "",
             "styles": []
         },
         {
-            "enabled": true,
+            "enabled": false,
             "name": "Antes e depois",
-            "description": "Formulário de contato.",
             "videoUrl": "",
             "styles": []
         },
         {
-            "enabled": true,
+            "enabled": false,
             "name": "O que dizem na mídia",
-            "description": "Formulário de contato.",
             "videoUrl": "",
             "styles": []
         },
         {
             "enabled": true,
+            "required": true,
             "name": "Cards de compra",
-            "description": "Formulário de contato.",
             "videoUrl": "",
             "styles": []
         },
         {
-            "enabled": true,
+            "enabled": false,
             "name": "Anvisa",
-            "description": "Formulário de ontato.",
             "videoUrl": "",
             "styles": []
         },
         {
-            "enabled": true,
+            "enabled": false,
             "name": "Garantia",
-            "description": "Formulário de contato.",
             "videoUrl": "",
             "styles": []
         },
         {
-            "enabled": true,
+            "enabled": false,
             "name": "Perguntas frequentes",
-            "description": "Formulário de contato.",
             "videoUrl": "",
             "styles": []
         },
         {
-            "enabled": true,
+            "enabled": false,
             "name": "Compra segura",
-            "description": "Formulário de contato.",
             "videoUrl": "",
             "styles": []
         },
@@ -101,7 +92,6 @@
             "enabled": true,
             "required": true,
             "name": "Rodapé",
-            "description": "Formulário de contato.",
             "videoUrl": "",
             "styles": []
         }

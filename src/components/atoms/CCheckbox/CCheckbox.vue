@@ -8,6 +8,7 @@
       py-2
       grid grid-cols-checkbox
       items-center
+      select-none
       dark:bg-gray-800
     "
   >
@@ -20,7 +21,10 @@
         @input="onInput"
       />
     </div>
-    <div class="border-l-2 px-4 cursor-pointer dark:border-gray-500" @click="onClick">
+    <div
+      class="border-l-2 px-4 cursor-pointer dark:border-gray-500"
+      @click="onClick"
+    >
       <slot></slot>
     </div>
   </div>
@@ -42,10 +46,11 @@ export default {
   methods: {
     onInput(event) {
       this.$emit("update:checked", event.target.checked);
+      this.$emit("valueChanged");
     },
     onClick() {
       if (!this.required) {
-        this.$emit("update:checked", !this.$refs.checkbox.checked);
+        this.$refs.checkbox.click();
       }
     },
   },

@@ -1,6 +1,15 @@
 <template>
   <div class="relative rounded-lg bg-white shadow-lg dark:bg-gray-800">
-    <div class="flex items-center rounded-t-lg border-gray-200 border-b bg-gray-100 dark:bg-gray-800 dark:border-gray-500">
+    <div
+      class="
+        flex
+        items-center
+        rounded-t-lg
+        border-gray-200 border-b
+        bg-gray-100
+        dark:bg-gray-800 dark:border-gray-500
+      "
+    >
       <div class="flex-1">
         <slot name="info"></slot>
       </div>
@@ -27,16 +36,25 @@
       </div>
     </div>
 
-    <div class="flex h-40 overflow-hidden">
-      <img class="object-cover rounded-b-lg w-full" :src="selectedStyle.image" />
-    </div>
-
     <div
       v-if="!store.getters['business/isAdmin']"
       class="absolute flex justify-between px-2 top-1/2 w-full"
     >
       <c-arrow direction="left" @click="stylePrevious"></c-arrow>
       <c-arrow direction="right" @click="styleNext"></c-arrow>
+    </div>
+
+    <div
+      :class="`
+      h-${element.height ? element.height : '40'}
+      md:h-${element.mobileHeight ? element.mobileHeight : '40'}
+      flex overflow-hidden animate-fade`"
+      :key="selectedStyle.name"
+    >
+      <img
+        class="object-cover rounded-b-lg w-full"
+        :src="selectedStyle.image"
+      />
     </div>
   </div>
 </template>

@@ -2,8 +2,7 @@
   <div
     :class="`
     rounded-full
-    w-10
-    h-10
+    w-10 h-10 z-30
     text-white
     bg-green-500
     hover:bg-green-600

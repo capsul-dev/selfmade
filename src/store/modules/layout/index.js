@@ -7,15 +7,24 @@ export default {
 
   state() {
     return {
+      requiredMin: 6,
       sections: [],
     };
   },
 
   getters: {
-    sections: (state) => state.sections,
+    sections: (state) =>
+      state.sections,
 
     filteredSections: (state) =>
-      state.sections.filter((section) => !!section.enabled),
+      state.sections.filter(
+        (section) => !!section.enabled || !!section.required
+      ),
+
+    selectedCount: (state) =>
+      state.sections.filter(
+        (section) => !!section.enabled || !!section.required
+      ).length,
   },
 
   actions: {
@@ -47,14 +56,19 @@ export default {
     },
 
     ORDER_INIT: (state) => {
-      state.sections = initialState.sections.map((section, index) => ({
+      let index = 1;
+
+      state.sections = (
+        state.sections.length > 0 ? state.sections : initialState.sections
+      ).map((section) => ({
         ...section,
-        order: section.order || index + 1,
+        order: section.enabled ? index++ : section.order || 0,
       }));
     },
 
     ORDER_UPDATE: (state, value) => {
       value
+        .filter((section) => !!section.enabled)
         .map((section, index) => ({ ...section, order: index }))
         .sort((a, b) =>
           (a.originalOrder || a.order) < (b.originalOrder || b.order) ? -1 : 1

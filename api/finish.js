@@ -25,6 +25,7 @@ module.exports = async (req, res) => {
       clientName: "string",
       clientMail: "string",
       content: "string",
+      details: "string",
     };
 
     if (typeof req.body !== "object") {
@@ -60,7 +61,8 @@ module.exports = async (req, res) => {
     });
 
     await transporter.sendMail({
-      ...fromClientToBusiness,
+      subject: "Selfmade",
+      text: `Detalhes: ${req.body.details ? req.body.details : "-"}`,
       from: `${req.body.clientName} <${req.body.clientMail}>`,
       to: CS_MAIL,
       attachments: [
