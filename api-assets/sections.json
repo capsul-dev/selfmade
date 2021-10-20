@@ -1,0 +1,99 @@
+{
+    "sections": [
+        {
+            "originalOrder": -1,
+            "enabled": true,
+            "required": true,
+            "name": "Cabeçalho",
+            "height": "20",
+            "videoUrl": "",
+            "styles": [
+                {
+                    "name": "Estilo 1",
+                    "image": "https://picsum.photos/seed/1230/800/600"
+                },
+                {
+                    "name": "Estilo 2",
+                    "image": "https://picsum.photos/seed/1231/800/600"
+                },
+                {
+                    "name": "Estilo 3",
+                    "image": "https://picsum.photos/seed/1232/800/300"
+                },
+                {
+                    "name": "Estilo 4",
+                    "image": "https://picsum.photos/seed/1234/800/300"
+                }
+            ]
+        },
+        {
+            "enabled": false,
+            "name": "Sobre o produto",
+            "videoUrl": "",
+            "styles": []
+        },
+        {
+            "enabled": false,
+            "name": "Depoimentos",
+            "videoUrl": "",
+            "styles": []
+        },
+        {
+            "enabled": false,
+            "name": "Benefícios",
+            "videoUrl": "",
+            "styles": []
+        },
+        {
+            "enabled": false,
+            "name": "Antes e depois",
+            "videoUrl": "",
+            "styles": []
+        },
+        {
+            "enabled": false,
+            "name": "O que dizem na mídia",
+            "videoUrl": "",
+            "styles": []
+        },
+        {
+            "enabled": true,
+            "required": true,
+            "name": "Cards de compra",
+            "videoUrl": "",
+            "styles": []
+        },
+        {
+            "enabled": false,
+            "name": "Anvisa",
+            "videoUrl": "",
+            "styles": []
+        },
+        {
+            "enabled": false,
+            "name": "Garantia",
+            "videoUrl": "",
+            "styles": []
+        },
+        {
+            "enabled": false,
+            "name": "Perguntas frequentes",
+            "videoUrl": "",
+            "styles": []
+        },
+        {
+            "enabled": false,
+            "name": "Compra segura",
+            "videoUrl": "",
+            "styles": []
+        },
+        {
+            "originalOrder": 999,
+            "enabled": true,
+            "required": true,
+            "name": "Rodapé",
+            "videoUrl": "",
+            "styles": []
+        }
+    ]
+}
