@@ -36,6 +36,10 @@
       </div>
     </div>
 
+    <div class="flex h-auto overflow-hidden">
+      <img class="object-cover rounded-b-lg w-full " :src="selectedStyle.image" />
+    </div>
+
     <div
       v-if="!store.getters['business/isAdmin']"
       class="absolute flex justify-between px-2 top-1/2 w-full"
