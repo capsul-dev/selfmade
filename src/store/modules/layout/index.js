@@ -1,141 +1,74 @@
+import { sections } from "@/../api-assets/sections.json";
+
+const initialState = { sections };
+
 export default {
   namespaced: true,
 
   state() {
     return {
-      sections: [
-        {
-          order: 1,
-          originalOrder: -1,
-          enabled: true,
-          required: true,
-          name: "Header",
-          description:
-            "A apresentação do site. Deve conter um título e um subtítulo.",
-          component: "c-section-header",
-          filename: "header",
-        },
-        {
-          order: 2,
-          enabled: true,
-          name: "Sobre o produto",
-          description: "Formulário de contato.",
-          component: "c-section-contact",
-          filename: "contact",
-        },
-        {
-          order: 3,
-          enabled: true,
-          name: "Depoimentos",
-          description: "Formulário de contato.",
-          component: "c-section-contact",
-          filename: "contact",
-        },
-        {
-          order: 4,
-          enabled: true,
-          name: "Benefícios",
-          description: "Formulário de contato.",
-          component: "c-section-contact",
-          filename: "contact",
-        },
-        {
-          order: 5,
-          enabled: true,
-          name: "Antes e depois",
-          description: "Formulário de contato.",
-          component: "c-section-contact",
-          filename: "contact",
-        },
-        {
-          order: 6,
-          enabled: true,
-          name: "O que dizem na mídia",
-          description: "Formulário de contato.",
-          component: "c-section-contact",
-          filename: "contact",
-        },
-        {
-          order: 7,
-          enabled: true,
-          name: "Cards de compra",
-          description: "Formulário de contato.",
-          component: "c-section-contact",
-          filename: "contact",
-        },
-        {
-          order: 8,
-          enabled: true,
-          name: "Anvisa",
-          description: "Formulário de contato.",
-          component: "c-section-contact",
-          filename: "contact",
-        },
-        {
-          order: 9,
-          enabled: true,
-          name: "Garantia",
-          description: "Formulário de contato.",
-          component: "c-section-contact",
-          filename: "contact",
-        },
-        {
-          order: 10,
-          enabled: true,
-          name: "Perguntas frequentes",
-          description: "Formulário de contato.",
-          component: "c-section-contact",
-          filename: "contact",
-        },
-        {
-          order: 11,
-          enabled: true,
-          name: "Rodapé",
-          description: "Formulário de contato.",
-          component: "c-section-contact",
-          filename: "contact",
-        },
-        {
-          order: 12,
-          enabled: true,
-          name: "Compra segura",
-          description: "Formulário de contato.",
-          component: "c-section-contact",
-          filename: "contact",
-        },
-        {
-          order: 13,
-          originalOrder: 999,
-          enabled: true,
-          required: true,
-          name: "Bottom",
-          description:
-            "O rodapé do site. Deve conter informações gerais e de contato.",
-          component: "c-section-bottom",
-          filename: "bottom",
-        },
-      ],
+      requiredMin: 6,
+      sections: [],
     };
   },
 
   getters: {
-    sections: (state) => state.sections,
+    sections: (state) =>
+      state.sections,
+
     filteredSections: (state) =>
-      state.sections.filter((section) => !!section.enabled),
+      state.sections.filter(
+        (section) => !!section.enabled || !!section.required
+      ),
+
+    selectedCount: (state) =>
+      state.sections.filter(
+        (section) => !!section.enabled || !!section.required
+      ).length,
   },
 
   actions: {
+    import: ({ commit }, value) => commit("LAYOUT_IMPORT", value),
+    reset: ({ commit, rootGetters }) =>
+      commit("LAYOUT_RESET", !!rootGetters["business/isAdmin"]),
+
+    initOrder: ({ commit }) => commit("ORDER_INIT"),
     updateOrder: ({ commit }, value) => commit("ORDER_UPDATE", value),
 
     moveUp: ({ commit }, value) =>
       commit("SECTION_MOVE", { target: value, direction: -1 }),
     moveDown: ({ commit }, value) =>
       commit("SECTION_MOVE", { target: value, direction: 1 }),
+
+    nextStyle: ({ commit }, target) =>
+      commit("STYLE_CYCLE", { target, direction: 1 }),
+    previousStyle: ({ commit }, target) =>
+      commit("STYLE_CYCLE", { target, direction: -1 }),
   },
 
   mutations: {
+    LAYOUT_IMPORT: (state, value) => {
+      state.sections = value;
+    },
+
+    LAYOUT_RESET: (state, isAdmin) => {
+      Object.assign(state, !isAdmin ? initialState : { sections: [] });
+    },
+
+    ORDER_INIT: (state) => {
+      let index = 1;
+
+      state.sections = (
+        state.sections.length > 0 ? state.sections : initialState.sections
+      ).map((section) => ({
+        ...section,
+        order: section.enabled ? index++ : section.order || 0,
+      }));
+    },
+
     ORDER_UPDATE: (state, value) => {
       value
+        .filter((section) => !!section.enabled)
         .map((section, index) => ({ ...section, order: index }))
         .sort((a, b) =>
           (a.originalOrder || a.order) < (b.originalOrder || b.order) ? -1 : 1
@@ -157,6 +90,7 @@ export default {
       const previous = sections
         .filter((section) => typeof section.originalOrder !== "number")
         .find((section) => section.order === order + direction);
+
       if (!previous) {
         return;
       }
@@ -165,6 +99,23 @@ export default {
         previous.order;
       previous.order = order;
       state.sections = sections;
+    },
+
+    STYLE_CYCLE: (state, { target, direction }) => {
+      const section = state.sections.find(({ name }) => name === target.name);
+
+      const prevIndex = section.selectedStyle?.index || 0;
+      const movement =
+        prevIndex + direction >= section.styles.length
+          ? 0
+          : prevIndex + direction < 0
+          ? section.styles.length
+          : prevIndex + direction;
+
+      section.selectedStyle = {
+        index: movement,
+        ...section.styles[movement],
+      };
     },
   },
 };
