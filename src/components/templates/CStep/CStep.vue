@@ -15,7 +15,7 @@
         <slot name="description"></slot>
       </div>
     </div>
-    <div class="step__body">
+    <div>
       <slot name="body"></slot>
     </div>
   </div>

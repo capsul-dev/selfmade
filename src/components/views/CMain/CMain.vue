@@ -60,8 +60,9 @@
     >
       <template #title>Disposição das seções</template>
       <template #description>
-        Clique nas setas laterais para mudar o estilo de cada seção e use as setas
-        na barra superior para mudar a posição, ou caso prefira, arraste a barra.
+        Clique nas setas laterais para mudar o estilo de cada seção e use as
+        setas na barra superior para mudar a posição, ou caso prefira, arraste a
+        barra.
       </template>
       <template #body>
         <c-section-arrange></c-section-arrange>
@@ -93,17 +94,17 @@
 <script>
 import { computed, onMounted } from "vue";
 import { useStore } from "vuex";
-
-import CTemplateStep from "@/templates/CStep/CStep.vue";
-import COperatorOptions from "@/components/organisms/COperatorOptions/COperatorOptions.vue";
-import CBusinessInfo from "@/components/organisms/CBusinessInfo/CBusinessInfo.vue";
-import CBusinessConfig from "@/components/organisms/CBusinessConfig/CBusinessConfig.vue";
-import CSectionList from "@/components/organisms/CSectionList/CSectionList.vue";
-import CSectionArrange from "@/components/organisms/CSectionArrange/CSectionArrange.vue";
-import CFinish from "@/components/organisms/CFinish/CFinish.vue";
-import CVideo from "@/components/atoms/CVideo/CVideo.vue";
-
-import CTemplateModal from "@/templates/CModal/CModal.vue";
+import {
+  CTemplateStep,
+  COperatorOptions,
+  CBusinessInfo,
+  CBusinessConfig,
+  CSectionList,
+  CSectionArrange,
+  CFinish,
+  CVideo,
+  CTemplateModal,
+} from "@/components";
 
 export default {
   components: {

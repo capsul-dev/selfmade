@@ -34,6 +34,7 @@ export default {
     clientMail: (state) => state.clientMail,
     clientPhone: (state) => state.clientPhone.replace(/^0/, '').replace(/[^0-9]/g, '') || 'invalid',
     productName: (state) => state.productName,
+    details: (state) => state.details,
   },
 
   actions: {
@@ -84,6 +85,7 @@ export default {
           clientMail: getters.clientMail,
           clientPhone: getters.clientPhone,
           productName: getters.productName,
+          details: getters.details,
           content: toBase64(serializedContent),
         };
 

@@ -1,6 +1,6 @@
 import { createApp, defineAsyncComponent } from "vue";
 
-import App from "./views/CMain/CMain.vue";
+import App from "./components/views/CMain/CMain.vue";
 import store from "./store";
 import "./assets/tailwind.css";
 
@@ -30,10 +30,9 @@ import { sections } from "../api-assets/sections.json";
 const precacheImage = async (source) => {
   const img = new Image();
   img.src = source;
-  console.log(`${source} precached`)
+  console.log(`${source} precached`);
 };
 
 sections.forEach((section) => {
   section.styles.forEach((style) => precacheImage(style.image));
 });
-

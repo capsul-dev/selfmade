@@ -22,7 +22,6 @@
       :placeholder="placeholder"
       @input="onInput"
       @change="onChange"
-
       v-maska="$props.mask"
     />
   </label>
@@ -33,7 +32,7 @@ import { maska } from "maska";
 
 export default {
   directives: {
-    maska
+    maska,
   },
 
   props: {
@@ -57,19 +56,19 @@ export default {
 
   methods: {
     onInput(event) {
-//      if (
-//        typeof this.$props.mask === "string" &&
-//        event.target.value.length >= this.$props.mask.length
-//      ) {
-//        console.log("aaa")
-//
-//        event.stopPropagation()
-//        return;
-//      }
-//
-//      const value = this.$props.mask
-//        ? mask(event.target.value, this.$props.mask)
-//        : event.target.value;
+      //      if (
+      //        typeof this.$props.mask === "string" &&
+      //        event.target.value.length >= this.$props.mask.length
+      //      ) {
+      //        console.log("aaa")
+      //
+      //        event.stopPropagation()
+      //        return;
+      //      }
+      //
+      //      const value = this.$props.mask
+      //        ? mask(event.target.value, this.$props.mask)
+      //        : event.target.value;
 
       this.$emit("update:modelValue", event.target.value);
     },
