@@ -18,7 +18,7 @@
 
 <script>
 import { useStore } from "vuex";
-const { HCAPTCHA_SITEKEY } = process.env;
+const HCAPTCHA_SITEKEY = "c54dbb72-3bb9-482b-baae-0b2f8368ae15";
 
 export default {
   setup() {

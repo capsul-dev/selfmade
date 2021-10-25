@@ -13,8 +13,7 @@ export default {
   },
 
   getters: {
-    sections: (state) =>
-      state.sections,
+    sections: (state) => state.sections,
 
     filteredSections: (state) =>
       state.sections.filter(

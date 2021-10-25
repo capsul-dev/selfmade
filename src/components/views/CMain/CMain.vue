@@ -96,6 +96,7 @@
 <script>
 import { computed, onMounted } from "vue";
 import { useStore } from "vuex";
+<<<<<<< HEAD:src/views/CMain/CMain.vue
 
 import CTemplateStep from "@/templates/CStep/CStep.vue";
 import COperatorOptions from "@/components/organisms/COperatorOptions/COperatorOptions.vue";
@@ -108,6 +109,19 @@ import CVideo from "@/components/atoms/CVideo/CVideo.vue";
 import CLogo from "@/components/atoms/CLogo/CLogo.vue";
 
 import CTemplateModal from "@/templates/CModal/CModal.vue";
+=======
+import {
+  CTemplateStep,
+  COperatorOptions,
+  CBusinessInfo,
+  CBusinessConfig,
+  CSectionList,
+  CSectionArrange,
+  CFinish,
+  CVideo,
+  CTemplateModal,
+} from "@/components";
+>>>>>>> d68248ed43079e4461f4e7e628ae74633f9f2233:src/components/views/CMain/CMain.vue
 
 export default {
   components: {

@@ -47,7 +47,9 @@
       role="selfmadeSection"
       :class="`flex overflow-hidden animate-fade 
         h-${selectedStyle.height ? selectedStyle.height : '40'}
-        md:h-${selectedStyle.mobileHeight ? selectedStyle.mobileHeight : 'auto'}`"
+        md:h-${
+          selectedStyle.mobileHeight ? selectedStyle.mobileHeight : 'auto'
+        }`"
       :key="selectedStyle.name"
     >
       <img
@@ -62,7 +64,7 @@
 import { computed } from "vue";
 import store from "@/store";
 
-import CArrow from "@/components/atoms/CArrow/CArrow.vue";
+import { CArrow } from "@/components";
 
 export default {
   props: {
