@@ -1,7 +1,8 @@
 {
   "name": "selfmade",
-  "version": "0.2.1",
+  "version": "0.2.4",
   "private": true,
+  "homepage": "capsulprodutor.com.br",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
