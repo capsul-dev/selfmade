@@ -12,7 +12,9 @@
       dark:bg-gray-900 dark:text-white
     "
   >
+        <c-logo source="img/logo/logo.png" class="pl-5 pt-3" />
     <c-template-step v-if="!store.getters['business/isAdmin']">
+
       <template #title>Dados pessoais</template>
       <template #description
         >Preencha com
@@ -60,8 +62,9 @@
     >
       <template #title>Disposição das seções</template>
       <template #description>
-        Clique nas setas laterais para mudar o estilo de cada seção e use as setas
-        na barra superior para mudar a posição, ou caso prefira, arraste a barra.
+        Clique nas setas laterais para mudar o estilo de cada seção e use as
+        setas na barra superior para mudar a posição, ou caso prefira, arraste a
+        barra.
       </template>
       <template #body>
         <c-section-arrange></c-section-arrange>
@@ -102,6 +105,7 @@ import CSectionList from "@/components/organisms/CSectionList/CSectionList.vue";
 import CSectionArrange from "@/components/organisms/CSectionArrange/CSectionArrange.vue";
 import CFinish from "@/components/organisms/CFinish/CFinish.vue";
 import CVideo from "@/components/atoms/CVideo/CVideo.vue";
+import CLogo from "@/components/atoms/CLogo/CLogo.vue";
 
 import CTemplateModal from "@/templates/CModal/CModal.vue";
 
@@ -115,7 +119,7 @@ export default {
     CSectionArrange,
     CFinish,
     CVideo,
-
+    CLogo,
     CTemplateModal,
   },
 
