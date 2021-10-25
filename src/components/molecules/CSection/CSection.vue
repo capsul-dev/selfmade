@@ -24,7 +24,7 @@
       <div class="w-10 opacity-50">#{{ $props.element.order }}</div>
 
       <div
-        v-if="!store.getters['business/isAdmin']"
+        v-if="showArrows"
         class="flex pt-1 gap-x-4 text-2xl opacity-40 cursor-pointer pr-3"
       >
         <div @click="$emit('moveUp')">
@@ -89,6 +89,7 @@ export default {
   setup(props) {
     return {
       store,
+      showArrows: computed(() => !store.getters['business/isAdmin'] && typeof props.element.originalOrder !== 'number'),
       selectedStyle: computed(() => {
         const selectedStyle = props.element.selectedStyle
           ? props.element.selectedStyle
