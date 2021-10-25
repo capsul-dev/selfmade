@@ -19,10 +19,6 @@
       v-model="store.state.business.productName"
       >Nome do produto</c-input
     >
-    <c-input
-      placeholder="Gostaria de reduzir a opacidade do fundo..."
-      v-model="store.state.business.details"
-      >Detalhes</c-input>
   </div>
 </template>
 

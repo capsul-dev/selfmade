@@ -1,6 +1,6 @@
 <template>
-  <c-message v-if="selectedCount < requiredMin">
-    <i class="fa fa-warning" />
+  <c-message v-if="selectedCount < requiredMin" class="dark:bg-gray-800 dark:border-red-600">
+    <i class="fa fa-warning dark:text-red-500"/>
     Você precisa escolher mais {{ requiredMin - selectedCount }}.
   </c-message
   >
@@ -75,7 +75,7 @@ export default {
         store.state.layout.sections
           .slice(0)
           .reverse()
-          .sort((a) => (a.required ? 1 : -1))
+          .sort((a) => (a.required ? -1 : -1))
       ),
       selectedCount: computed(() => store.getters['layout/selectedCount']),
       requiredMin: computed(() => store.state.layout.requiredMin),
