@@ -19,3 +19,8 @@ E então acesse pelo navegador o link de acesso que vai aparecer destacado no te
 - v0.2.3
 * Adicionado trava de movimento para determinadas seções
 * Adicionado logo da Capsul ao topo da página
+
+## Próximas atualizações
+
+- v0.2.4
+* Mudar o formato dos botões de interação das seções para um botão que ocupe toda a altura da seção
