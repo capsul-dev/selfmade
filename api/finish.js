@@ -80,6 +80,13 @@ module.exports = async (req, res) => {
       from: `${CS_SENDERNAME} <${CS_MAIL}>`,
       to: req.body.clientMail,
     });
+
+    console.log(S_SMTP_HOST,
+      CS_SMTP_PORT,
+      CS_SMTP_USER,
+      CS_SMTP_PASS,
+      CS_MAIL,
+      CS_SENDERNAME,HCAPTCHA_SECRET);
   } catch (error) {
     console.trace(error);
     return res.status(500).send({ error: true, message: error.message });
