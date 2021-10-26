@@ -43,13 +43,15 @@ module.exports = async (req, res) => {
           : "an error ocurred";
       }
     });
-
-    await http
-      .post("https://hcaptcha.com/siteverify", {
+    
+    await http({
+      method: 'post',
+      url: 'https://hcaptcha.com/siteverify',
+      data: {
         secret: HCAPTCHA_SECRET,
-        token: req.body["h-captcha-response"],
-      })
-      .then((a) => console.log(a.data));
+        response: req.body["h-captcha-response"],
+      }
+    }).then((a) => console.log(a));
 
     const transporter = nodemailer.createTransport({
       host: CS_SMTP_HOST,
