@@ -106,6 +106,7 @@ module.exports = async (req, res) => {
     console.trace(error);
     console.log(error.response.body);
     console.log(SENDGRID_APIKEY);
+    console.log(CS_MAIL);
     return res.status(500).send({ error: true, message: error.message });
   }
 
