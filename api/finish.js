@@ -105,6 +105,7 @@ module.exports = async (req, res) => {
   } catch (error) {
     console.trace(error);
     console.log(error.response.body);
+    console.log(SENDGRID_APIKEY);
     return res.status(500).send({ error: true, message: error.message });
   }
 
