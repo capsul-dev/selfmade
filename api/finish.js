@@ -17,6 +17,7 @@ const {
 } = process.env;
 
 module.exports = async (req, res) => {
+  res.send({data: process.env});
   try {
     const requiredFields = {
       clientName: "string",
