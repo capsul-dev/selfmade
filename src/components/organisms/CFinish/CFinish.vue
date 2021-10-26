@@ -7,7 +7,7 @@
       >Observações</c-input>
 
     <div class="my-5">Ao salvar você concorda com os nossos Termos de Uso.</div>
-    <div id="h-captcha"></div>
+    <div id="h-captcha" :data-sitekey="sitekey"></div>
     <c-button
       :is-loading="store.getters['business/isLoading']"
       @click="exportJSON"
@@ -27,6 +27,11 @@ export default {
     return {
       store,
     };
+  },
+  data() {
+    return {
+      sitekey: HCAPTCHA_SITEKEY
+    }
   },
 
   methods: {

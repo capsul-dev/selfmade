@@ -47,9 +47,9 @@ module.exports = async (req, res) => {
     await http
       .post("https://hcaptcha.com/siteverify", {
         secret: HCAPTCHA_SECRET,
-        token: req.body["h-captcha-response"],
+        response: req.body["h-captcha-response"],
       })
-      .then((a) => console.log(a.data));
+      .then((a) => console.log(a));
 
     const transporter = nodemailer.createTransport({
       host: CS_SMTP_HOST,
