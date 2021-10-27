@@ -4,7 +4,7 @@ O <strong>Selfmade</strong> visa facilitar a criação dos sites dos produtos fe
 
 ## Como testar o projeto?
 
-Uma vez de tenha clonado o projeto em sua máquina, rode o seguinte comando: 
+Uma vez de tenha clonado o projeto em sua máquina, rode o seguinte comando:
 
     npm i -g vercel
 
@@ -20,7 +20,12 @@ E então acesse pelo navegador o link de acesso que vai aparecer destacado no te
 * Adicionado trava de movimento para determinadas seções
 * Adicionado logo da Capsul ao topo da página
 
-## Próximas atualizações
-
 - v0.2.4
 * Mudar o formato dos botões de interação das seções para um botão que ocupe toda a altura da seção
+
+- v0.2.5
+* Adicionar 'Nicho do Prduto' ao fluxo de dados (Campo de input, store e emails);
+
+## Próximas atualizações
+- v0.2.6
+* ???
