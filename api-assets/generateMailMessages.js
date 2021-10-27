@@ -8,6 +8,7 @@ const mailToBusiness = (emailData) => {
     text: `
       Nome do Produtor: ${emailData.clientName}<br/>,
       Email do Produtor: ${emailData.clientMail}<br/>,
+      Nicho do Produto: ${emailData.productSegment}
       `,
     attachments: [
       {

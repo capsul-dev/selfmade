@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 const http = require("../isomorphic/http");
-const sendMail = require('../isomorphic/services/sendMail');
+const sendMail = require("../isomorphic/services/sendMail");
 
 const {
   NODE_ENV,
@@ -11,7 +11,7 @@ const {
   CS_SENDERNAME,
   CS_MAIL,
   HCAPTCHA_SECRET,
-  SENDGRID_APIKEY
+  SENDGRID_APIKEY,
 } = process.env;
 
 module.exports = async (req, res) => {
@@ -40,12 +40,12 @@ module.exports = async (req, res) => {
     });
 
     await http({
-      method: 'post',
-      url: 'https://hcaptcha.com/siteverify',
+      method: "post",
+      url: "https://hcaptcha.com/siteverify",
       data: {
         secret: HCAPTCHA_SECRET,
         response: req.body["h-captcha-response"],
-      }
+      },
     }).then((a) => console.log(a));
 
     await sendMail({
@@ -59,9 +59,9 @@ module.exports = async (req, res) => {
       clientName: req.body.clientName,
       clientMail: req.body.clientMail,
       productName: req.body.productName,
-      content: req.body.content
+      productSegment: req.body.productSegment,
+      content: req.body.content,
     });
-
   } catch (error) {
     console.trace(error);
     return res.status(500).send({ error: true, message: error.message });

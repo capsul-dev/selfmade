@@ -1,6 +1,6 @@
 <template>
   <div class="lg:px-5">
-    
+
     <c-input
       placeholder="Gostaria de reduzir a opacidade do fundo..."
       v-model="store.state.business.details"

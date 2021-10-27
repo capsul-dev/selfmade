@@ -20,6 +20,10 @@
       >Nome do produto</c-input
     >
     <c-input
+      placeholder="Emagrecimento, Nootrópico, Desempenho Sexual..."
+      v-model="store.state.business.productSegment"
+      >Qual o nicho do seu produto?</c-input>
+    <c-input
       placeholder="Gostaria de reduzir a opacidade do fundo..."
       v-model="store.state.business.details"
       >Detalhes</c-input

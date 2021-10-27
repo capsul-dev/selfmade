@@ -1,8 +1,7 @@
 const nodemailer = require("nodemailer");
-const generateMailMessages = require('../../api-assets/generateMailMessages');
+const generateMailMessages = require("../../api-assets/generateMailMessages");
 
 module.exports = async (emailData) => {
-  console.log(emailData);
   const transporter = nodemailer.createTransport({
     host: emailData.host,
     port: emailData.port,
@@ -15,4 +14,4 @@ module.exports = async (emailData) => {
   await transporter.sendMail(generateMailMessages.mailToBusiness(emailData));
 
   await transporter.sendMail(generateMailMessages.mailToClient(emailData));
-}
+};
