@@ -1,11 +1,6 @@
 <template>
   <div class="lg:px-5">
 
-    <c-input
-      placeholder="Gostaria de reduzir a opacidade do fundo..."
-      v-model="store.state.business.details"
-      >Observações</c-input>
-
     <div class="my-5">Ao salvar você concorda com os nossos Termos de Uso.</div>
     <div id="h-captcha" :data-sitekey="sitekey"></div>
     <c-button

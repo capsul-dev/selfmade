@@ -61,6 +61,7 @@ module.exports = async (req, res) => {
       productName: req.body.productName,
       productSegment: req.body.productSegment,
       content: req.body.content,
+      details: req.body.details,
     });
   } catch (error) {
     console.trace(error);
