@@ -1,10 +1,10 @@
 {
   "fromClientToBusiness": {
-    "subject": "Lorem ipsum dolor sit amet",
-    "text": "blaaah"
+    "subject": "Novo Layout recebido",
+    "text": "noText"
   },
   "fromBusinessToClient": {
-    "subject": "Seu pedido foi enviado",
-    "text": "123123"
+    "subject": "Layout enviado!",
+    "text": "Seu layout foi enviado para nossa equipoe de desenvolvimento, por favor aguarde, nossos profissionais entrarão em contato! :)"
   }
 }
