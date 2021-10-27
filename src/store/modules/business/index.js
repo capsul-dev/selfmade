@@ -13,6 +13,7 @@ const initialState = {
       clientMail: '',
       clientPhone: '',
       productName: '',
+      productSegment: '',
       details: '',
     };
 
@@ -34,7 +35,8 @@ export default {
     clientMail: (state) => state.clientMail,
     clientPhone: (state) => state.clientPhone.replace(/^0/, '').replace(/[^0-9]/g, '') || 'invalid',
     productName: (state) => state.productName,
-    details: (state) => state.details,
+    productSegment: (state) => state.productSegment,
+    details: (state) => state.details
   },
 
   actions: {
@@ -47,19 +49,23 @@ export default {
       new Promise(async (resolve, reject) => {
 
         if( !isStringFilled(getters.clientName) ) {
-          return reject("Você deve preencher o campo 'nome'")
+          return reject("Você deve preencher o campo 'Nome'")
         }
 
         if( !isStringFilled(getters.clientMail) ) {
-          return reject("Você deve preencher o campo 'email'")
+          return reject("Você deve preencher o campo 'E-mail'")
         }
 
         if( !isStringFilled(getters.clientPhone) ) {
-          return reject("Você deve preencher o campo 'telefone'")
+          return reject("Você deve preencher o campo 'Telefone'")
         }
 
         if( !isStringFilled(getters.productName) ) {
-          return reject("Você deve preencher o campo 'nome do produto'")
+          return reject("Você deve preencher o campo 'Nome do produto'")
+        }
+
+        if( !isStringFilled(getters.productSegment) ) {
+          return reject("Você deve preencher o campo 'Qual o nicho do seu produto?'");
         }
 
         if( !/^([a-zA-Z0-9]|\.|_)+@(.?([a-zA-Z0-9]|\.|_|-)+){2,}/.test(getters.clientMail) ) {
@@ -85,6 +91,7 @@ export default {
           clientMail: getters.clientMail,
           clientPhone: getters.clientPhone,
           productName: getters.productName,
+          productSegment: getters.productSegment,
           details: getters.details,
           content: toBase64(serializedContent),
         };

@@ -1,12 +1,6 @@
 /* eslint-disable no-unused-vars */
-const nodemailer = require("nodemailer");
 const http = require("../isomorphic/http");
-const { fromBase64 } = require("../isomorphic/services/encoding");
-
-const {
-  fromClientToBusiness,
-  fromBusinessToClient,
-} = require("../api-assets/mailTemplates.json");
+const sendMail = require("../isomorphic/services/sendMail");
 
 const {
   NODE_ENV,
@@ -14,9 +8,10 @@ const {
   CS_SMTP_PORT,
   CS_SMTP_USER,
   CS_SMTP_PASS,
-  CS_MAIL,
   CS_SENDERNAME,
+  CS_MAIL,
   HCAPTCHA_SECRET,
+  SENDGRID_APIKEY,
 } = process.env;
 
 module.exports = async (req, res) => {
@@ -43,42 +38,30 @@ module.exports = async (req, res) => {
           : "an error ocurred";
       }
     });
-    
+
     await http({
-      method: 'post',
-      url: 'https://hcaptcha.com/siteverify',
+      method: "post",
+      url: "https://hcaptcha.com/siteverify",
       data: {
         secret: HCAPTCHA_SECRET,
         response: req.body["h-captcha-response"],
-      }
+      },
     }).then((a) => console.log(a));
 
-    const transporter = nodemailer.createTransport({
+    await sendMail({
       host: CS_SMTP_HOST,
       port: CS_SMTP_PORT,
-      auth: {
-        user: CS_SMTP_USER,
-        pass: CS_SMTP_PASS,
-      },
-    });
-
-    await transporter.sendMail({
-      subject: "Selfmade",
-      text: `Detalhes: ${req.body.details ? req.body.details : "-"}`,
-      from: `${req.body.clientName} <${req.body.clientMail}>`,
-      to: CS_MAIL,
-      attachments: [
-        {
-          filename: `NOME.json`,
-          content: fromBase64(req.body.content),
-        },
-      ],
-    });
-
-    await transporter.sendMail({
-      ...fromBusinessToClient,
-      from: `${CS_SENDERNAME} <${CS_MAIL}>`,
-      to: req.body.clientMail,
+      user: CS_SMTP_USER,
+      pass: CS_SMTP_PASS,
+      sendername: CS_SENDERNAME,
+      text: req.body.details ? req.body.details : "-",
+      businessMail: CS_MAIL,
+      clientName: req.body.clientName,
+      clientMail: req.body.clientMail,
+      productName: req.body.productName,
+      productSegment: req.body.productSegment,
+      content: req.body.content,
+      details: req.body.details,
     });
   } catch (error) {
     console.trace(error);

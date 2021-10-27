@@ -35,23 +35,23 @@
         </div>
       </div>
     </div>
-    <div
-      v-if="!store.getters['business/isAdmin']"
-      class="absolute flex justify-between px-2 top-1/2 w-full"
-    >
-      <c-arrow direction="left" @click="stylePrevious"></c-arrow>
-      <c-arrow direction="right" @click="styleNext"></c-arrow>
-    </div>
 
     <div
       role="selfmadeSection"
-      :class="`flex overflow-hidden animate-fade 
+      :class="`relative flex overflow-hidden animate-fade
         h-${selectedStyle.height ? selectedStyle.height : '40'}
         md:h-${
           selectedStyle.mobileHeight ? selectedStyle.mobileHeight : 'auto'
         }`"
       :key="selectedStyle.name"
     >
+      <div
+      v-if="!store.getters['business/isAdmin']"
+      class="absolute flex justify-between px-2 w-full h-full"
+      >
+      <c-arrow direction="left" @click="stylePrevious"></c-arrow>
+      <c-arrow direction="right" @click="styleNext"></c-arrow>
+    </div>
       <img
         class="object-cover rounded-b-lg w-full"
         :src="selectedStyle.image"
