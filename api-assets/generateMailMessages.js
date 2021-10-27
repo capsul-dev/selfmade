@@ -6,9 +6,9 @@ const mailToBusiness = (emailData) => {
     to: emailData.businessMail,
     subject: `Selfmade - Layout recebido (${emailData.productName})!`,
     text: `
-      Nome do Produtor: ${emailData.clientName}<br/>,
-      Email do Produtor: ${emailData.clientMail}<br/>,
-      Nicho do Produto: ${emailData.productSegment}<br/>,
+      Nome do Produtor: ${emailData.clientName},
+      Email do Produtor: ${emailData.clientMail},
+      Nicho do Produto: ${emailData.productSegment},
       Detalhes: ${emailData.details}
       `,
     attachments: [

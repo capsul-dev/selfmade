@@ -1,8 +1,9 @@
 <template>
   <div
     :class="`
+    flex justify-center items-center rounded
     rounded-full
-    w-10 h-10 z-30
+    w-10 h-90 z-10
     text-white
     bg-green-500
     hover:bg-green-600
