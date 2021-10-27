@@ -28,4 +28,5 @@ E então acesse pelo navegador o link de acesso que vai aparecer destacado no te
 
 ## Próximas atualizações
 - v0.2.6
-* ???
+* Corrigir UTF na página de admin
+* Enviar no email do produtor uma prévia do site (baseado nas escolhas dele)
