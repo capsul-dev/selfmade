@@ -47,7 +47,7 @@
     >
       <div
       v-if="!store.getters['business/isAdmin']"
-      class="absolute flex justify-between px-2 w-full h-full"
+      class="absolute flex justify-between w-full h-full"
       >
       <c-arrow direction="left" @click="stylePrevious"></c-arrow>
       <c-arrow direction="right" @click="styleNext"></c-arrow>
