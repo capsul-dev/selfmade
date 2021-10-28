@@ -39,7 +39,11 @@ E então acesse pelo navegador o link de acesso que vai aparecer destacado no te
 * Enviar no email do produtor uma prévia do site (baseado nas escolhas dele)
 
 - v0.4.0
-* Adicionar seção de dores que o produto pretendo atender
+* Adicionar seção de dores que o produto pretende solucionar
 
 - v0.5.0
+* Adicionar um aviso caso o produtor saia da página sem enviar as informações
+* Adicionar um campo de Observações para cada seção
+
+- v0.6.0
 * Adicionar opções quanto ao advertorial, como midia de referencia e etc
