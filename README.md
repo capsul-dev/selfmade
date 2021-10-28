@@ -33,7 +33,7 @@ E então acesse pelo navegador o link de acesso que vai aparecer destacado no te
 * Corrigir UTF na página de admin
 * Aumentar a caixa de observação e colocá-la o final
 * Seção de oferta: deixar apenas 3 opções
-* Retirar o Captcha
+* Retirar o Captcha - OK
 
 - v0.3.0
 * Enviar no email do produtor uma prévia do site (baseado nas escolhas dele)
