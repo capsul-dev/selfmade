@@ -28,5 +28,17 @@ E então acesse pelo navegador o link de acesso que vai aparecer destacado no te
 
 ## Próximas atualizações
 - v0.2.6
+* Trocar acesso direto ao store por acesso via r
 * Corrigir UTF na página de admin
+* Aumentar a caixa de observação e colocá-la o final
+* Seção de oferta: deixar apenas 3 opções
+* Retirar o Captcha
+
+- v0.3.0
 * Enviar no email do produtor uma prévia do site (baseado nas escolhas dele)
+
+- v0.4.0
+* Adicionar seção de dores que o produto pretendo atender
+
+- v0.5.0
+* Adicionar opções quanto ao advertorial, como midia de referencia e etc

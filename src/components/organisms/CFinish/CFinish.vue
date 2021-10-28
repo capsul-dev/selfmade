@@ -1,6 +1,5 @@
 <template>
   <div class="lg:px-5">
-
     <div class="my-5">Ao salvar você concorda com os nossos Termos de Uso.</div>
     <div id="h-captcha" :data-sitekey="sitekey"></div>
     <c-button
