@@ -4,8 +4,9 @@ O <strong>Selfmade</strong> visa facilitar a criação dos sites dos produtos fe
 
 ## Como testar o projeto?
 
-Uma vez de tenha clonado o projeto em sua máquina, rode o seguinte comando:
+Uma vez de tenha clonado o projeto em sua máquina, rode os seguinte comandos:
 
+    npm i 	
     npm i -g vercel
 
 Com o pacote da Vercel instalado, navegue com o terminal até a pasta onde você clonou o projeto e rode o comando:
@@ -28,7 +29,7 @@ E então acesse pelo navegador o link de acesso que vai aparecer destacado no te
 
 ## Próximas atualizações
 - v0.2.6
-* Trocar acesso direto ao store por acesso via r
+* Trocar acesso direto ao store por acesso via getter - OK
 * Corrigir UTF na página de admin
 * Aumentar a caixa de observação e colocá-la o final
 * Seção de oferta: deixar apenas 3 opções

@@ -5,16 +5,15 @@
       w-full
       min-h-screen
       lg:px-40
-      xl:px-60
+      xl:px-
       py-4
       grid
       gap-y-5
       dark:bg-gray-900 dark:text-white
     "
   >
-        <c-logo source="img/logo/logo.png" class="pl-5 pt-3" />
+    <c-logo source="img/logo/logo.png" class="pl-5 pt-3" />
     <c-template-step v-if="!store.getters['business/isAdmin']">
-
       <template #title>Dados pessoais</template>
       <template #description
         >Preencha com
@@ -106,7 +105,7 @@ import {
   CFinish,
   CVideo,
   CTemplateModal,
-  CLogo
+  CLogo,
 } from "@/components";
 
 export default {

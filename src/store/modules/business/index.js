@@ -31,12 +31,7 @@ export default {
     isImported: (state) => !!state.isImported,
     isLoading: (state) => !!state.isLoading,
 
-    clientName: (state) => state.clientName,
-    clientMail: (state) => state.clientMail,
-    clientPhone: (state) => state.clientPhone.replace(/^0/, '').replace(/[^0-9]/g, '') || 'invalid',
-    productName: (state) => state.productName,
-    productSegment: (state) => state.productSegment,
-    details: (state) => state.details
+    business: (state) => state
   },
 
   actions: {
@@ -48,31 +43,31 @@ export default {
     sendLayout: ({ commit, getters, rootGetters, rootState }) =>
       new Promise(async (resolve, reject) => {
 
-        if( !isStringFilled(getters.clientName) ) {
+        if( !isStringFilled(getters.business.clientName) ) {
           return reject("Você deve preencher o campo 'Nome'")
         }
 
-        if( !isStringFilled(getters.clientMail) ) {
+        if( !isStringFilled(getters.business.clientMail) ) {
           return reject("Você deve preencher o campo 'E-mail'")
         }
 
-        if( !isStringFilled(getters.clientPhone) ) {
+        if( !isStringFilled(getters.business.clientPhone) ) {
           return reject("Você deve preencher o campo 'Telefone'")
         }
 
-        if( !isStringFilled(getters.productName) ) {
+        if( !isStringFilled(getters.business.productName) ) {
           return reject("Você deve preencher o campo 'Nome do produto'")
         }
 
-        if( !isStringFilled(getters.productSegment) ) {
+        if( !isStringFilled(getters.business.productSegment) ) {
           return reject("Você deve preencher o campo 'Qual o nicho do seu produto?'");
         }
 
-        if( !/^([a-zA-Z0-9]|\.|_)+@(.?([a-zA-Z0-9]|\.|_|-)+){2,}/.test(getters.clientMail) ) {
+        if( !/^([a-zA-Z0-9]|\.|_)+@(.?([a-zA-Z0-9]|\.|_|-)+){2,}/.test(getters.business.clientMail) ) {
           return reject('E-mail inválido')
         }
 
-        if( ![10, 11].includes(getters.clientPhone.length)) {
+        if( ![15].includes(getters.business.clientPhone.length)) {
           return reject('Telefone inválido - deve conter entre 10 e 11 dígitos e incluir o DDD')
         }
 
@@ -87,28 +82,17 @@ export default {
         })
 
         const payload = {
-          clientName: getters.clientName,
-          clientMail: getters.clientMail,
-          clientPhone: getters.clientPhone,
-          productName: getters.productName,
-          productSegment: getters.productSegment,
-          details: getters.details,
+          clientName: getters.business.clientName,
+          clientMail: getters.business.clientMail,
+          clientPhone: getters.business.clientPhone,
+          productName: getters.business.productName,
+          productSegment: getters.business.productSegment,
+          details: getters.business.details,
           content: toBase64(serializedContent),
         };
 
         commit('LOADING_UPDATE', true)
-
-        if( 'hcaptcha' in window ) {
-          const { key } = await hcaptcha.execute(window.hcaptcha_widgetID, { async: true })
-            .catch((error) => reject(error))
-
-          if( !key ) {
-            return
-          }
-
-          payload['h-captcha-response'] = key
-        }
-
+        
         http
           .post("/api/finish", payload)
           .then((result) => {
