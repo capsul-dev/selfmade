@@ -2,12 +2,10 @@
   <div
     :class="`
     flex justify-center items-center rounded
-    rounded-full
-    w-10 h-90 z-10
+    w-10 h-90 z-10 opacity-80 hover:opacity-100
     text-white
-    bg-green-500
-    hover:bg-green-600
-    opacity-6
+    bg-gray-400
+    hover:bg-gray-400
     shadow-lg
     text-center
     leading-10
