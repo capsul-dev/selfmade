@@ -1,10 +1,9 @@
-<template>
-  <div>
-    <img :src="source">
-  </div>
+<template>    
+  <img :src="source">
 </template>
 
 <script>
+import  {version} from "../../../../package.json";
 export default {
   props: {
     source: {
@@ -12,5 +11,8 @@ export default {
       required: true,
     },
   },
+  data() {
+    return { version }
+  }
 };
 </script>
