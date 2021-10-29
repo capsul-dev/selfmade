@@ -28,7 +28,7 @@ E então acesse pelo navegador o link de acesso que vai aparecer destacado no te
 * Adicionar 'Nicho do Prduto' ao fluxo de dados (Campo de input, store e emails);
 
 ## Próximas atualizações
-- v0.2.6
+- v0.2.x
 * Trocar acesso direto ao store por acesso via getter - OK
 * Corrigir UTF na página de admin
 * Aumentar a caixa de observação e colocá-la o final
@@ -47,3 +47,8 @@ E então acesse pelo navegador o link de acesso que vai aparecer destacado no te
 
 - v0.6.0
 * Adicionar opções quanto ao advertorial, como midia de referencia e etc
+
+- v0.?.?
+* Adicionar uma página de login ao Selfmade, com captcha no login
+* Fazer uma interface de acesso para o produtor tornando o Selfmade o briefing inicial do produto
+* Identificar se o produtor já preencheu o briefing do produto, caso não, sempre mostrar o Selfmade
