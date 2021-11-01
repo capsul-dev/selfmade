@@ -14,7 +14,7 @@ const mailToBusiness = (emailData) => {
     attachments: [
       {
         filename: `${emailData.productName}.json`,
-        content: fromBase64(emailData.content),
+        content: emailData.content,
       },
     ],
   }

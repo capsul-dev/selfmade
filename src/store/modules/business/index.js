@@ -82,6 +82,12 @@ export default {
         })
 
         const payload = {
+          clientName: getters.business.clientName,
+          clientMail: getters.business.clientMail,
+          clientPhone: getters.business.clientPhone,
+          productName: getters.business.productName,
+          productSegment: getters.business.productSegment,
+          details: getters.business.details,
           content: toBase64(serializedContent),
         };
 
