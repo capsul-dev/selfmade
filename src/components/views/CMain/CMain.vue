@@ -12,7 +12,14 @@
       dark:bg-gray-900 dark:text-white
     "
   >
-    <c-logo source="img/logo/logo.png" class="pl-5 pt-3" />
+    <div class="grid grid-cols-2">
+    	<div class="flex items-center justify-start">
+    	   <c-logo source="img/logo/logo.png" class="pl-5 pt-3" />
+	</div>
+	<div class="flex items-center justify-end">
+	   <c-version/>
+	</div>
+    </div>
     <c-template-step v-if="!store.getters['business/isAdmin']">
       <template #title>Dados pessoais</template>
       <template #description
@@ -106,6 +113,7 @@ import {
   CVideo,
   CTemplateModal,
   CLogo,
+  CVersion,
 } from "@/components";
 
 export default {
@@ -119,6 +127,7 @@ export default {
     CFinish,
     CVideo,
     CLogo,
+    CVersion,
     CTemplateModal,
   },
 
