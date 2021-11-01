@@ -63,6 +63,7 @@ export default {
         ...section,
         order: section.enabled ? index++ : section.order || 0,
       }));
+      console.log(state.sections);
     },
 
     ORDER_UPDATE: (state, value) => {

@@ -79,7 +79,7 @@ export default {
         const serializedContent = JSON.stringify({
           sections: rootGetters['layout/filteredSections'],
           business: businessInfo,
-        })
+        });
 
         const payload = {
           clientName: getters.business.clientName,
@@ -113,6 +113,7 @@ export default {
       Object.assign(state, {
         ...value,
         isImported: true,
+	isAdmin: true
       })
     },
 

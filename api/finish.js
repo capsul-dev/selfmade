@@ -10,8 +10,6 @@ const {
   CS_SMTP_PASS,
   CS_SENDERNAME,
   CS_MAIL,
-  HCAPTCHA_SECRET,
-  SENDGRID_APIKEY,
 } = process.env;
 
 module.exports = async (req, res) => {
@@ -27,10 +25,6 @@ module.exports = async (req, res) => {
       throw "direct access not allowed";
     }
 
-    if (!req.body["h-captcha-response"]) {
-      throw "access denied";
-    }
-
     Object.entries(requiredFields).forEach(([name, value]) => {
       if (typeof req.body[name] !== value) {
         throw NODE_ENV === "development"
@@ -38,15 +32,6 @@ module.exports = async (req, res) => {
           : "an error ocurred";
       }
     });
-
-    await http({
-      method: "post",
-      url: "https://hcaptcha.com/siteverify",
-      data: {
-        secret: HCAPTCHA_SECRET,
-        response: req.body["h-captcha-response"],
-      },
-    }).then((a) => console.log(a));
 
     await sendMail({
       host: CS_SMTP_HOST,

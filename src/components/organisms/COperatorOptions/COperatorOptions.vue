@@ -11,6 +11,7 @@
 
 <script>
 import store from "@/store";
+const { fromBase64 } = require("../../../../isomorphic/services/encoding");
 
 export default {
   setup() {
@@ -32,8 +33,10 @@ export default {
 
     async onFileImported(event) {
       const content = await this.importJSON(event);
-      store.dispatch("business/import", content.business);
-      store.dispatch("layout/import", content.sections);
+      const deserializedContent = fromBase64(content.serialized);
+      const parsedContent = JSON.parse(deserializedContent);
+      store.dispatch("business/import", parsedContent.business.business);
+      store.dispatch("layout/import", parsedContent.sections);
     },
 
     importJSON(event) {
@@ -41,7 +44,7 @@ export default {
         const fr = new FileReader();
         fr.onload = () => {
           const content = JSON.parse(fr.result) || {};
-          if (!content.sections || !content.business) {
+          if (!content.serialized) {
             throw "JSON inválido";
           }
 

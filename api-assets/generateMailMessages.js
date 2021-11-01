@@ -1,6 +1,9 @@
-const { fromBase64 } = require("../isomorphic/services/encoding");
-
 const mailToBusiness = (emailData) => {
+  const content = emailData.content;
+  const jsonContent = JSON.stringify({serialized: new String(emailData.content)});
+  console.log(jsonContent);
+console.log(jsonContent.length)
+  const bufferedContent = new Buffer.alloc(jsonContent.length, JSON.parse(jsonContent));
   return {
     from: `${emailData.clientName} <${emailData.clientMail}>`,
     to: emailData.businessMail,
@@ -14,7 +17,7 @@ const mailToBusiness = (emailData) => {
     attachments: [
       {
         filename: `${emailData.productName}.json`,
-        content: emailData.content,
+	content: bufferedContent
       },
     ],
   }

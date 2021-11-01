@@ -126,7 +126,8 @@ export default {
     const store = useStore();
 
     onMounted(() => {
-      store.dispatch("business/setAdmin", window.location.hash === "#admin");
+      const params = new URLSearchParams(window.location.search);
+      store.dispatch("business/setAdmin", params.has("admin") && params.get("admin") === "true");
 
       if (!store.getters["business/isAdmin"]) {
         store.dispatch("layout/initOrder");

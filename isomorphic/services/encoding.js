@@ -1,6 +1,6 @@
 export const toBase64 = (s) => {
   return typeof btoa !== "function"
-    ? new Buffer(s).toString("base64")
+    ? new Buffer.alloc(s.length, s).toString("base64")
     : btoa(s);
 };
 
