@@ -1,7 +1,11 @@
 <template>
   <c-message v-if="selectedCount < requiredMin" class="dark:bg-gray-800 dark:border-red-600">
     <i class="fa fa-warning dark:text-red-500"/>
-    Você precisa escolher mais {{ requiredMin - selectedCount }}.
+    Você precisa escolher mais {{ requiredMin - selectedCount }} seções.
+  </c-message>
+  <c-message v-if="selectedCount > requiredMax" class="dark:bg-gray-800 dark:border-red-600">
+    <i class="fa fa-warning dark:text-red-500"/>
+    Seu site está muito grande, retire {{ selectedCount - requiredMax }} seções.
   </c-message>
   <div class="grid lg:grid-cols-2 gap-y-2 lg:gap-x-4">
     <c-checkbox
@@ -77,6 +81,7 @@ export default {
       ),
       selectedCount: computed(() => store.getters["layout/selectedCount"]),
       requiredMin: computed(() => store.state.layout.requiredMin),
+      requiredMax: computed(() => store.state.layout.requiredMax)
     };
   },
 };

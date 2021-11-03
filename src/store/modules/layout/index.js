@@ -8,6 +8,7 @@ export default {
   state() {
     return {
       requiredMin: 6,
+      requiredMax: 11,
       sections: [],
     };
   },

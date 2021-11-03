@@ -44,19 +44,19 @@ export default {
       new Promise(async (resolve, reject) => {
 
         if( !isStringFilled(getters.business.clientName) ) {
-          return reject("Você deve preencher o campo 'Nome'")
+          return reject("Você deve preencher o campo 'Nome'");
         }
 
         if( !isStringFilled(getters.business.clientMail) ) {
-          return reject("Você deve preencher o campo 'E-mail'")
+          return reject("Você deve preencher o campo 'E-mail'");
         }
 
         if( !isStringFilled(getters.business.clientPhone) ) {
-          return reject("Você deve preencher o campo 'Telefone'")
+          return reject("Você deve preencher o campo 'Telefone'");
         }
 
         if( !isStringFilled(getters.business.productName) ) {
-          return reject("Você deve preencher o campo 'Nome do produto'")
+          return reject("Você deve preencher o campo 'Nome do produto'");
         }
 
         if( !isStringFilled(getters.business.productSegment) ) {
@@ -64,15 +64,19 @@ export default {
         }
 
         if( !/^([a-zA-Z0-9]|\.|_)+@(.?([a-zA-Z0-9]|\.|_|-)+){2,}/.test(getters.business.clientMail) ) {
-          return reject('E-mail inválido')
+          return reject('E-mail inválido');
         }
 
         if( ![15].includes(getters.business.clientPhone.length)) {
-          return reject('Telefone inválido - deve conter entre 10 e 11 dígitos e incluir o DDD')
+          return reject('Telefone inválido - deve conter entre 10 e 11 dígitos e incluir o DDD');
         }
+	
+	if( rootGetters["layout/selectedCount"] > rootState.layout.requiredMax ) {
+	  return reject('Você precisa escolher até 11 seções!');
+	}
 
-        if( rootState.layout.selectedCount < rootState.layout.requiredMin ) {
-          return reject('Você precisa escolher mais seções')
+        if( rootGetters["layout/selectedCount"] < rootState.layout.requiredMin ) {
+          return reject('Você precisa escolher mais seções !');
         }
 
         const { isAdmin, ...businessInfo } = getters;
