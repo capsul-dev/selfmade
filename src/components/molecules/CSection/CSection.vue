@@ -18,7 +18,7 @@
         v-if="store.getters['business/isAdmin']"
         class="text-sm pr-4 opacity-80"
       >
-        {{ $props.element.selectedStyle?.name }}
+       {{ $props.element.selectedStyle?.name }}
       </div>
 
       <div class="w-10 opacity-50">#{{ $props.element.order }}</div>

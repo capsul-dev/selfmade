@@ -55,10 +55,10 @@ export default {
     spawnVideoModal(section) {
       store.dispatch("modal/spawn", {
         title: section.name,
-        body: "fdfdasfa",
+        body: `Aqui será inserido um video explicando a seção ${section.name}`,
         component: "c-video",
         details: {
-          id: "blabla",
+          id: section.name,
         },
       });
     },
