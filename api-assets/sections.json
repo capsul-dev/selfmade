@@ -171,24 +171,12 @@
                     "image": "img/sections/checkout/checkout_exemplo1.webp"
                 },
                 { 
-                    "name": "sm-oferta2",
-                    "image": "img/sections/checkout/checkout_exemplo2.webp"
-                },
-                { 
                     "name": "sm-oferta3",
                     "image": "img/sections/checkout/checkout_exemplo3.webp"
                 },
                 { 
-                    "name": "sm-oferta4",
-                    "image": "img/sections/checkout/checkout_exemplo4.webp"
-                },
-                { 
                     "name": "sm-oferta5",
                     "image": "img/sections/checkout/checkout_exemplo5.webp"
-                },
-                { 
-                    "name": "sm-oferta6",
-                    "image": "img/sections/checkout/checkout_exemplo6.webp"
                 }
             ]
         },
