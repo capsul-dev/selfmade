@@ -112,8 +112,6 @@ export default {
           ? section.styles.length -1
           : prevIndex + direction;
 
-      console.log({ section, movement })
-
       section.selectedStyle = {
         index: movement,
         ...section.styles[movement],

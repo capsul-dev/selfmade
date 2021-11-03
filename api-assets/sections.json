@@ -6,17 +6,23 @@
             "required": true,
             "name": "Cabeçalho",
             "videoUrl": "",
+	    "selectedStyle": {
+		    "height": "50",
+	 	    "image": "img/sections/header/header_exemplo1.webp",
+		    "index": 0,
+                    "name": "sm-header1"
+	    },
             "styles": [
                 {
-                    "name": "Estilo 1",
+                    "name": "sm-header1",
                     "image": "img/sections/header/header_exemplo1.webp"
                 },
                 {
-                    "name": "Estilo 2",
+                    "name": "sm-header2",
                     "image": "img/sections/header/header_exemplo2.webp"
                 },
                 {
-                    "name": "Estilo 3",
+                    "name": "sm-header3",
                     "image": "img/sections/header/header_exemplo3.webp"
                 }                
             ]
@@ -25,20 +31,26 @@
             "enabled": true,
             "name": "Faixa gatilho",
             "description": "Formulário de contato.",
+	    "selectedStyle": {
+		    "name": "sm-faixagatilho1",
+                    "image": "img/sections/faixagatilho/faixagatilho_exemplo1.webp",
+                    "height": "20",
+		    "index": 0
+	    },
             "videoUrl": "",
             "styles": [
                 {
-                    "name": "Estilo 1",
+                    "name": "sm-faixagatilho1",
                     "image": "img/sections/faixagatilho/faixagatilho_exemplo1.webp",
                     "height": "20"
                 },
                 {
-                    "name": "Estilo 2",
+                    "name": "sm-faixagatilho2",
                     "image": "img/sections/faixagatilho/faixagatilho_exemplo2.webp",
                     "height": "50"
                 },
                 {
-                    "name": "Estilo 3",
+                    "name": "sm-faixagatilho3",
                     "image": "img/sections/faixagatilho/faixagatilho_exemplo3.webp",
                     "height": "70"
                 }
@@ -48,17 +60,22 @@
             "enabled": false,
             "name": "Sobre o produto",
             "videoUrl": "",
+	    "selectedStyle": {
+		    "name": "sm-comofunciona1",
+		    "image": "img/sections/comofunciona/comofunciona_exemplo1.webp",
+		    "index": 0
+	    },
             "styles": [
                 {
-                    "name": "Estilo 1",
+                    "name": "sm-comofunciona1",
                     "image": "img/sections/comofunciona/comofunciona_exemplo1.webp"
                 },
                 {
-                    "name": "Estilo 2",
+                    "name": "sm-comofunciona2",
                     "image": "img/sections/comofunciona/comofunciona_exemplo2.webp"
                 },
                 {
-                    "name": "Estilo 3",
+                    "name": "sm-comofunciona3",
                     "image": "img/sections/comofunciona/comofunciona_exemplo3.webp"
                 }                
             ]
@@ -67,17 +84,22 @@
             "enabled": false,
             "name": "Benefícios",
             "videoUrl": "",
+	    "selectedStyle": {
+		    "name": "sm-beneficios1",
+                    "image": "img/sections/beneficios/beneficios_exemplo1.webp",
+		    "index": 0
+	    },
             "styles": [
                 {
-                    "name": "Estilo 1",
+                    "name": "sm-beneficios1",
                     "image": "img/sections/beneficios/beneficios_exemplo1.webp"
                 },
                 {
-                    "name": "Estilo 2",
+                    "name": "sm-beneficios2",
                     "image": "img/sections/beneficios/beneficios_exemplo2.webp"
                 },
                 {
-                    "name": "Estilo 3",
+                    "name": "sm-beneficios3",
                     "image": "img/sections/beneficios/beneficios_exemplo3.webp"
                 }
             ]
@@ -87,17 +109,22 @@
             "name": "Fórmula",
             "description": "Formulário de contato.",
             "videoUrl": "",
+	    "selectedStyle": {
+		    "name": "sm-formula1",
+                    "image": "img/sections/formula/formula_exemplo1.webp",
+		    "index": 0
+	    },
             "styles": [
                 {
-                    "name": "Estilo 1",
+                    "name": "sm-formula1",
                     "image": "img/sections/formula/formula_exemplo1.webp"
                 },
                 {
-                    "name": "Estilo 2",
+                    "name": "sm-formula2",
                     "image": "img/sections/formula/formula_exemplo2.webp"
                 },
                 {
-                    "name": "Estilo 3",
+                    "name": "sm-formula3",
                     "image": "img/sections/formula/formula_exemplo3.webp"
                 }
             ]
@@ -107,17 +134,22 @@
             "name": "Provas Sociais",
             "description": "Formulário de contato.",
             "videoUrl": "",
+	    "selectedStyle": {
+		    "name": "sm-provassociais1",
+                    "image": "img/sections/provassociais/provassociais_exemplo1.webp",
+		    "index": 0
+	    },
             "styles": [
                 { 
-                    "name": "Estilo 1",
+                    "name": "sm-provassociais1",
                     "image": "img/sections/provassociais/provassociais_exemplo1.webp"
                 },
                 { 
-                    "name": "Estilo 2",
+                    "name": "sm-provassociais2",
                     "image": "img/sections/provassociais/provassociais_exemplo2.webp"
                 },
                 { 
-                    "name": "Estilo 3",
+                    "name": "sm-provassociais3",
                     "image": "img/sections/provassociais/provassociais_exemplo3.webp"
                 }
             ]
@@ -128,29 +160,34 @@
             "required": true,
             "description": "Formulário de contato.",
             "videoUrl": "",
+	    "selectedStyle": {
+		    "name": "sm-oferta1",
+                    "image": "img/sections/checkout/checkout_exemplo1.webp",
+		    "index": 0
+	    },
             "styles": [
                 { 
-                    "name": "Estilo 1",
+                    "name": "sm-oferta1",
                     "image": "img/sections/checkout/checkout_exemplo1.webp"
                 },
                 { 
-                    "name": "Estilo 2",
+                    "name": "sm-oferta2",
                     "image": "img/sections/checkout/checkout_exemplo2.webp"
                 },
                 { 
-                    "name": "Estilo 3",
+                    "name": "sm-oferta3",
                     "image": "img/sections/checkout/checkout_exemplo3.webp"
                 },
                 { 
-                    "name": "Estilo 4",
+                    "name": "sm-oferta4",
                     "image": "img/sections/checkout/checkout_exemplo4.webp"
                 },
                 { 
-                    "name": "Estilo 5",
+                    "name": "sm-oferta5",
                     "image": "img/sections/checkout/checkout_exemplo5.webp"
                 },
                 { 
-                    "name": "Estilo 6",
+                    "name": "sm-oferta6",
                     "image": "img/sections/checkout/checkout_exemplo6.webp"
                 }
             ]
@@ -160,17 +197,22 @@
             "name": "Gatilhos mentais",
             "description": "Formulário de contato.",
             "videoUrl": "",
+	    "selectedStyle": {
+		    "name": "sm-gatilhomental1",
+                    "image": "img/sections/gatilhosmentais/gatilhosmentais_exemplo1.webp",
+		    "index": 0
+	    },
             "styles": [
                 {
-                    "name": "Estilo 1",
+                    "name": "sm-gatilhomental1",
                     "image": "img/sections/gatilhosmentais/gatilhosmentais_exemplo1.webp"
                 },
                 {
-                    "name": "Estilo 2",
+                    "name": "sm-gatilhomental2",
                     "image": "img/sections/gatilhosmentais/gatilhosmentais_exemplo2.webp"
                 },
                 {
-                    "name": "Estilo 3",
+                    "name": "sm-gatilhomental3",
                     "image": "img/sections/gatilhosmentais/gatilhosmentais_exemplo3.webp"
                 }
             ]
@@ -180,29 +222,34 @@
             "name": "Anvisa",
             "description": "Formulário de contato.",
             "videoUrl": "",
+	    "selectedStyle": {
+		    "name": "sm-anvisa1",
+                    "image": "img/sections/anvisa/anvisa_exemplo1.webp",
+		    "index": 0
+	    },
             "styles": [
                 {
-                    "name": "Estilo 1",
+                    "name": "sm-anvisa1",
                     "image": "img/sections/anvisa/anvisa_exemplo1.webp"
                 },
                 {
-                    "name": "Estilo 2",
+                    "name": "sm-anvisa2",
                     "image": "img/sections/anvisa/anvisa_exemplo2.webp"
                 },
                 {
-                    "name": "Estilo 3",
+                    "name": "sm-anvisa3",
                     "image": "img/sections/anvisa/anvisa_exemplo3.webp"
                 },
                 {
-                    "name": "Estilo 4",
+                    "name": "sm-anvisa4",
                     "image": "img/sections/anvisa/anvisa_exemplo4.webp"
                 },
                 {
-                    "name": "Estilo 5",
+                    "name": "sm-anvisa5",
                     "image": "img/sections/anvisa/anvisa_exemplo5.webp"
                 },
                 {
-                    "name": "Estilo 6",
+                    "name": "sm-anvisa6",
                     "image": "img/sections/anvisa/anvisa_exemplo6.webp"
                 }
             ]
@@ -211,17 +258,22 @@
             "enabled": false,
             "name": "Garantia",
             "videoUrl": "",
+	    "selectedStyle": {
+		    "name": "sm-garantia30dias1",
+                    "image": "img/sections/garantia/garantia_exemplo1.webp",
+		    "index": 0
+	    },
             "styles": [
                 {
-                    "name": "Estilo 1",
+                    "name": "sm-garantia30dias1",
                     "image": "img/sections/garantia/garantia_exemplo1.webp"
                 },
                 {
-                    "name": "Estilo 2",
+                    "name": "sm-garantia30dias2",
                     "image": "img/sections/garantia/garantia_exemplo2.webp"
                 },
                 {
-                    "name": "Estilo 3",
+                    "name": "sm-garantia30dias3",
                     "image": "img/sections/garantia/garantia_exemplo3.webp"
                 }
             ]
@@ -230,17 +282,23 @@
             "enabled": false,
             "name": "Compra segura",
             "videoUrl": "",
+	    "selectedStyle": {
+		    "name": "sm-comocomprarpelainternet1",
+                    "image": "img/sections/comprarnainternet/comprarnainternet_exemplo1.webp",
+		    "index": 0
+	    },
+
             "styles": [
                 {
-                    "name": "Estilo 1",
+                    "name": "sm-comocomprarpelainternet1",
                     "image": "img/sections/comprarnainternet/comprarnainternet_exemplo1.webp"
                 },
                 {
-                    "name": "Estilo 2",
+                    "name": "sm-comocomprarpelainternet2",
                     "image": "img/sections/comprarnainternet/comprarnainternet_exemplo2.webp"
                 },
                 {
-                    "name": "Estilo 3",
+                    "name": "sm-comocomprarpelainternet3",
                     "image": "img/sections/comprarnainternet/comprarnainternet_exemplo3.webp"
                 }
             ]
@@ -250,29 +308,34 @@
             "name": "Atendimento Whatsapp",
             "description": "Formulário de contato.",
             "videoUrl": "",
+	    "selectedStyle": {
+		    "name": "sm-atendimentowhatsapp1",
+                    "image": "img/sections/whatsapp/whatsapp_exemplo1.webp",
+		    "index": 0
+	    },
             "styles": [
                 {
-                    "name": "Estilo 1",
+                    "name": "sm-atendimentowhatsapp1",
                     "image": "img/sections/whatsapp/whatsapp_exemplo1.webp"
                 },
                 {
-                    "name": "Estilo 2",
+                    "name": "sm-atendimentowhatsapp2",
                     "image": "img/sections/whatsapp/whatsapp_exemplo2.webp"
                 },
                 {
-                    "name": "Estilo 3",
+                    "name": "sm-atendimentowhatsapp3",
                     "image": "img/sections/whatsapp/whatsapp_exemplo3.webp"
                 },
                 {
-                    "name": "Estilo 4",
+                    "name": "sm-atendimentowhatsapp4",
                     "image": "img/sections/whatsapp/whatsapp_exemplo4.webp"
                 },
                 {
-                    "name": "Estilo 5",
+                    "name": "sm-atendimentowhatsapp5",
                     "image": "img/sections/whatsapp/whatsapp_exemplo5.webp"
                 },
                 {
-                    "name": "Estilo 6",
+                    "name": "sm-atendimentowhatsapp6",
                     "image": "img/sections/whatsapp/whatsapp_exemplo6.webp"
                 }
             ]
@@ -280,18 +343,22 @@
         {
             "enabled": false,
             "name": "Perguntas frequentes",
-            "videoUrl": "",
+            "videoUrl": "", "selectedStyle": {
+		    "name": "sm-faq1",
+                    "image": "img/sections/faq/faq_exemplo1.webp",
+		    "index": 0
+	    },
             "styles": [
                 {
-                    "name": "Estilo 1",
+                    "name": "sm-faq1",
                     "image": "img/sections/faq/faq_exemplo1.webp"
                 },
                 {
-                    "name": "Estilo 2",
+                    "name": "sm-faq2",
                     "image": "img/sections/faq/faq_exemplo2.webp"
                 },
                 {
-                    "name": "Estilo 3",
+                    "name": "sm-faq3",
                     "image": "img/sections/faq/faq_exemplo3.webp"
                 }
             ]
@@ -301,18 +368,23 @@
             "enabled": true,
             "required": true,
             "name": "Rodapé",
-            "videoUrl": "",
+            "videoUrl": "", "selectedStyle": {
+		    "name": "sm-rodape1",
+                    "image": "img/sections/rodape/rodape_exemplo1.webp",
+		    "index": 0
+	    },
+
             "styles": [
                 {
-                    "name": "Estilo 1",
+                    "name": "sm-rodape1",
                     "image": "img/sections/rodape/rodape_exemplo1.webp"
                 },
                 {
-                    "name": "Estilo 2",
+                    "name": "sm-rodape2",
                     "image": "img/sections/rodape/rodape_exemplo2.webp"
                 },
                 {
-                    "name": "Estilo 3",
+                    "name": "sm-rodape3",
                     "image": "img/sections/rodape/rodape_exemplo3.webp"
                 }
             ]
