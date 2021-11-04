@@ -57,7 +57,7 @@
         :src="selectedStyle.image"
       />
     </div>
-    <c-text-area v-model:content="element.details"></c-text-area>
+    <c-text-area v-model:content="details"></c-text-area>
   </div>
 </template>
 
@@ -80,13 +80,24 @@ export default {
     CTextArea,
   },
 
+  computed: {
+    details: {
+      get() {
+        return this.element.value
+      },
+      set(value) {
+        this.store.commit('layout/DETAIL_SET', { target: this.element, value })
+      }
+    }
+  },
+
   methods: {
     styleNext() {
-      store.dispatch("layout/nextStyle", this.$props.element);
+      store.dispatch("layout/nextStyle", this.element);
     },
 
     stylePrevious() {
-      store.dispatch("layout/previousStyle", this.$props.element);
+      store.dispatch("layout/previousStyle", this.element);
     },
   },
 

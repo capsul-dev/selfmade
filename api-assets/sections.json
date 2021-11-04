@@ -12,7 +12,7 @@
                 "index": 0,
                 "name": "sm-header1"
             },
-            "details": "kkkkkkkkkkkkkkk",
+            "detail": "kkkkkkkkkkkkkkk",
             "styles": [
                 {
                     "name": "sm-header1",
@@ -39,7 +39,7 @@
                 "index": 0
             },
             "videoUrl": "",
-            "details": "",
+            "detail": "",
             "styles": [
                 {
                     "name": "sm-faixagatilho1",
@@ -67,7 +67,7 @@
                 "image": "img/sections/comofunciona/comofunciona_exemplo1.webp",
                 "index": 0
             },
-            "details": "",
+            "detail": "",
             "styles": [
                 {
                     "name": "sm-comofunciona1",
@@ -92,7 +92,7 @@
                 "image": "img/sections/beneficios/beneficios_exemplo1.webp",
                 "index": 0
             },
-            "details": "",
+            "detail": "",
             "styles": [
                 {
                     "name": "sm-beneficios1",
@@ -118,7 +118,7 @@
                 "image": "img/sections/formula/formula_exemplo1.webp",
                 "index": 0
             },
-            "details": "",
+            "detail": "",
             "styles": [
                 {
                     "name": "sm-formula1",
@@ -144,7 +144,7 @@
                 "image": "img/sections/provassociais/provassociais_exemplo1.webp",
                 "index": 0
             },
-            "details": "",
+            "detail": "",
             "styles": [
                 {
                     "name": "sm-provassociais1",
@@ -171,7 +171,7 @@
                 "image": "img/sections/checkout/checkout_exemplo1.webp",
                 "index": 0
             },
-            "details": "",
+            "detail": "",
             "styles": [
                 {
                     "name": "sm-oferta1",
@@ -197,7 +197,7 @@
                 "image": "img/sections/gatilhosmentais/gatilhosmentais_exemplo1.webp",
                 "index": 0
             },
-            "details": "",
+            "detail": "",
             "styles": [
                 {
                     "name": "sm-gatilhomental1",
@@ -223,7 +223,7 @@
                 "image": "img/sections/anvisa/anvisa_exemplo1.webp",
                 "index": 0
             },
-            "details": "",
+            "detail": "",
             "styles": [
                 {
                     "name": "sm-anvisa1",
@@ -260,7 +260,7 @@
                 "image": "img/sections/garantia/garantia_exemplo1.webp",
                 "index": 0
             },
-            "details": "",
+            "detail": "",
             "styles": [
                 {
                     "name": "sm-garantia30dias1",
@@ -285,7 +285,7 @@
                 "image": "img/sections/comprarnainternet/comprarnainternet_exemplo1.webp",
                 "index": 0
             },
-            "details": "",
+            "detail": "",
             "styles": [
                 {
                     "name": "sm-comocomprarpelainternet1",
@@ -311,7 +311,7 @@
                 "image": "img/sections/whatsapp/whatsapp_exemplo1.webp",
                 "index": 0
             },
-            "details": "",
+            "detail": "",
             "styles": [
                 {
                     "name": "sm-atendimentowhatsapp1",
@@ -348,7 +348,7 @@
                 "image": "img/sections/faq/faq_exemplo1.webp",
                 "index": 0
             },
-            "details": "",
+            "detail": "",
             "styles": [
                 {
                     "name": "sm-faq1",
@@ -375,7 +375,7 @@
                 "image": "img/sections/rodape/rodape_exemplo1.webp",
                 "index": 0
             },
-            "details": "",
+            "detail": "",
             "styles": [
                 {
                     "name": "sm-rodape1",

@@ -13,7 +13,7 @@
         :order="element.order"
         @moveUp="onMoveUp(element)"
         @moveDown="onMoveDown(element)"
-        v-modal:element="element"
+        :element="element"
       >
         <template #info>
           <div

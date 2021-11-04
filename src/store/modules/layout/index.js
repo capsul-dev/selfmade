@@ -43,7 +43,7 @@ export default {
     nextStyle: ({ commit }, target) =>
       commit("STYLE_CYCLE", { target, direction: 1 }),
     previousStyle: ({ commit }, target) =>
-      commit("STYLE_CYCLE", { target, direction: -1 })
+      commit("STYLE_CYCLE", { target, direction: -1 }),
   },
 
   mutations: {
@@ -118,5 +118,10 @@ export default {
         ...section.styles[movement],
       };
     },
+
+    DETAIL_SET: (state, { target, value }) => {
+      state.sections.find(({ name }) => name === target.name)
+        .detail = value
+    }
   },
 };

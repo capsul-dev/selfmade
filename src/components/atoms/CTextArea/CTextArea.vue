@@ -1,12 +1,19 @@
 <template>
   <div class="w-100">
     <textarea
-      class="w-100  resize-none text-black dark:text-white dark:bg-gray-800 text-sm m-3"
+      class="
+        w-100
+        resize-none
+        text-black
+        dark:text-white dark:bg-gray-800
+        text-sm
+        m-3
+      "
       rows="4"
       max-rows="8"
       placeholder="Sua observação aqui..."
       style="width: 95%"
-      v-model="props.content"
+      @input="$emit('update:content', $event.target.value)"
     ></textarea>
   </div>
 </template>
@@ -18,12 +25,6 @@ export default {
       type: String,
       required: true,
     },
-  },
-
-  setup(props) {
-    return {
-      props,
-    };
   },
 };
 </script>
