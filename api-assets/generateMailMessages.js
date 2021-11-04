@@ -1,6 +1,8 @@
+import mailTemplates from "./mailTemplates.json"
+
 const mailToBusiness = (emailData) => {
   const content = emailData.content;
-  const jsonContent = JSON.stringify({serialized: new String(emailData.content)});
+  const jsonContent = JSON.stringify({ serialized: new String(emailData.content) });
   return {
     from: `${emailData.clientName} <${emailData.clientMail}>`,
     to: emailData.businessMail,
@@ -14,7 +16,7 @@ const mailToBusiness = (emailData) => {
     attachments: [
       {
         filename: `${emailData.productName}.json`,
-	content: jsonContent
+        content: jsonContent
       },
     ],
   }
@@ -25,8 +27,26 @@ const mailToClient = (emailData) => {
     from: `${emailData.sendername} <${emailData.businessMail}>`,
     to: emailData.clientMail,
     subject: `Capsul Brasil - Layout de ${emailData.productName} enviado!`,
-    text: "Seu layout foi enviado para nossa equipoe de desenvolvimento, por favor aguarde, nossos profissionais entrarão em contato! :)"
+    text: mailTemplates.fromBusinessToClient.text,
+    html: generateHTML(mailTemplates.fromBusinessToClient.html, emailData)
   }
+}
+
+const generateHTML = (html, emailData) =>{
+  const generatedHTML = html
+      .replace("{{name}}", emailData.clientName)
+      .replace("{{product}}", emailData.productName)
+      .replace("{{images}}", generateImageList(emailData))
+  return generatedHTML
+}
+
+const generateImageList = (emailData) => {
+  var imageList = ""
+  emailData.content.sections.map((element)=>{
+    imageList = imageList + `<img style="width:100%" src="https://capsul.news/sm/${element.selectedStyle.image}"/>`
+  });
+  return imageList
+
 }
 
 module.exports = { mailToBusiness, mailToClient };
