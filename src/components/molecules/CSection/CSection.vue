@@ -57,7 +57,8 @@
         :src="selectedStyle.image"
       />
     </div>
-    <c-text-area v-model:content="details"></c-text-area>
+    <c-text-area :is-read-only="store.getters['business/isAdmin']"
+     v-model:content="detail"></c-text-area>
   </div>
 </template>
 
@@ -81,9 +82,9 @@ export default {
   },
 
   computed: {
-    details: {
+    detail: {
       get() {
-        return this.element.value
+        return this.element.detail
       },
       set(value) {
         this.store.commit('layout/DETAIL_SET', { target: this.element, value })

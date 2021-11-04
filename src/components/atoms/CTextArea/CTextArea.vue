@@ -8,11 +8,14 @@
         dark:text-white dark:bg-gray-800
         text-sm
         m-3
+        p-1
       "
       rows="4"
       max-rows="8"
       placeholder="Sua observação aqui..."
       style="width: 95%"
+      :value="content"
+      :readonly="isReadOnly"
       @input="$emit('update:content', $event.target.value)"
     ></textarea>
   </div>
@@ -25,6 +28,10 @@ export default {
       type: String,
       required: true,
     },
+    isReadOnly: {
+        type: Boolean,
+        default: false,
+    }
   },
 };
 </script>
