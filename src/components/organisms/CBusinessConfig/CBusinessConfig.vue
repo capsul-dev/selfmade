@@ -26,11 +26,6 @@
       v-model="store.getters['business/business'].productSegment"
       >Qual o nicho do seu produto?</c-input
     >
-    <c-input
-      placeholder="Gostaria de reduzir a opacidade do fundo..."
-      v-model="store.getters['business/business'].details"
-      >Detalhes</c-input
-    >
   </div>
 </template>
 

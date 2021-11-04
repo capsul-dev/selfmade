@@ -4,7 +4,6 @@
     <div>Email: {{ store.getters["business/business"].clientMail }}</div>
     <div>Telefone: {{ store.getters["business/business"].clientPhone }}</div>
     <div>Nome do produto: {{ store.getters["business/business"].productName }}</div>
-    <div>Detalhes: {{ store.getters["business/business"].details }}</div>
   </div>
 </template>
 

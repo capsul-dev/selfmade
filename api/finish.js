@@ -18,7 +18,6 @@ module.exports = async (req, res) => {
       clientName: "string",
       clientMail: "string",
       content: "string",
-      details: "string",
     };
 
     if (typeof req.body !== "object") {
@@ -39,14 +38,12 @@ module.exports = async (req, res) => {
       user: CS_SMTP_USER,
       pass: CS_SMTP_PASS,
       sendername: CS_SENDERNAME,
-      text: req.body.details ? req.body.details : "-",
       businessMail: CS_MAIL,
       clientName: req.body.clientName,
       clientMail: req.body.clientMail,
       productName: req.body.productName,
       productSegment: req.body.productSegment,
       content: req.body.content,
-      details: req.body.details,
     });
   } catch (error) {
     console.trace(error);
