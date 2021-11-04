@@ -43,7 +43,7 @@ export default {
     nextStyle: ({ commit }, target) =>
       commit("STYLE_CYCLE", { target, direction: 1 }),
     previousStyle: ({ commit }, target) =>
-      commit("STYLE_CYCLE", { target, direction: -1 }),
+      commit("STYLE_CYCLE", { target, direction: -1 })
   },
 
   mutations: {

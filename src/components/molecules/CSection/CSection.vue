@@ -18,7 +18,7 @@
         v-if="store.getters['business/isAdmin']"
         class="text-sm pr-4 opacity-80"
       >
-       {{ $props.element.selectedStyle?.name }}
+        {{ $props.element.selectedStyle?.name }}
       </div>
 
       <div class="w-10 opacity-50">#{{ $props.element.order }}</div>
@@ -46,17 +46,18 @@
       :key="selectedStyle.name"
     >
       <div
-      v-if="!store.getters['business/isAdmin']"
-      class="absolute flex justify-between w-full h-full"
+        v-if="!store.getters['business/isAdmin']"
+        class="absolute flex justify-between w-full h-full"
       >
-      <c-arrow direction="left" @click="stylePrevious"></c-arrow>
-      <c-arrow direction="right" @click="styleNext"></c-arrow>
-    </div>
+        <c-arrow direction="left" @click="stylePrevious"></c-arrow>
+        <c-arrow direction="right" @click="styleNext"></c-arrow>
+      </div>
       <img
         class="object-cover rounded-b-lg w-full"
         :src="selectedStyle.image"
       />
     </div>
+    <c-text-area v-model:content="element.details"></c-text-area>
   </div>
 </template>
 
@@ -64,7 +65,7 @@
 import { computed } from "vue";
 import store from "@/store";
 
-import { CArrow } from "@/components";
+import { CArrow, CTextArea } from "@/components";
 
 export default {
   props: {
@@ -76,6 +77,7 @@ export default {
 
   components: {
     CArrow,
+    CTextArea,
   },
 
   methods: {
@@ -91,7 +93,11 @@ export default {
   setup(props) {
     return {
       store,
-      showArrows: computed(() => !store.getters['business/isAdmin'] && typeof props.element.originalOrder !== 'number'),
+      showArrows: computed(
+        () =>
+          !store.getters["business/isAdmin"] &&
+          typeof props.element.originalOrder !== "number"
+      ),
       selectedStyle: computed(() => {
         const selectedStyle = props.element.selectedStyle
           ? props.element.selectedStyle

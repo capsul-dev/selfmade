@@ -1,17 +1,18 @@
 {
     "sections": [
-        {            
+        {
             "originalOrder": -1,
             "enabled": true,
             "required": true,
             "name": "Cabeçalho",
             "videoUrl": "",
-	    "selectedStyle": {
-		    "height": "50",
-	 	    "image": "img/sections/header/header_exemplo1.webp",
-		    "index": 0,
-                    "name": "sm-header1"
-	    },
+            "selectedStyle": {
+                "height": "50",
+                "image": "img/sections/header/header_exemplo1.webp",
+                "index": 0,
+                "name": "sm-header1"
+            },
+            "details": "kkkkkkkkkkkkkkk",
             "styles": [
                 {
                     "name": "sm-header1",
@@ -24,20 +25,21 @@
                 {
                     "name": "sm-header3",
                     "image": "img/sections/header/header_exemplo3.webp"
-                }                
+                }
             ]
         },
         {
             "enabled": true,
             "name": "Faixa gatilho",
             "description": "Formulário de contato.",
-	    "selectedStyle": {
-		    "name": "sm-faixagatilho1",
-                    "image": "img/sections/faixagatilho/faixagatilho_exemplo1.webp",
-                    "height": "20",
-		    "index": 0
-	    },
+            "selectedStyle": {
+                "name": "sm-faixagatilho1",
+                "image": "img/sections/faixagatilho/faixagatilho_exemplo1.webp",
+                "height": "20",
+                "index": 0
+            },
             "videoUrl": "",
+            "details": "",
             "styles": [
                 {
                     "name": "sm-faixagatilho1",
@@ -60,11 +62,12 @@
             "enabled": false,
             "name": "Sobre o produto",
             "videoUrl": "",
-	    "selectedStyle": {
-		    "name": "sm-comofunciona1",
-		    "image": "img/sections/comofunciona/comofunciona_exemplo1.webp",
-		    "index": 0
-	    },
+            "selectedStyle": {
+                "name": "sm-comofunciona1",
+                "image": "img/sections/comofunciona/comofunciona_exemplo1.webp",
+                "index": 0
+            },
+            "details": "",
             "styles": [
                 {
                     "name": "sm-comofunciona1",
@@ -77,18 +80,19 @@
                 {
                     "name": "sm-comofunciona3",
                     "image": "img/sections/comofunciona/comofunciona_exemplo3.webp"
-                }                
+                }
             ]
         },
         {
             "enabled": false,
             "name": "Benefícios",
             "videoUrl": "",
-	    "selectedStyle": {
-		    "name": "sm-beneficios1",
-                    "image": "img/sections/beneficios/beneficios_exemplo1.webp",
-		    "index": 0
-	    },
+            "selectedStyle": {
+                "name": "sm-beneficios1",
+                "image": "img/sections/beneficios/beneficios_exemplo1.webp",
+                "index": 0
+            },
+            "details": "",
             "styles": [
                 {
                     "name": "sm-beneficios1",
@@ -103,17 +107,18 @@
                     "image": "img/sections/beneficios/beneficios_exemplo3.webp"
                 }
             ]
-        },  
+        },
         {
             "enabled": true,
             "name": "Fórmula",
             "description": "Formulário de contato.",
             "videoUrl": "",
-	    "selectedStyle": {
-		    "name": "sm-formula1",
-                    "image": "img/sections/formula/formula_exemplo1.webp",
-		    "index": 0
-	    },
+            "selectedStyle": {
+                "name": "sm-formula1",
+                "image": "img/sections/formula/formula_exemplo1.webp",
+                "index": 0
+            },
+            "details": "",
             "styles": [
                 {
                     "name": "sm-formula1",
@@ -128,53 +133,55 @@
                     "image": "img/sections/formula/formula_exemplo3.webp"
                 }
             ]
-        },    
+        },
         {
             "enabled": true,
             "name": "Provas Sociais",
             "description": "Formulário de contato.",
             "videoUrl": "",
-	    "selectedStyle": {
-		    "name": "sm-provassociais1",
-                    "image": "img/sections/provassociais/provassociais_exemplo1.webp",
-		    "index": 0
-	    },
+            "selectedStyle": {
+                "name": "sm-provassociais1",
+                "image": "img/sections/provassociais/provassociais_exemplo1.webp",
+                "index": 0
+            },
+            "details": "",
             "styles": [
-                { 
+                {
                     "name": "sm-provassociais1",
                     "image": "img/sections/provassociais/provassociais_exemplo1.webp"
                 },
-                { 
+                {
                     "name": "sm-provassociais2",
                     "image": "img/sections/provassociais/provassociais_exemplo2.webp"
                 },
-                { 
+                {
                     "name": "sm-provassociais3",
                     "image": "img/sections/provassociais/provassociais_exemplo3.webp"
                 }
             ]
-        },  
+        },
         {
             "enabled": true,
             "name": "Cards de compra",
             "required": true,
             "description": "Formulário de contato.",
             "videoUrl": "",
-	    "selectedStyle": {
-		    "name": "sm-oferta1",
-                    "image": "img/sections/checkout/checkout_exemplo1.webp",
-		    "index": 0
-	    },
+            "selectedStyle": {
+                "name": "sm-oferta1",
+                "image": "img/sections/checkout/checkout_exemplo1.webp",
+                "index": 0
+            },
+            "details": "",
             "styles": [
-                { 
+                {
                     "name": "sm-oferta1",
                     "image": "img/sections/checkout/checkout_exemplo1.webp"
                 },
-                { 
+                {
                     "name": "sm-oferta3",
                     "image": "img/sections/checkout/checkout_exemplo3.webp"
                 },
-                { 
+                {
                     "name": "sm-oferta5",
                     "image": "img/sections/checkout/checkout_exemplo5.webp"
                 }
@@ -185,11 +192,12 @@
             "name": "Gatilhos mentais",
             "description": "Formulário de contato.",
             "videoUrl": "",
-	    "selectedStyle": {
-		    "name": "sm-gatilhomental1",
-                    "image": "img/sections/gatilhosmentais/gatilhosmentais_exemplo1.webp",
-		    "index": 0
-	    },
+            "selectedStyle": {
+                "name": "sm-gatilhomental1",
+                "image": "img/sections/gatilhosmentais/gatilhosmentais_exemplo1.webp",
+                "index": 0
+            },
+            "details": "",
             "styles": [
                 {
                     "name": "sm-gatilhomental1",
@@ -210,11 +218,12 @@
             "name": "Anvisa",
             "description": "Formulário de contato.",
             "videoUrl": "",
-	    "selectedStyle": {
-		    "name": "sm-anvisa1",
-                    "image": "img/sections/anvisa/anvisa_exemplo1.webp",
-		    "index": 0
-	    },
+            "selectedStyle": {
+                "name": "sm-anvisa1",
+                "image": "img/sections/anvisa/anvisa_exemplo1.webp",
+                "index": 0
+            },
+            "details": "",
             "styles": [
                 {
                     "name": "sm-anvisa1",
@@ -246,11 +255,12 @@
             "enabled": false,
             "name": "Garantia",
             "videoUrl": "",
-	    "selectedStyle": {
-		    "name": "sm-garantia30dias1",
-                    "image": "img/sections/garantia/garantia_exemplo1.webp",
-		    "index": 0
-	    },
+            "selectedStyle": {
+                "name": "sm-garantia30dias1",
+                "image": "img/sections/garantia/garantia_exemplo1.webp",
+                "index": 0
+            },
+            "details": "",
             "styles": [
                 {
                     "name": "sm-garantia30dias1",
@@ -270,12 +280,12 @@
             "enabled": false,
             "name": "Compra segura",
             "videoUrl": "",
-	    "selectedStyle": {
-		    "name": "sm-comocomprarpelainternet1",
-                    "image": "img/sections/comprarnainternet/comprarnainternet_exemplo1.webp",
-		    "index": 0
-	    },
-
+            "selectedStyle": {
+                "name": "sm-comocomprarpelainternet1",
+                "image": "img/sections/comprarnainternet/comprarnainternet_exemplo1.webp",
+                "index": 0
+            },
+            "details": "",
             "styles": [
                 {
                     "name": "sm-comocomprarpelainternet1",
@@ -296,11 +306,12 @@
             "name": "Atendimento Whatsapp",
             "description": "Formulário de contato.",
             "videoUrl": "",
-	    "selectedStyle": {
-		    "name": "sm-atendimentowhatsapp1",
-                    "image": "img/sections/whatsapp/whatsapp_exemplo1.webp",
-		    "index": 0
-	    },
+            "selectedStyle": {
+                "name": "sm-atendimentowhatsapp1",
+                "image": "img/sections/whatsapp/whatsapp_exemplo1.webp",
+                "index": 0
+            },
+            "details": "",
             "styles": [
                 {
                     "name": "sm-atendimentowhatsapp1",
@@ -331,11 +342,13 @@
         {
             "enabled": false,
             "name": "Perguntas frequentes",
-            "videoUrl": "", "selectedStyle": {
-		    "name": "sm-faq1",
-                    "image": "img/sections/faq/faq_exemplo1.webp",
-		    "index": 0
-	    },
+            "videoUrl": "",
+            "selectedStyle": {
+                "name": "sm-faq1",
+                "image": "img/sections/faq/faq_exemplo1.webp",
+                "index": 0
+            },
+            "details": "",
             "styles": [
                 {
                     "name": "sm-faq1",
@@ -356,12 +369,13 @@
             "enabled": true,
             "required": true,
             "name": "Rodapé",
-            "videoUrl": "", "selectedStyle": {
-		    "name": "sm-rodape1",
-                    "image": "img/sections/rodape/rodape_exemplo1.webp",
-		    "index": 0
-	    },
-
+            "videoUrl": "",
+            "selectedStyle": {
+                "name": "sm-rodape1",
+                "image": "img/sections/rodape/rodape_exemplo1.webp",
+                "index": 0
+            },
+            "details": "",
             "styles": [
                 {
                     "name": "sm-rodape1",
