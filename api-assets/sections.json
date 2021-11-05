@@ -8,7 +8,7 @@
             "videoUrl": "",
             "selectedStyle": {
                 "height": "50",
-                "image": "img/sections/header/header_exemplo1.webp",
+                "image": "img/sections/header/header_exemplo1.jpg",
                 "index": 0,
                 "name": "sm-header1"
             },
@@ -16,15 +16,15 @@
             "styles": [
                 {
                     "name": "sm-header1",
-                    "image": "img/sections/header/header_exemplo1.webp"
+                    "image": "img/sections/header/header_exemplo1.jpg"
                 },
                 {
                     "name": "sm-header2",
-                    "image": "img/sections/header/header_exemplo2.webp"
+                    "image": "img/sections/header/header_exemplo2.jpg"
                 },
                 {
                     "name": "sm-header3",
-                    "image": "img/sections/header/header_exemplo3.webp"
+                    "image": "img/sections/header/header_exemplo3.jpg"
                 }
             ]
         },
@@ -34,7 +34,7 @@
             "description": "Formulário de contato.",
             "selectedStyle": {
                 "name": "sm-faixagatilho1",
-                "image": "img/sections/faixagatilho/faixagatilho_exemplo1.webp",
+                "image": "img/sections/faixagatilho/faixagatilho_exemplo1.jpg",
                 "height": "20",
                 "index": 0
             },
@@ -43,17 +43,17 @@
             "styles": [
                 {
                     "name": "sm-faixagatilho1",
-                    "image": "img/sections/faixagatilho/faixagatilho_exemplo1.webp",
+                    "image": "img/sections/faixagatilho/faixagatilho_exemplo1.jpg",
                     "height": "20"
                 },
                 {
                     "name": "sm-faixagatilho2",
-                    "image": "img/sections/faixagatilho/faixagatilho_exemplo2.webp",
+                    "image": "img/sections/faixagatilho/faixagatilho_exemplo2.jpg",
                     "height": "50"
                 },
                 {
                     "name": "sm-faixagatilho3",
-                    "image": "img/sections/faixagatilho/faixagatilho_exemplo3.webp",
+                    "image": "img/sections/faixagatilho/faixagatilho_exemplo3.jpg",
                     "height": "70"
                 }
             ]
@@ -64,22 +64,22 @@
             "videoUrl": "",
             "selectedStyle": {
                 "name": "sm-comofunciona1",
-                "image": "img/sections/comofunciona/comofunciona_exemplo1.webp",
+                "image": "img/sections/comofunciona/comofunciona_exemplo1.jpg",
                 "index": 0
             },
             "detail": "",
             "styles": [
                 {
                     "name": "sm-comofunciona1",
-                    "image": "img/sections/comofunciona/comofunciona_exemplo1.webp"
+                    "image": "img/sections/comofunciona/comofunciona_exemplo1.jpg"
                 },
                 {
                     "name": "sm-comofunciona2",
-                    "image": "img/sections/comofunciona/comofunciona_exemplo2.webp"
+                    "image": "img/sections/comofunciona/comofunciona_exemplo2.jpg"
                 },
                 {
                     "name": "sm-comofunciona3",
-                    "image": "img/sections/comofunciona/comofunciona_exemplo3.webp"
+                    "image": "img/sections/comofunciona/comofunciona_exemplo3.jpg"
                 }
             ]
         },
@@ -89,22 +89,22 @@
             "videoUrl": "",
             "selectedStyle": {
                 "name": "sm-beneficios1",
-                "image": "img/sections/beneficios/beneficios_exemplo1.webp",
+                "image": "img/sections/beneficios/beneficios_exemplo1.jpg",
                 "index": 0
             },
             "detail": "",
             "styles": [
                 {
                     "name": "sm-beneficios1",
-                    "image": "img/sections/beneficios/beneficios_exemplo1.webp"
+                    "image": "img/sections/beneficios/beneficios_exemplo1.jpg"
                 },
                 {
                     "name": "sm-beneficios2",
-                    "image": "img/sections/beneficios/beneficios_exemplo2.webp"
+                    "image": "img/sections/beneficios/beneficios_exemplo2.jpg"
                 },
                 {
                     "name": "sm-beneficios3",
-                    "image": "img/sections/beneficios/beneficios_exemplo3.webp"
+                    "image": "img/sections/beneficios/beneficios_exemplo3.jpg"
                 }
             ]
         },
@@ -115,22 +115,22 @@
             "videoUrl": "",
             "selectedStyle": {
                 "name": "sm-formula1",
-                "image": "img/sections/formula/formula_exemplo1.webp",
+                "image": "img/sections/formula/formula_exemplo1.jpg",
                 "index": 0
             },
             "detail": "",
             "styles": [
                 {
                     "name": "sm-formula1",
-                    "image": "img/sections/formula/formula_exemplo1.webp"
+                    "image": "img/sections/formula/formula_exemplo1.jpg"
                 },
                 {
                     "name": "sm-formula2",
-                    "image": "img/sections/formula/formula_exemplo2.webp"
+                    "image": "img/sections/formula/formula_exemplo2.jpg"
                 },
                 {
                     "name": "sm-formula3",
-                    "image": "img/sections/formula/formula_exemplo3.webp"
+                    "image": "img/sections/formula/formula_exemplo3.jpg"
                 }
             ]
         },
@@ -141,22 +141,22 @@
             "videoUrl": "",
             "selectedStyle": {
                 "name": "sm-provassociais1",
-                "image": "img/sections/provassociais/provassociais_exemplo1.webp",
+                "image": "img/sections/provassociais/provassociais_exemplo1.jpg",
                 "index": 0
             },
             "detail": "",
             "styles": [
                 {
                     "name": "sm-provassociais1",
-                    "image": "img/sections/provassociais/provassociais_exemplo1.webp"
+                    "image": "img/sections/provassociais/provassociais_exemplo1.jpg"
                 },
                 {
                     "name": "sm-provassociais2",
-                    "image": "img/sections/provassociais/provassociais_exemplo2.webp"
+                    "image": "img/sections/provassociais/provassociais_exemplo2.jpg"
                 },
                 {
                     "name": "sm-provassociais3",
-                    "image": "img/sections/provassociais/provassociais_exemplo3.webp"
+                    "image": "img/sections/provassociais/provassociais_exemplo3.jpg"
                 }
             ]
         },
@@ -168,22 +168,22 @@
             "videoUrl": "",
             "selectedStyle": {
                 "name": "sm-oferta1",
-                "image": "img/sections/checkout/checkout_exemplo1.webp",
+                "image": "img/sections/checkout/checkout_exemplo1.jpg",
                 "index": 0
             },
             "detail": "",
             "styles": [
                 {
                     "name": "sm-oferta1",
-                    "image": "img/sections/checkout/checkout_exemplo1.webp"
+                    "image": "img/sections/checkout/checkout_exemplo1.jpg"
                 },
                 {
                     "name": "sm-oferta3",
-                    "image": "img/sections/checkout/checkout_exemplo3.webp"
+                    "image": "img/sections/checkout/checkout_exemplo3.jpg"
                 },
                 {
                     "name": "sm-oferta5",
-                    "image": "img/sections/checkout/checkout_exemplo5.webp"
+                    "image": "img/sections/checkout/checkout_exemplo5.jpg"
                 }
             ]
         },
@@ -194,22 +194,22 @@
             "videoUrl": "",
             "selectedStyle": {
                 "name": "sm-gatilhomental1",
-                "image": "img/sections/gatilhosmentais/gatilhosmentais_exemplo1.webp",
+                "image": "img/sections/gatilhosmentais/gatilhosmentais_exemplo1.jpg",
                 "index": 0
             },
             "detail": "",
             "styles": [
                 {
                     "name": "sm-gatilhomental1",
-                    "image": "img/sections/gatilhosmentais/gatilhosmentais_exemplo1.webp"
+                    "image": "img/sections/gatilhosmentais/gatilhosmentais_exemplo1.jpg"
                 },
                 {
                     "name": "sm-gatilhomental2",
-                    "image": "img/sections/gatilhosmentais/gatilhosmentais_exemplo2.webp"
+                    "image": "img/sections/gatilhosmentais/gatilhosmentais_exemplo2.jpg"
                 },
                 {
                     "name": "sm-gatilhomental3",
-                    "image": "img/sections/gatilhosmentais/gatilhosmentais_exemplo3.webp"
+                    "image": "img/sections/gatilhosmentais/gatilhosmentais_exemplo3.jpg"
                 }
             ]
         },
@@ -220,34 +220,34 @@
             "videoUrl": "",
             "selectedStyle": {
                 "name": "sm-anvisa1",
-                "image": "img/sections/anvisa/anvisa_exemplo1.webp",
+                "image": "img/sections/anvisa/anvisa_exemplo1.jpg",
                 "index": 0
             },
             "detail": "",
             "styles": [
                 {
                     "name": "sm-anvisa1",
-                    "image": "img/sections/anvisa/anvisa_exemplo1.webp"
+                    "image": "img/sections/anvisa/anvisa_exemplo1.jpg"
                 },
                 {
                     "name": "sm-anvisa2",
-                    "image": "img/sections/anvisa/anvisa_exemplo2.webp"
+                    "image": "img/sections/anvisa/anvisa_exemplo2.jpg"
                 },
                 {
                     "name": "sm-anvisa3",
-                    "image": "img/sections/anvisa/anvisa_exemplo3.webp"
+                    "image": "img/sections/anvisa/anvisa_exemplo3.jpg"
                 },
                 {
                     "name": "sm-anvisa4",
-                    "image": "img/sections/anvisa/anvisa_exemplo4.webp"
+                    "image": "img/sections/anvisa/anvisa_exemplo4.jpg"
                 },
                 {
                     "name": "sm-anvisa5",
-                    "image": "img/sections/anvisa/anvisa_exemplo5.webp"
+                    "image": "img/sections/anvisa/anvisa_exemplo5.jpg"
                 },
                 {
                     "name": "sm-anvisa6",
-                    "image": "img/sections/anvisa/anvisa_exemplo6.webp"
+                    "image": "img/sections/anvisa/anvisa_exemplo6.jpg"
                 }
             ]
         },
@@ -257,22 +257,22 @@
             "videoUrl": "",
             "selectedStyle": {
                 "name": "sm-garantia30dias1",
-                "image": "img/sections/garantia/garantia_exemplo1.webp",
+                "image": "img/sections/garantia/garantia_exemplo1.jpg",
                 "index": 0
             },
             "detail": "",
             "styles": [
                 {
                     "name": "sm-garantia30dias1",
-                    "image": "img/sections/garantia/garantia_exemplo1.webp"
+                    "image": "img/sections/garantia/garantia_exemplo1.jpg"
                 },
                 {
                     "name": "sm-garantia30dias2",
-                    "image": "img/sections/garantia/garantia_exemplo2.webp"
+                    "image": "img/sections/garantia/garantia_exemplo2.jpg"
                 },
                 {
                     "name": "sm-garantia30dias3",
-                    "image": "img/sections/garantia/garantia_exemplo3.webp"
+                    "image": "img/sections/garantia/garantia_exemplo3.jpg"
                 }
             ]
         },
@@ -282,22 +282,22 @@
             "videoUrl": "",
             "selectedStyle": {
                 "name": "sm-comocomprarpelainternet1",
-                "image": "img/sections/comprarnainternet/comprarnainternet_exemplo1.webp",
+                "image": "img/sections/comprarnainternet/comprarnainternet_exemplo1.jpg",
                 "index": 0
             },
             "detail": "",
             "styles": [
                 {
                     "name": "sm-comocomprarpelainternet1",
-                    "image": "img/sections/comprarnainternet/comprarnainternet_exemplo1.webp"
+                    "image": "img/sections/comprarnainternet/comprarnainternet_exemplo1.jpg"
                 },
                 {
                     "name": "sm-comocomprarpelainternet2",
-                    "image": "img/sections/comprarnainternet/comprarnainternet_exemplo2.webp"
+                    "image": "img/sections/comprarnainternet/comprarnainternet_exemplo2.jpg"
                 },
                 {
                     "name": "sm-comocomprarpelainternet3",
-                    "image": "img/sections/comprarnainternet/comprarnainternet_exemplo3.webp"
+                    "image": "img/sections/comprarnainternet/comprarnainternet_exemplo3.jpg"
                 }
             ]
         },
@@ -308,34 +308,34 @@
             "videoUrl": "",
             "selectedStyle": {
                 "name": "sm-atendimentowhatsapp1",
-                "image": "img/sections/whatsapp/whatsapp_exemplo1.webp",
+                "image": "img/sections/whatsapp/whatsapp_exemplo1.jpg",
                 "index": 0
             },
             "detail": "",
             "styles": [
                 {
                     "name": "sm-atendimentowhatsapp1",
-                    "image": "img/sections/whatsapp/whatsapp_exemplo1.webp"
+                    "image": "img/sections/whatsapp/whatsapp_exemplo1.jpg"
                 },
                 {
                     "name": "sm-atendimentowhatsapp2",
-                    "image": "img/sections/whatsapp/whatsapp_exemplo2.webp"
+                    "image": "img/sections/whatsapp/whatsapp_exemplo2.jpg"
                 },
                 {
                     "name": "sm-atendimentowhatsapp3",
-                    "image": "img/sections/whatsapp/whatsapp_exemplo3.webp"
+                    "image": "img/sections/whatsapp/whatsapp_exemplo3.jpg"
                 },
                 {
                     "name": "sm-atendimentowhatsapp4",
-                    "image": "img/sections/whatsapp/whatsapp_exemplo4.webp"
+                    "image": "img/sections/whatsapp/whatsapp_exemplo4.jpg"
                 },
                 {
                     "name": "sm-atendimentowhatsapp5",
-                    "image": "img/sections/whatsapp/whatsapp_exemplo5.webp"
+                    "image": "img/sections/whatsapp/whatsapp_exemplo5.jpg"
                 },
                 {
                     "name": "sm-atendimentowhatsapp6",
-                    "image": "img/sections/whatsapp/whatsapp_exemplo6.webp"
+                    "image": "img/sections/whatsapp/whatsapp_exemplo6.jpg"
                 }
             ]
         },
@@ -345,22 +345,22 @@
             "videoUrl": "",
             "selectedStyle": {
                 "name": "sm-faq1",
-                "image": "img/sections/faq/faq_exemplo1.webp",
+                "image": "img/sections/faq/faq_exemplo1.jpg",
                 "index": 0
             },
             "detail": "",
             "styles": [
                 {
                     "name": "sm-faq1",
-                    "image": "img/sections/faq/faq_exemplo1.webp"
+                    "image": "img/sections/faq/faq_exemplo1.jpg"
                 },
                 {
                     "name": "sm-faq2",
-                    "image": "img/sections/faq/faq_exemplo2.webp"
+                    "image": "img/sections/faq/faq_exemplo2.jpg"
                 },
                 {
                     "name": "sm-faq3",
-                    "image": "img/sections/faq/faq_exemplo3.webp"
+                    "image": "img/sections/faq/faq_exemplo3.jpg"
                 }
             ]
         },
@@ -372,22 +372,22 @@
             "videoUrl": "",
             "selectedStyle": {
                 "name": "sm-rodape1",
-                "image": "img/sections/rodape/rodape_exemplo1.webp",
+                "image": "img/sections/rodape/rodape_exemplo1.jpg",
                 "index": 0
             },
             "detail": "",
             "styles": [
                 {
                     "name": "sm-rodape1",
-                    "image": "img/sections/rodape/rodape_exemplo1.webp"
+                    "image": "img/sections/rodape/rodape_exemplo1.jpg"
                 },
                 {
                     "name": "sm-rodape2",
-                    "image": "img/sections/rodape/rodape_exemplo2.webp"
+                    "image": "img/sections/rodape/rodape_exemplo2.jpg"
                 },
                 {
                     "name": "sm-rodape3",
-                    "image": "img/sections/rodape/rodape_exemplo3.webp"
+                    "image": "img/sections/rodape/rodape_exemplo3.jpg"
                 }
             ]
         }
