@@ -24,16 +24,6 @@
             }}</span>
           </div>
         </div>
-
-        <div
-          class="self-center text-green-500 ml-5 z-9"
-          @click="
-            $event.stopPropagation();
-            spawnVideoModal(section);
-          "
-        >
-          <i class="fa fa-video"></i>
-        </div>
       </div>
     </c-checkbox>
   </div>
