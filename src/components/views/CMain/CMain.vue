@@ -43,10 +43,8 @@
       <template #description
         >Nesta área, você irá
         <span class="font-medium">escolher as seções</span> que deseja em seu
-        site. Caso queira saber mais sobre cada uma,
-        <span class="font-bold">clique no ícone</span> "
-        <i class="fa fa-video text-green-500"></i> " e assista a um vídeo que
-        preparamos para você!</template
+        site. Caso deseje saber mais sobre uma página de vendas, clique abaixo 
+	e assista a um vídeo que preparamos para você!</template
       >
       <template #body>
         <c-section-list></c-section-list>
@@ -136,7 +134,8 @@ export default {
 
     onMounted(() => {
       const params = new URLSearchParams(window.location.search);
-      store.dispatch("business/setAdmin", params.has("admin") && params.get("admin") === "true");
+      store.dispatch("business/setAdmin", 
+        params.has("admin") && params.get("admin") === "true");
 
       if (!store.getters["business/isAdmin"]) {
         store.dispatch("layout/initOrder");
