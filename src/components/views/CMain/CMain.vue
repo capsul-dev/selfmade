@@ -7,6 +7,7 @@
       lg:px-40
       xl:px-
       py-4
+      bg-gray-50
       grid
       gap-y-5
       dark:bg-gray-900 dark:text-white

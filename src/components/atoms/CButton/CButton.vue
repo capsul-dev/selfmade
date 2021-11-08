@@ -3,12 +3,13 @@
     :class="`
       ${
         !!props.isLoading
-          ? 'bg-gray-200'
+          ? 'bg-gradient-to-r from-green-300 to-green-500'
           : 'bg-gradient-to-r from-green-500 to-green-700'
       }
       text-white text-center
-      font-bold
-      py-2
+      font-500
+      uppercase
+      py-3
       px-4
       rounded
       cursor-pointer

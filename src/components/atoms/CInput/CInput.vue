@@ -8,9 +8,11 @@
         w-full
         border-box
         bg-white
-        shadow-sm
+        placeholder-gray-600
+        dark:placeholder-gray-500
+        shadow-lg
         px-3
-        bg-gray-100
+        bg-white
         py-2
         mb-2
         dark:bg-gray-800 dark:text-white

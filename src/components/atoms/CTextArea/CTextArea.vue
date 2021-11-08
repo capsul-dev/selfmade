@@ -5,10 +5,13 @@
         w-100
         resize-none
         text-black
+        bg-gray-100
         dark:text-white dark:bg-gray-800
         text-sm
         m-3
         p-1
+        placeholder-gray-800
+        dark:placeholder-gray-400
       "
       rows="4"
       max-rows="8"

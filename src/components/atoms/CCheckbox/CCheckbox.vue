@@ -4,7 +4,7 @@
       checkbox
       rounded
       bg-white
-      shadow-md
+      shadow-lg
       py-2
       grid grid-cols-checkbox
       items-center

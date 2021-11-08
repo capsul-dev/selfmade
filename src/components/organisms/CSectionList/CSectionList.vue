@@ -1,13 +1,13 @@
 <template>
   <c-message v-if="selectedCount < requiredMin" class="dark:bg-gray-800 dark:border-red-600">
-    <i class="fa fa-warning dark:text-red-500"/>
+    <i class="fa fa-warning text-red-500"/>
     Você precisa escolher mais {{ requiredMin - selectedCount }} seções.
   </c-message>
   <c-message v-if="selectedCount > requiredMax" class="dark:bg-gray-800 dark:border-red-600">
-    <i class="fa fa-warning dark:text-red-500"/>
+    <i class="fa fa-warning text-red-500"/>
     Seu site está muito grande, retire {{ selectedCount - requiredMax }} seções.
   </c-message>
-  <div class="grid lg:grid-cols-2 gap-y-2 lg:gap-x-4">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 text-sm gap-y-2 sm:gap-x-2 lg:gap-x-4">
     <c-checkbox
       v-for="(section, index) in sections"
       v-model:checked="section.enabled"

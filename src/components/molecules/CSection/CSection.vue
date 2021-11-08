@@ -1,12 +1,12 @@
 <template>
-  <div class="relative rounded-lg bg-white shadow-lg dark:bg-gray-800">
+  <div class="relative rounded-lg bg-gray-100 shadow-lg dark:bg-gray-800">
     <div
       class="
         flex
         items-center
         rounded-t-lg
         border-gray-200 border-b
-        bg-gray-100
+        bg-gray-200
         dark:bg-gray-800 dark:border-gray-500
       "
     >
