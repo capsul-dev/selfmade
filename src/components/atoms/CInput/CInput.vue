@@ -20,6 +20,7 @@
       :type="type"
       :value="modelValue"
       :placeholder="placeholder"
+      :role="role"
       @input="onInput"
       @change="onChange"
       v-maska="$props.mask"
@@ -45,6 +46,10 @@ export default {
       default: "text",
     },
     placeholder: {
+      type: String,
+      required: false,
+    },
+    role: {
       type: String,
       required: false,
     },

@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute z-10" @click="closeModal">
+  <div class="absolute z-10" @click="closeModal" role="modal">
     <div class="fixed inset-0 bg-gray-900 opacity-50"></div>
     <div class="fixed inset-0 flex justify-center items-center">
       <div
@@ -20,7 +20,10 @@
           <div class="flex-1 font-bold text-2xl">
             <slot name="title"></slot>
           </div>
-          <div class="cursor-pointer text-2xl opacity-50" @click="closeModal">
+          <div 
+            class="cursor-pointer text-2xl opacity-50" 
+            @click="closeModal"
+            >
             <i class="fa fa-close"></i>
           </div>
         </div>

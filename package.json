@@ -7,10 +7,10 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
+    "test:watch": "jest --watch --verbose",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@sendgrid/mail": "^7.5.0",
     "@tailwindcss/postcss7-compat": "^2.2.14",
     "autoprefixer": "^9.8.6",
     "axios": "^0.21.4",
@@ -36,6 +36,7 @@
     "eslint": "^6.8.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.0.0",
+    "miragejs": "^0.1.42",
     "prettier": "^2.2.1",
     "stylelint": "^13.13.1",
     "stylelint-config-idiomatic-order": "^8.1.0",

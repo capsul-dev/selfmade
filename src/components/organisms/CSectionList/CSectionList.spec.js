@@ -1,10 +1,15 @@
 /* eslint-disable no-undef */
-import { shallowMount } from '@vue/test-utils'
+import store from '@/store';
+import { mount } from '@vue/test-utils'
 import CSectionList from './CSectionList.vue'
 
 describe('./CSectionList.vue', () => {
   it('renders section list widget', () => {
-    const component = shallowMount(CSectionList)
+    const component = mount(CSectionList, {
+      global: {
+        plugins: [store]
+      }
+    })
     expect(component.isVisible()).toBe(true)
   })
 })

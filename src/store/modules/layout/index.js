@@ -14,7 +14,7 @@ export default {
   },
 
   getters: {
-    sections: (state) => state.sections,
+    sections: (state) => { return state.sections },
 
     filteredSections: (state) =>
       state.sections.filter(
@@ -64,7 +64,6 @@ export default {
         ...section,
         order: section.enabled ? index++ : section.order || 0,
       }));
-      console.log(state.sections);
     },
 
     ORDER_UPDATE: (state, value) => {

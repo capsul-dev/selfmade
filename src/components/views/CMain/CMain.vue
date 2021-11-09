@@ -84,7 +84,10 @@
     <c-template-modal v-if="modal.isVisible">
       <template #title>{{ modal.title }}</template>
       <template #body>
-        <div v-if="modal.body.length > 0" class="opacity-80 mb-5">
+        <div 
+          v-if="modal.body.length > 0" 
+          class="opacity-80 mb-5"
+          role="modalBody">
           {{ modal.body }}
         </div>
         <component
@@ -131,7 +134,7 @@ export default {
 
   setup() {
     const store = useStore();
-
+    
     onMounted(() => {
       const params = new URLSearchParams(window.location.search);
       store.dispatch("business/setAdmin", 
