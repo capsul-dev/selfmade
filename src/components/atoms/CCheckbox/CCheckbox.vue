@@ -19,6 +19,7 @@
         :checked="checked"
         :disabled="!!required"
         @input="onInput"
+        :id="id"
       />
     </div>
     <div
@@ -40,6 +41,10 @@ export default {
     required: {
       type: Boolean,
       default: false,
+    },
+    id: {
+      type: String,
+      required: true,
     },
   },
 

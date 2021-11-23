@@ -7,6 +7,7 @@ describe('./CCheckbox.vue', () => {
     const component = shallowMount(CCheckbox, {
       propsData: {
         checked: true,
+        id:"checkboxTest"
       }
     })
 
