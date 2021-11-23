@@ -11,9 +11,13 @@
 
 <script>
 import store from "@/store";
-const { fromBase64 } = require("../../../../isomorphic/services/encoding");
+import { CButton } from "@/components";
+import { fromBase64 } from "../../../../isomorphic/services/encoding";
 
 export default {
+  components:{
+    CButton,
+  },
   setup() {
     return {
       store,
@@ -33,9 +37,9 @@ export default {
 
     async onFileImported(event) {
       const content = await this.importJSON(event);
-      const deserializedContent = fromBase64(content.serialized);
+      const deserializedContent = fromBase64(content.serializedContent);
       const parsedContent = JSON.parse(deserializedContent);
-      store.dispatch("business/import", parsedContent.business.business);
+      store.dispatch("business/import", parsedContent.business);
       store.dispatch("layout/import", parsedContent.sections);
     },
 
