@@ -1,5 +1,6 @@
 <template>
-  <div
+  <button
+    :role="role"
     :class="`
       ${
         !!props.isLoading
@@ -15,7 +16,7 @@
       `"
   >
     <slot></slot>
-  </div>
+  </button>
 </template>
 
 <script>
@@ -24,6 +25,10 @@ export default {
     isLoading: {
       type: Boolean,
       default: false,
+    },
+    role: {
+      type: String,
+      required: false,
     },
   },
 
