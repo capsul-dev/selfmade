@@ -2,6 +2,7 @@
   <div class="lg:px-5">
     <div class="my-5">Ao salvar você concorda com os nossos Termos de Uso.</div>
     <c-button
+      role="saveButton"
       :is-loading="store.getters['business/isLoading']"
       @click="exportJSON"
       >Salvar</c-button
@@ -11,8 +12,12 @@
 
 <script>
 import { useStore } from "vuex";
+import { CButton } from "@/components";
 
 export default {
+  components: {
+    CButton,
+  },
   setup() {
     const store = useStore();
 
