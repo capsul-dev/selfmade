@@ -84,7 +84,7 @@ export default {
   computed: {
     detail: {
       get() {
-        return this.element.detail
+        return new String(this.element.detail)
       },
       set(value) {
         this.store.commit('layout/DETAIL_SET', { target: this.element, value })
