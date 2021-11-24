@@ -13,6 +13,7 @@
       v-model:checked="section.enabled"
       :key="`section-${index}`"
       :required="section.required"
+      :id="`checkbox-${index}`"
       @valueChanged="store.dispatch('layout/initOrder')"
     >
       <div class="flex">

@@ -12,15 +12,18 @@
       dark:bg-gray-900 dark:text-white
     "
   >
-    <div class="grid grid-cols-2">
+    <div class="grid grid-cols-2" id="upperArea">
     	<div class="flex items-center justify-start">
-    	   <c-logo source="img/logo/logo.png" class="pl-5 pt-3" />
-	</div>
-	<div class="flex items-center justify-end">
-	   <c-version/>
-	</div>
+    	  <c-logo source="img/logo/logo.png" class="pl-5 pt-3" />
+	    </div>
+	    <div class="flex items-center justify-end">
+	     <c-version/>
+	    </div>
     </div>
-    <c-template-step v-if="!store.getters['business/isAdmin']">
+    <c-template-step 
+      v-if="!store.getters['business/isAdmin']" 
+      id="cBusinessInfo"
+    >
       <template #title>Dados pessoais</template>
       <template #description
         >Preencha com
@@ -38,7 +41,10 @@
       </template>
     </c-template-step>
 
-    <c-template-step v-if="!store.getters['business/isAdmin']">
+    <c-template-step 
+      v-if="!store.getters['business/isAdmin']"
+      id="cSectionList"
+    >
       <template #title>Escolha suas seções</template>
       <template #description
         >Nesta área, você irá
@@ -54,7 +60,7 @@
     <c-template-step v-else-if="!!store.getters['business/isImported']">
       <template #title>Dados do cliente</template>
       <template #body>
-        <c-business-info></c-business-info>
+        <c-businessz-info></c-businessz-info>
       </template>
     </c-template-step>
 
@@ -63,6 +69,7 @@
         !store.getters['business/isAdmin'] ||
         !!store.getters['business/isImported']
       "
+      id="cSectionArrange"
     >
       <template #title>Disposição das seções</template>
       <template #description>
@@ -75,16 +82,24 @@
       </template>
     </c-template-step>
 
-    <c-template-step v-if="!store.getters['business/isAdmin']">
+    <c-template-step 
+      v-if="!store.getters['business/isAdmin']"
+      id="cFinish"
+    >
       <template #body>
         <c-finish></c-finish>
       </template>
     </c-template-step>
 
-    <c-template-modal v-if="modal.isVisible">
-      <template #title>{{ modal.title }}</template>
+    <c-template-modal 
+      v-if="modal.isVisible"
+    >
+      <template #title >{{ modal.title }}</template>
       <template #body>
-        <div v-if="modal.body.length > 0" class="opacity-80 mb-5">
+        <div 
+          v-if="modal.body.length > 0" 
+          class="opacity-80 mb-5"
+          role="modalBody">
           {{ modal.body }}
         </div>
         <component
@@ -131,7 +146,7 @@ export default {
 
   setup() {
     const store = useStore();
-
+    
     onMounted(() => {
       const params = new URLSearchParams(window.location.search);
       store.dispatch("business/setAdmin", 
