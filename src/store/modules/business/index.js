@@ -9,12 +9,14 @@ const initialState = {
       isLoading: false,
 
       sentLayouts: [],
-      clientName: '',
-      clientMail: '',
-      clientPhone: '',
-      productName: '',
-      productSegment: '',
-    };
+      businessInfo: {
+	      clientName: '',
+        clientMail: '',
+        clientPhone: '',
+        productName: '',
+        productSegment: '',
+      }
+};
 
 export default {
   namespaced: true,
@@ -39,62 +41,55 @@ export default {
 
     setAdmin: ({ commit }, value) => commit('ADMIN_SET', value),
 
-    sendLayout: ({ commit, getters, rootGetters, rootState }) =>
-      new Promise(async (resolve, reject) => {
-
-        if( !isStringFilled(getters.business.clientName) ) {
+    sendLayout: ({ commit, getters, rootGetters, rootState }) => 
+    new Promise(async (resolve, reject) => {
+        if( !isStringFilled(getters.business.businessInfo.clientName) ) {
           return reject("Você deve preencher o campo 'Nome'");
         }
 
-        if( !isStringFilled(getters.business.clientMail) ) {
+        if( !isStringFilled(getters.business.businessInfo.clientMail) ) {
           return reject("Você deve preencher o campo 'E-mail'");
         }
-
-        if( !isStringFilled(getters.business.clientPhone) ) {
-          return reject("Você deve preencher o campo 'Telefone'");
-        }
-
-        if( !isStringFilled(getters.business.productName) ) {
-          return reject("Você deve preencher o campo 'Nome do produto'");
-        }
-
-        if( !isStringFilled(getters.business.productSegment) ) {
-          return reject("Você deve preencher o campo 'Qual o nicho do seu produto?'");
-        }
-
-        if( !/^([a-zA-Z0-9]|\.|_)+@(.?([a-zA-Z0-9]|\.|_|-)+){2,}/.test(getters.business.clientMail) ) {
+        
+        if( !/^([a-zA-Z0-9]|\.|_)+@(.?([a-zA-Z0-9]|\.|_|-)+){2,}/.test(getters.business.businessInfo.clientMail) ) {
           return reject('E-mail inválido');
         }
 
-        if( ![15].includes(getters.business.clientPhone.length)) {
+        if( !isStringFilled(getters.business.businessInfo.clientPhone) ) {
+          return reject("Você deve preencher o campo 'Telefone'");
+        }
+
+        if( ![15].includes(getters.business.businessInfo.clientPhone.length)) {
           return reject('Telefone inválido - deve conter entre 10 e 11 dígitos e incluir o DDD');
         }
+
+        if( !isStringFilled(getters.business.businessInfo.productName) ) {
+          return reject("Você deve preencher o campo 'Nome do produto'");
+        }
+
+        if( !isStringFilled(getters.business.businessInfo.productSegment) ) {        
+          return reject("Você deve preencher o campo 'Qual o nicho do seu produto?'");
+        }
 	
-	if( rootGetters["layout/selectedCount"] > rootState.layout.requiredMax ) {
-	  return reject('Você precisa escolher até 11 seções!');
-	}
+        if( rootGetters["layout/selectedCount"] > rootState.layout.requiredMax ) {
+          return reject('Você precisa escolher até 11 seções!');
+        }
 
         if( rootGetters["layout/selectedCount"] < rootState.layout.requiredMin ) {
           return reject('Você precisa escolher mais seções !');
         }
 
         const { isAdmin, ...businessInfo } = getters;
-        const serializedContent = JSON.stringify({
+        const stringifiedContent = JSON.stringify({
           sections: rootGetters['layout/filteredSections'],
           business: businessInfo,
         });
-
         const payload = {
-          clientName: getters.business.clientName,
-          clientMail: getters.business.clientMail,
-          clientPhone: getters.business.clientPhone,
-          productName: getters.business.productName,
-          productSegment: getters.business.productSegment,
-          content: toBase64(serializedContent),
+          serializedContent: toBase64(stringifiedContent),
         };
 
         commit('LOADING_UPDATE', true)
-        
+        console.log(payload); 
         http
           .post("/api/finish", payload)
           .then((result) => {
