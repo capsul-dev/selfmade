@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 const http = require("../isomorphic/http");
-const sendMail = require("../isomorphic/services/sendMail");
+const sendMail = require("../api-assets/sendMail");
 
 const {
   NODE_ENV,

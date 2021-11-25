@@ -1,8 +1,8 @@
 
-import {fromBase64} from "./encoding"
+import {fromBase64} from "../isomorphic/services/encoding"
 
 const nodemailer = require("nodemailer");
-const generateMailMessages = require("../../api-assets/generateMailMessages");
+const generateMailMessages = require("./generateMailMessages");
 
 module.exports = async (emailData) => {
   const desserializedContent = fromBase64(emailData.content);
