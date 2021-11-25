@@ -6,8 +6,6 @@
     "CS_SMTP_USER": "@cs-selfmade-smtp-user",
     "CS_SMTP_PASS": "@cs-selfmade-smtp-pass",
     "CS_MAIL": "@cs-selfmade-mail",
-    "CS_SENDERNAME": "@cs-selfmade-sendername",
-    "HCAPTCHA_SITEKEY": "@cs-selfmade-hcaptcha-sitekey",
-    "HCAPTCHA_SECRET": "@cs-selfmade-hcaptcha-secret"
+    "CS_SENDERNAME": "@cs-selfmade-sendername"
   }
 }

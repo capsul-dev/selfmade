@@ -1,14 +1,20 @@
 /* eslint-disable no-undef */
-import { createServer, Response } from "miragejs";
 import { chromium } from "playwright";
+import { fromBase64 } from "../../../../isomorphic/services/encoding";
 
-const setup = async () => {
-  const browser = await chromium.launch({ headless: true });
+let browser = {};
+let renderedPage = {};
+
+const setup = async (browser) => {
+  await setupChromium(browser);
+};
+
+const setupChromium = async (browser) => {
+  browser = await chromium.launch({ headless: false });
   const page = await browser.newPage();
-  return page;
+  renderedPage = page;
 }
 
-let renderedPage = {};
 const basicElementsToBeRendered = [
   {
     id: "upperArea",
@@ -55,8 +61,9 @@ let renderedElements = [
   }
 ]
 
+jest.setTimeout(15000);
+
 describe('./CMain.vue', () => {
-  let server = {};
   
   const testData = {
     clientName: "Nome Teste",
@@ -65,38 +72,72 @@ describe('./CMain.vue', () => {
     invalidClientPhone: "989898",
     validClientPhone:"47933332222",
     productName: "Produto Teste",
-    productSegment: "Nicho de Teste"
+    productSegment: "Nicho de Teste",
+    sections: [
+      {
+        "sectionName": "Cabeçalho",
+        "layoutIndex": 1,
+        "sectionDetail": "gostaria de mudar a cor do fundo"
+      },
+      {
+        "sectionName": "Faixa gatilho",
+        "layoutIndex": 0,
+        "sectionDetail": "coloque um texto que tenha a ver com o header"
+      },
+      {
+        "sectionName": "Fórmula",
+        "layoutIndex": 2,
+        "sectionDetail": "dar foco em x ingrediente?"
+      },
+      {
+        "sectionName": "Provas Sociais",
+        "layoutIndex": 2,
+        "sectionDetail": "gostaria de prints do whatsapp"
+      },
+      {
+        "sectionName": "Cards de compra",
+        "layoutIndex": 0,
+        "sectionDetail": "quero 4 cards de checkout"
+      },
+      {
+        "sectionName": "Gatilhos mentais",
+        "layoutIndex": 2,
+        "sectionDetail": "gostaria de mudar a cor do fundo"
+      },      
+      {
+        "sectionName": "Atendimento Whatsapp",
+        "layoutIndex": 1,
+        "sectionDetail": "coloca pra enviar pro numero xxxxx-xxxx"
+      },
+      {
+        "sectionName": "Rodapé",
+        "layoutIndex": 1,
+        "sectionDetail": "não colocar cnpj"
+      },
+    ]
   }
   
   const verifyModal = async (modalTitle, modalContain) => {
-    await renderedPage.click("button[role='saveButton']");  
-    expect(await renderedPage.isVisible('#cModal')).toBe(true);
+    await renderedPage.click("button[role='saveButton']");
+    await renderedPage.waitForSelector('#cModal', { state: 'visible' });
     expect(await renderedPage.innerText("[role='modalTitle']")).toBe(modalTitle);
     expect(await renderedPage.innerText("[role='modalBody']")).toContain(modalContain);
-    await renderedPage.click("#closeModal");
+    await renderedPage.click("#closeModal");    
   }
 
   beforeAll(async () => {
-    renderedPage = await setup();
-  
-    server = createServer({
-      routes() {
-        this.namespace = "/api";
-        this.post("/finish", (request) => {
-          console.log(request);
-          return new Response(200, {}, { "teste": "serverResponse" })
-        });
-      }
-    });      
+    await setup(browser);    
   });
   
-  afterAll(() => { server.shutdown() });
+  afterAll(async () => { 
+    await renderedPage.close();
+  });
 
   
   describe('Trying to send the layout without all required data', () => {
     it('renders the main view', async () => {
       await renderedPage.goto(
-        "http://localhost:8080/", 
+        "http://localhost:3000/", 
         { waitUntil: 'networkidle' }
       );
       
@@ -160,10 +201,7 @@ describe('./CMain.vue', () => {
   }, 15000);
   describe("try to save with all required data", () => {
     it('renders the main view', async () => {
-      await renderedPage.goto(
-        "http://localhost:8080/", 
-        { waitUntil: 'networkidle' }
-      );
+      await renderedPage.reload({ waitUntil: 'networkidle' });
       
       renderedElements.forEach(async (el) => {
         const matchElement = basicElementsToBeRendered.find(({ id }) => id === el.id);
@@ -184,8 +222,26 @@ describe('./CMain.vue', () => {
         if(await renderedPage.isChecked(`#checkbox-${index}`))
           await renderedPage.check(`#checkbox-${index}`)
       }
+      
+      renderedPage.on('request', request => {
+        const serializedContent = JSON.parse(request.postData()).serializedContent;
+        const deserializedContent = fromBase64(serializedContent);
+        const parsedContent = JSON.parse(deserializedContent);
 
-      await verifyModal("Erro", "enviado");
+        const sections = parsedContent.sections;
+        console.log(sections[0].selectedStyle);        
+        
+        const businessInfo = parsedContent.business.business.businessInfo;
+        expect(businessInfo.clientName).toBe(testData.clientName);
+        expect(businessInfo.clientMail).toBe(testData.validClientMail);
+        expect(businessInfo.clientPhone).toBe("(47) 93333-2222");
+        expect(businessInfo.productName).toBe(testData.productName);
+        expect(businessInfo.productSegment).toBe(testData.productSegment);
+
+        console.log(businessInfo);
+      });
+
+      await verifyModal("Sucesso", "enviado"); 
     });
-  }, 15000);
+  });
 });

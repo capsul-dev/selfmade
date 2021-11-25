@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-const http = require("../isomorphic/http");
 const sendMail = require("../api-assets/sendMail");
 
 const {
@@ -13,6 +12,12 @@ const {
 } = process.env;
 
 module.exports = async (req, res) => {
+  if (process.env.NODE_ENV === 'development') {
+    return res.send({
+      error: false,
+    });
+  };
+
   try {
     const requiredFields = {
       clientName: "string",
@@ -50,7 +55,7 @@ module.exports = async (req, res) => {
     return res.status(500).send({ error: true, message: error.message });
   }
 
-  res.send({
+  return res.send({
     error: false,
   });
 };

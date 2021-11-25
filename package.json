@@ -6,8 +6,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
-    "test:end2end": "jest --verbose --runInBand",
+    "test:unit": "cross-env NODE_ENV=development vue-cli-service test:unit --verbose --runInBand --detectOpenHandles",
+    "test:end2end": "NODE_ENV=development jest --verbose --runInBand",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -15,6 +15,7 @@
     "autoprefixer": "^9.8.6",
     "axios": "^0.21.4",
     "core-js": "^3.6.5",
+    "cross-env": "^7.0.3",
     "maska": "^1.4.5",
     "nodemailer": "^6.6.3",
     "postcss": "^7.0.36",
@@ -40,6 +41,7 @@
     "miragejs": "^0.1.42",
     "playwright": "^1.16.3",
     "prettier": "^2.2.1",
+    "smtp-server": "^3.9.0",
     "stylelint": "^13.13.1",
     "stylelint-config-idiomatic-order": "^8.1.0",
     "stylelint-order": "^4.1.0",

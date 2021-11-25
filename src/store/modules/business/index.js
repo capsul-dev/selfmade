@@ -41,8 +41,8 @@ export default {
 
     setAdmin: ({ commit }, value) => commit('ADMIN_SET', value),
 
-    sendLayout: ({ commit, getters, rootGetters, rootState }) => 
-    new Promise(async (resolve, reject) => {
+    sendLayout: ({ commit, getters, rootGetters, rootState }) => {
+      return new Promise(async (resolve, reject) => {
         if( !isStringFilled(getters.business.businessInfo.clientName) ) {
           return reject("Você deve preencher o campo 'Nome'");
         }
@@ -70,7 +70,7 @@ export default {
         if( !isStringFilled(getters.business.businessInfo.productSegment) ) {        
           return reject("Você deve preencher o campo 'Qual o nicho do seu produto?'");
         }
-	
+
         if( rootGetters["layout/selectedCount"] > rootState.layout.requiredMax ) {
           return reject('Você precisa escolher até 11 seções!');
         }
@@ -89,16 +89,17 @@ export default {
         };
 
         commit('LOADING_UPDATE', true)
-        console.log(payload); 
+
         http
           .post("/api/finish", payload)
           .then((result) => {
             commit("LAYOUT_SEND");
             resolve(result);
           })
-          .catch((error) => reject(error))
-
-      }).finally(() => commit('LOADING_UPDATE', false)),
+          .catch(() =>  reject(error));
+            
+      }).finally(() => commit('LOADING_UPDATE', false));
+    },
   },
 
   mutations: {
