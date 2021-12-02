@@ -14,7 +14,7 @@ const initialState = {
         clientMail: '',
         clientPhone: '',
         productName: '',
-        productSegment: '',
+        productSegment: ''
       }
 };
 
@@ -38,11 +38,10 @@ export default {
   actions: {
     import: ({ commit }, value) => commit('BUSINESS_IMPORT', value),
     reset: ({ commit }) => commit('BUSINESS_RESET'),
-
     setAdmin: ({ commit }, value) => commit('ADMIN_SET', value),
-
     sendLayout: ({ commit, getters, rootGetters, rootState }) => {
       return new Promise(async (resolve, reject) => {
+
         if( !isStringFilled(getters.business.businessInfo.clientName) ) {
           return reject("Você deve preencher o campo 'Nome'");
         }
@@ -98,7 +97,7 @@ export default {
           })
           .catch(() =>  reject(error));
             
-      }).finally(() => commit('LOADING_UPDATE', false));
+       }).finally(() => commit('LOADING_UPDATE', false));
     },
   },
 
