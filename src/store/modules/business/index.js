@@ -7,8 +7,6 @@ const initialState = {
       isAdmin: false,
       isImported: false,
       isLoading: false,
-
-      sentLayouts: [],
       businessInfo: {
 	      clientName: '',
         clientMail: '',
@@ -77,11 +75,10 @@ export default {
         if( rootGetters["layout/selectedCount"] < rootState.layout.requiredMin ) {
           return reject('Você precisa escolher mais seções !');
         }
-
-        const { isAdmin, ...businessInfo } = getters;
+        
         const stringifiedContent = JSON.stringify({
           sections: rootGetters['layout/filteredSections'],
-          business: businessInfo,
+          business: getters.business.businessInfo,
         });
         const payload = {
           serializedContent: toBase64(stringifiedContent),

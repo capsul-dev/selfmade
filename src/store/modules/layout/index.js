@@ -16,11 +16,21 @@ export default {
   getters: {
     sections: (state) => { return state.sections },
 
-    filteredSections: (state) =>
-      state.sections.filter(
-        (section) => !!section.enabled || !!section.required
-      ),
-
+    filteredSections: (state) => {
+      let selectedList = state.sections.map((section) => {
+        if(section.enabled || section.required) {
+          return {
+            enabled: section.enabled,
+            required: section.required,
+            name: section.name,
+            selectedStyle: section.selectedStyle,
+            detail: section.detail,
+            order: section.order
+          }
+        }
+      });
+      return selectedList.filter(el => el != null);
+    },
     selectedCount: (state) =>
       state.sections.filter(
         (section) => !!section.enabled || !!section.required
