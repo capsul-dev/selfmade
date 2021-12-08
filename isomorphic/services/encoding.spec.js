@@ -5,7 +5,7 @@ describe("Encoding", () => {
         const baseText = JSON.stringify({ prop:'value' });
         const encodedString = toBase64(baseText);
         const decodedString = fromBase64(encodedString);
-        console.log(encodedString, decodedString);
+        
         expect(decodedString).toEqual(baseText);
     })
 });
